@@ -1,0 +1,353 @@
+.tbt_origin_panel {
+    padding: 40px 20px;
+    padding-bottom: 80px;
+}
+
+.myp_bigfont {
+    font-size: 64px;
+}
+.myp_mediumfont {
+    font-size: 45px;
+}
+.myp_normalfont {
+    font-size: 35px;
+}
+.myp_smallfont {
+    font-size: 29px;
+}
+.myp_msmallfont {
+    font-size: 23px;
+}
+
+.man_small {
+    width: 50px;
+    height: 50px;
+    border-radius: 200px;
+    float: left;
+    margin-top: 10px;
+}
+.mpheader_name {
+    float: left;
+    margin-top: 6px;
+    margin-bottom: -5px;
+    margin-left: 20px;
+}
+
+.balance_panel {
+    text-align: right;
+}
+
+.myp_body1 {
+    margin: 5px 20px;
+}
+.myp_body2 {
+    margin: 10px 20px;
+    padding: 10px 20px;
+    background-color: #e6e6e6;
+}
+
+.myp_b2 {
+    margin-left: 20px;
+    font-weight: bold;
+}
+.myp_b3 {
+    margin-left: 20px;
+}
+
+.mark_body {
+    height: 230px;
+}
+.mark_panel {
+    position: absolute;
+    width: 100%;
+}
+.mark_panel img {
+    width: 100%;
+}
+.mark_txts {
+    position: absolute;
+    text-align: center;
+    top: 30px;
+    left: 55px;
+}
+.mark_txts img {
+    width: 50px;
+    margin-bottom: 20px;
+}
+.mark_txts h5 {
+    font-size: 30px;
+}
+
+.mark_numbers {
+    padding: 30px 50px;
+}
+
+.pink_round {
+    border-image-source: url(/assets/imgs/pink_round.png) !important;
+    color: #f06292;
+}
+.green_round {
+    border-image-source: url(/assets/imgs/green_round.png) !important;
+    color: #66bb6a;
+}
+.blue_round {
+    border-image-source: url(/assets/imgs/blue_round.png) !important;
+    color: #1a75ad;
+}
+.red_round {
+    border-image-source: url(/assets/imgs/red_round.png) !important;
+    color: #ef5350;
+}
+.roundnum {
+    border: 18px solid transparent;
+    border-image-slice: 22;
+    border-radius: 400px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+
+.table_body {
+    border: solid 15px #ffb217;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #1d0a41;
+    margin-top: 20px;
+}
+.loto-whitetable table{
+    overflow-x: auto;
+    width: 100%;
+}
+.loto-whitetable tbody td:nth-child(3) {
+    border: none;
+}
+.loto-whitetable tbody td:nth-child(1) {
+    text-align: left;
+    padding: 0px 30px;
+}
+.loto-whitetable thead td:nth-child(3) {
+    border-right: none;
+}
+.loto-whitetable td img{
+    margin-bottom: 5px;
+}
+
+.next_challenge {
+    margin: 20px 0px;
+    text-align: center;
+}
+.next_challenge img{
+    cursor: pointer;
+}
+
+.lobetboxes{
+    margin: 30px 0px;
+}
+.bbox_header{
+    background-color: #ffe256;
+    padding: 15px 0px;
+    text-align: center;
+}
+.bbox_header img{
+    margin-top: -24px;
+    margin-right: 10px;
+}
+.bbox_body{
+    border: solid 7px #ffe256;
+    padding: 10px;
+    background-color: white;
+    padding-bottom: 30px;
+}
+.bbb_body {
+    height: 60px;
+}
+.bbb_title{
+    float: left;
+}
+.bbb_content{
+    float: right;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+    .myp_bigfont {
+        font-size: 54px;
+    }
+    .myp_mediumfont {
+        font-size: 40px;
+    }
+    .myp_normalfont {
+        font-size: 30px;
+    }
+    .myp_smallfont {
+        font-size: 24px;
+    }
+    .myp_msmallfont {
+        font-size: 20px;
+    }
+
+    .mark_txts {
+        top: 25px;
+        left: 30px;
+    }
+
+    .bbox_body{
+        padding: 10px 5px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .man_small {
+        margin-top: -5px;
+        margin-bottom: 10px;
+    }
+    .mpheader_name {
+        margin-left: 0px;
+    }
+
+    .myp_bigfont {
+        font-size: 45px;
+    }
+    .myp_mediumfont {
+        font-size: 30px;
+    }
+    .myp_normalfont {
+        font-size: 20px;
+    }
+    .myp_smallfont {
+        font-size: 18px;
+    }
+    .myp_msmallfont {
+        font-size: 17px;
+    }
+
+    .mark_txts {
+        top: 20px;
+        left: 25px;
+    }
+    .mark_txts img {
+        width: 30px;
+        margin-bottom: 10px;
+    }
+    .mark_txts h5 {
+        font-size: 20px;
+    }
+
+    .bbb_body {
+        height: 50px;
+    }
+    .bbox_header img {
+        margin-top: -10px;
+    }
+
+    
+}
+
+@media screen and (max-width: 768px) {
+    .myp_body1 {
+        margin: 0px -15px;
+    }
+    .myp_body2 {
+        margin: 10px -15px;
+    }
+
+    .myp_bigfont {
+        font-size: 35px;
+    }
+    .myp_mediumfont {
+        font-size: 27px;
+    }
+    .myp_normalfont {
+        font-size: 20px;
+    }
+    .myp_smallfont {
+        font-size: 17px;
+    }
+
+    .myp_header {
+        padding: 0px;
+    }
+
+    .mark_txts {
+        top: 25%;
+        left: 31%;
+    }
+    .mark_numbers {
+        padding: 100px 0px;
+        padding-bottom: 0px;
+    }
+
+    .roundnum {
+        border: 13px solid transparent;
+        border-image-slice: 24;
+        background-color: white;
+        border-radius: 400px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 25px;
+        line-height: 24px;
+        font-weight: bold;
+        float: left;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .loto-whitetable table{
+        width: 768px;
+    }
+
+    .next_challenge img{
+        width: 100%;
+    }
+
+    .bbox_body{
+        padding: 10px 5px;
+    }
+    .lobetboxes{
+        margin: 10px 0px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .balance_panel {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .myp_b2 {
+        margin-left: 2px;
+    }
+    .myp_b3 {
+        margin-left: 2px;
+    }
+
+    .myp_bigfont {
+        font-size: 30px;
+        line-height: 30px;
+        margin-top: 30px;
+    }
+    .myp_mediumfont {
+        font-size: 20px;
+    }
+    .myp_normalfont {
+        font-size: 17px;
+    }
+    .myp_smallfont {
+        font-size: 15px;
+    }
+
+    .mpheader_name {
+        margin-left: 0px;
+    }
+    .mark_numbers {
+        padding: 0px;
+    }
+}

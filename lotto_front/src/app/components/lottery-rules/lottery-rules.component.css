@@ -1,0 +1,14 @@
+.lor_lr_txtlayouts{
+    margin-top: 40px;
+}
+.lol_lr_titles{
+    font-size: 25px;
+}
+.lol_sub_contents{
+    margin-top: 20px;
+    font-size: 19px;
+}
+
+@media screen and (max-width: 768px) {
+
+}

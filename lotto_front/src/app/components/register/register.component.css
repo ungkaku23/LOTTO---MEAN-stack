@@ -1,0 +1,124 @@
+.loregister{
+    background: url('/assets/imgs/blugbg.png') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.lor_back{
+    color: black;
+    font-size: 25px;
+    float: left;
+    margin-top: 2px;
+    text-decoration: none;
+}
+.lor_back_icon{
+    font-size: 40px; 
+    float: left;
+}
+
+.lor_htitle{
+    color: white;
+    font-size: 4rem;
+    margin-left: 40px;
+}
+
+.regwithsocial{
+    font-size: 22px;
+}
+.socialgroups{
+    border-right: solid 2px #cbcbcb;
+}
+
+.reg_inputs{
+    border: solid 3px #f9a823;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+    width: 100%;
+    height: 35px;
+}
+.reg_labels{
+    font-size: 22px;
+}
+.reg_inputgroups{
+    padding: 0px 65px;
+}
+.reg_widgets{
+
+}
+.reg_btn{
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    margin-top: 35px;
+    float: right;
+}
+.captcha_widget{
+    float: left;
+    /*transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;*/
+}
+
+.reg_mainbody{
+    margin-bottom: 60px;
+    margin-top: 5px;
+}
+
+.socialbtns{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .reg_inputgroups{
+        padding: 0px 31px;
+    }
+    .captcha_widget{
+        transform:scale(0.77);
+        -webkit-transform:scale(0.77);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+    .reg_btn{
+        margin-top: -60px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .lor_htitle{
+        font-size: 2.5rem;
+    }
+    .socialbtns img{
+        width: 100%;
+    }
+    .reg_inputgroups{
+        padding: 0px 15px;
+    }
+    .reg_btn{
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .lor_htitle{
+        font-size: 2rem;
+    }
+    .socialgroups{
+        border: none;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media screen and (max-width: 430px) {
+    .captcha_widget{
+        transform:scale(0.57);
+        -webkit-transform:scale(0.57);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+}

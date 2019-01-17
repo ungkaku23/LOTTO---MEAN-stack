@@ -1,0 +1,110 @@
+<div class="lologin">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 15px;">
+        <i class="fa fa-angle-left lol_back_icon" aria-hidden="true"></i>
+        <a routerLink="/" class="lol_back font_roboto">
+          &nbsp;Back
+        </a>
+      </div>
+      <div class="col-md-12">
+        <h1 class="lol_htitle font_asap">LOGIN</h1>
+      </div>
+      <div class="col-md-12 bordered_outer login_mainbody">
+        <div class="row bordered_inner">
+
+          <div class="col-md-12 text-right">
+            <a routerLink="/loto/register">
+              <img src="assets/imgs/orregisterbtn.png" />
+            </a>
+          </div>
+
+          <div *ngIf="!showCodePanel" class="col-md-12">
+            <div class="row">
+              <div class="col-md-12 socialheader">
+                <h4 class="font_roboto loginwithsocial">Login with social account</h4>
+              </div>
+              <div class="col-md-4 sociallayout">
+                <span class="socialbtns">
+                  <img (click)="doRegisterWithSocial('facebook')" src="assets/imgs/facebookbtn.png" />
+                </span>
+              </div>
+              <div class="col-md-4 sociallayout">
+                <span class="socialbtns">
+                  <img (click)="doRegisterWithSocial('twitter')" src="assets/imgs/twitterbtn.png" />
+                </span>
+              </div>
+              <div class="col-md-4 sociallayout">
+                <span class="socialbtns">
+                  <img (click)="doRegisterWithSocial('google')" src="assets/imgs/googlebtn.png" />
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="!showCodePanel" class="col-md-12 login_inputgroups">
+            <form name="form" (ngSubmit)="login.form.valid && (captchaResponse != '') && this.doLogin() " #login="ngForm" validate>
+              <div class="row">
+                  <div class="form-group col-md-6 login_widgets_left" [ngClass]="{ 'has-error': login.submitted && !email.valid }">
+                    <label class="font_roboto login_labels">Mail address</label>
+                    <p class="m0"></p>
+                    <input type="email" class="form-control login_inputs" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+                    <div *ngIf="login.submitted && !email.valid" class="font_roboto help-block">Mail address is required</div>
+                  </div>
+                  <div class="form-group col-md-6 login_widgets_right" [ngClass]="{ 'has-error': login.submitted && !password.valid }">
+                    <label class="font_roboto login_labels">Password</label>
+                    <p class="m0"></p>
+                    <input type="password" class="form-control login_inputs" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                    <div *ngIf="login.submitted && !password.valid" class="font_roboto help-block">Password is required</div>
+                  </div>
+              </div>
+              <div class="row" style="margin-top: 40px;">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 submitbody">
+                  <re-captcha class="captcha_widget" (resolved)="resolved($event)" siteKey="6LdkTWAUAAAAAGKrAlDQyPKC_dOL_YgiDFYTLPcc"></re-captcha>
+                  <button class="login_btn">
+                    <img src="assets/imgs/loginbtn.png" />
+                  </button>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-12 reg_inputgroups text-center">
+                  <div *ngIf="login.submitted && (captchaResponse == '')" class="font_roboto help-block">Please check the Recaptcha</div>
+                  <div style="margin-top: 20px;">
+                    <a routerLink="/loto/forgot-password" class="font_roboto forgotlink">
+                      Forgot password?
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div *ngIf="showCodePanel" class="col-md-12 login_inputgroups">
+              <form name="form" (ngSubmit)="l_verifycode.form.valid && this.doVerifyLoginCode() " #l_verifycode="ngForm" validate>
+                  <div class="row">
+                      <div class="col-md-3"></div>
+                      <div class="form-group col-md-6 login_widgets_left" [ngClass]="{ 'has-error': l_verifycode.submitted && !smscode.valid }">
+                        <label class="font_roboto login_labels">Code</label>
+                        <p class="m0"></p>
+                        <input type="text" placeholder="6 digits" class="form-control login_inputs" name="smscode" [(ngModel)]="smsmodel.smscode" #smscode="ngModel" required />
+                        <div *ngIf="l_verifycode.submitted && !smscode.valid" class="font_roboto help-block">Code is required</div>
+                      </div>
+                      <div class="col-md-3"></div>
+                  </div>
+                  <div class="row" style="margin-top: 40px;">
+                      <div class="col-md-3"></div>
+                      <div class="col-md-6 submitbody text-center">
+                        <button class="codesubmit">
+                          <img src="assets/imgs/loginbtn.png" />
+                        </button>
+                      </div>
+                      <div class="col-md-3"></div>
+                  </div>
+              </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<div class="lomotherbody">
+  <img src="assets/imgs/blugbg.png" class="ab_bg" />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 15px;">
+        <a routerLink="/" class="breadcums lol_graywhite font_roboto">
+          TOP
+        </a>
+        <i class="fa fa-angle-right lol_arrow_icon lol_graywhite" aria-hidden="true"></i>
+        <a routerLink="/loto/contact-us" class="breadcums lol_black font_roboto">
+          Contact Us
+        </a>
+      </div>
+      <div class="col-md-12">
+        <h1 class="lol_htitle lol_black font_asap">Contact Us</h1>
+      </div>
+      <div class="col-md-12 lol_wrote_panel">
+        <p class="cu_normaltxt lol_black font_roboto" style="margin-top: 40px;">
+          Whether you're looking for answers, would like to solve a problem, or just want to leave feedback, you can contact us via one of the options offered here. We'll help you resolve your issues quickly and easily.
+        </p>
+        <div class="row brief_comment">
+          <div class="col-md-2"></div>
+          <div class="col-md-4 mome text-center">
+            <p class="cu_normaltxt lol_dirtybluesky font_roboto" style="margin-bottom: 20px;">For support requests</p>
+            <img style="cursor: pointer" (click)="clickedTab(1)" src="assets/imgs/contactus_mail.png" />
+            <p></p>
+            <img *ngIf="tid == '1'" src="assets/imgs/contactus_chosen.png" />
+          </div>
+          <div class="col-md-4 mome text-center">
+            <p class="cu_normaltxt lol_dirtybluesky font_roboto" style="margin-bottom: 20px;">For affiliate inquiries</p>
+            <img style="cursor: pointer" (click)="clickedTab(2)" src="assets/imgs/contactus_inqury.png" />
+            <p></p>
+            <img *ngIf="tid == '2'" src="assets/imgs/contactus_chosen.png" />
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        <form name="form" (ngSubmit)="contact.form.valid && (captchaResponse != '') && this.doContact(contact) " #contact="ngForm" validate>
+        <div class="row cu_contact_body">
+
+            <div class="col-md-3" style="margin-bottom: 50px;">
+              <img *ngIf="tid == '1'" src="assets/imgs/contactus_mail.png" />
+              <img *ngIf="tid == '2'" src="assets/imgs/contactus_inqury.png" />
+            </div>
+            <div class="col-md-9" style="margin-bottom: 50px;">
+              <h3 class="cu_bigtxt lol_whitebluesky font_roboto" style="margin-top: 10px;">Send us a message</h3>
+              <h3 *ngIf="tid == '1'" class="cu_bigtxt lol_whitebluesky font_roboto">For support requests</h3>
+              <h3 *ngIf="tid == '2'" class="cu_bigtxt lol_whitebluesky font_roboto">For affiliate inquires</h3>
+            </div>
+            <div class="col-md-3">
+              <p class="cu_smalltxt lol_darkgray font_roboto">Your name:</p>
+            </div>
+            <div class="form-group col-md-9" [ngClass]="{ 'has-error': contact.submitted && !name.valid }">
+              <input type="text" class="form-control cu_input contact_input" name="name" [(ngModel)]="model.name" #name="ngModel" required />
+              <div *ngIf="contact.submitted && !name.valid" class="font_roboto help-block">Name is required</div>
+            </div>
+            <div class="col-md-12" style="height: 20px;"></div>
+            <div class="col-md-3">
+              <p class="cu_smalltxt lol_darkgray font_roboto">Your Email:</p>
+            </div>
+            <div class="form-group col-md-9" [ngClass]="{ 'has-error': contact.submitted && !email.valid }">
+              <input type="text" class="form-control cu_input contact_input cin" name="email" [(ngModel)]="model.email" #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required />
+              <div *ngIf="contact.submitted && !email.valid" class="font_roboto help-block">Your email is required</div>
+            </div>
+            <div class="col-md-12" style="height: 20px;"></div>
+            <div class="col-md-3">
+              <p class="cu_smalltxt lol_darkgray font_roboto">Your request in full details:</p>
+            </div>
+            <div class="form-group col-md-9" [ngClass]="{ 'has-error': contact.submitted && !fullrequest.valid }">
+              <textarea class="form-control cu_input contact_textarea" name="fullrequest" [(ngModel)]="model.fullrequest" #fullrequest="ngModel" required >
+              </textarea>
+              <div *ngIf="contact.submitted && !fullrequest.valid" class="font_roboto help-block">Your full Words is required</div>
+            </div>
+            <div class="col-md-12"style="margin-top: 30px;">
+              <button class="cu_contactbtn">
+                <img src="assets/imgs/contactus_submit.png" />
+              </button>
+              <re-captcha class="captcha_widget" (resolved)="resolved($event)" siteKey="6LdkTWAUAAAAAGKrAlDQyPKC_dOL_YgiDFYTLPcc"></re-captcha>
+            </div>
+            <div *ngIf="contact.submitted && captchaResponse == ''" class="text-right col-md-12 font_roboto help-block">
+              Recaptcha is required
+            </div>
+          
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade betRModal" [class.successModal]="result == 1" [class.failedModal]="result == 2" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <img *ngIf="result == 1" src="assets/imgs/successclose.png"/>
+                  <img *ngIf="result == 2" src="assets/imgs/failedclose.png"/>
+              </button>
+          </div>
+          <div class="col-md-12 text-center">
+            <img *ngIf="result == 1" class="successicon" src="assets/imgs/successflag.png" />
+            <img *ngIf="result == 2" class="successicon" src="assets/imgs/failedflag.png" />
+            <h3 *ngIf="result == 1" class="font_asap">Success!!</h3>
+            <h3 *ngIf="result == 2" class="font_asap">Error!!</h3>
+            <button class="betRBtn" (click)="closeModal();">
+              <img *ngIf="result == 1" src="assets/imgs/successdone.png" />
+              <img *ngIf="result == 2" src="assets/imgs/faileddone.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

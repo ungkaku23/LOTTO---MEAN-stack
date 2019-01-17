@@ -1,0 +1,105 @@
+.cu_normaltxt{
+    font-size: 25px;
+}
+.cu_bigtxt{
+    font-size: 35px;
+}
+.cu_smalltxt{
+    font-size: 20px;
+}
+
+.brief_comment img{
+    margin-bottom: 10px;
+}
+.brief_comment p{
+    margin-bottom: 0;
+}
+.brief_comment .col-md-4{
+    margin-top: 40px;
+}
+
+.cu_contact_body {
+    border-image-source: url(/assets/imgs/contactus_layer.png) !important;
+    border: 80px solid transparent;
+    /*padding: 30px;*/
+    border-image-slice: 80;
+    background-color: white;
+    border-radius: 30px;
+
+    margin-top: 30px;
+}
+.cu_contact_body .col-md-3 {
+    text-align: right;
+}
+
+.contact_input{
+    height: 40px;
+    border: solid 3px #29c6d6;
+    margin-top: -5px;
+}
+.contact_textarea{
+    height: 180px;
+    border: solid 3px #29c6d6;
+    margin-top: -5px;
+}
+.cu_contactbtn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    float: right;
+}
+.captcha_widget{
+    float: right;
+    margin-right: -50px;
+    margin-top: 8px;
+
+    transform: scale(0.77);
+    -webkit-transform: scale(0.77);
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+}
+
+.cin{
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .cu_bigtxt{
+        font-size: 30px;
+    }
+    .cu_smalltxt{
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cu_bigtxt{
+        font-size: 22px;
+    }
+    .cu_normaltxt{
+        font-size: 17px;
+    }   
+    .cu_contact_body {
+        border-width: 30px;
+    }
+    .cu_contact_body .col-md-3 {
+        text-align: left;
+    } 
+    .cin{
+        margin-top: -5px;
+    }  
+
+    .cu_contactbtn img{
+        width: 100px;
+    }
+    .captcha_widget{
+        margin-right: -155px;
+        margin-top: 8px;
+
+        transform: scale(0.47);
+        -webkit-transform: scale(0.47);
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+    }
+}

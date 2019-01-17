@@ -1,0 +1,96 @@
+.lologin{
+    background: url('/assets/imgs/blugbg.png') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.lol_back{
+    color: black;
+    font-size: 25px;
+    float: left;
+    margin-top: 2px;
+    text-decoration: none;
+}
+.lol_back_icon{
+    font-size: 40px; 
+    float: left;
+}
+
+.lol_htitle{
+    color: white;
+    font-size: 4rem;
+    margin-left: 40px;
+}
+
+.login_mainbody{
+    margin-bottom: 60px;
+    margin-top: 5px;
+}
+
+.verfiying{
+    font-size: 18px;
+}
+
+.login_inputs{
+    border: solid 3px #f9a823;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+    width: 100%;
+    height: 35px;
+}
+.login_labels{
+    font-size: 22px;
+}
+.fcomment{
+    color: #686868;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.resendPanel {    
+    padding: 10px 200px;
+}
+.resend_btn {
+    border: solid 5px #00c4db;
+    background-color: #00aac1;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.email_submitted_notify {
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+.mailboxer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 992px) {
+    .lol_htitle{
+        font-size: 2.5rem;
+    }
+    .resendPanel{
+        padding: 10px 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .lol_htitle{
+        font-size: 2rem;
+    }
+    .resendPanel{
+        padding: 10px 15px;
+    }
+
+    .mailboxer {
+        width: 160px;
+    }
+    .notify_contents {
+        font-size: 18px;
+    }
+}

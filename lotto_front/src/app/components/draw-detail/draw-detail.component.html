@@ -1,0 +1,172 @@
+<div class="lomotherbody">
+  <img src="assets/imgs/blugbg.png" class="ab_bg" />
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12" style="margin-top: 15px;">
+        <a routerLink="/" class="breadcums lol_graywhite font_roboto">
+          TOP
+        </a>
+        <i class="fa fa-angle-right lol_arrow_icon lol_graywhite" aria-hidden="true"></i>
+        <a *ngIf="tid == 1" routerLink="{{'/loto/draws-history/' + tid + '/' +pages + '/' + per_page}}" 
+          class="breadcums lol_graywhite font_roboto">
+          Draws History
+          <span>NUMBER 3</span>
+        </a>
+        <a *ngIf="tid == 2" routerLink="{{'/loto/draws-history/' + tid + '/' +pages + '/' + per_page}}"
+          class="breadcums lol_graywhite font_roboto">
+          Draws History
+          <span>NUMBER 4</span>
+        </a>
+        <i class="fa fa-angle-right lol_arrow_icon lol_graywhite" aria-hidden="true"></i>
+        <a routerLink="{{'/loto/draw-detail/' + tid + '/' +pages + '/' + per_page + '/' + drawindex}}" 
+          class="breadcums lol_black font_roboto">
+          Draw {{drawData.no}}
+        </a>
+      </div>
+      <div class="col-md-12">
+        <h1 class="lol_htitle lol_black font_asap">Draws History</h1>
+      </div>
+      <div class="col-md-12 lol_wrote_panel">
+        <div class="row detailbox">
+          <div class="col-md-6 text-left dd_header">
+            <span class="dd_topheader dd_bigfont font_asap">Draw&nbsp;&nbsp;&nbsp;&nbsp;{{drawData.no}}</span>
+            <span class="dd_b3">
+              <img *ngIf="tid==1" src="assets/imgs/bet3other.png"/>
+              <img *ngIf="tid==2" src="assets/imgs/bet4other.png" />
+            </span>
+            <span class="dd_toprule dd_smallfont font_asap">Rules</span>
+          </div>
+          <div class="col-md-6 text-right dd_header">
+            <span class="dd_topdate dd_mediumfont font_asap">{{drawData.date | dot_date_format}}</span>
+          </div>
+          <div class="col-md-12">
+            <hr class="hrborder" />
+          </div>
+          <div class="col-md-12">
+            <div *ngIf="drawData.win_number != undefined" class="numbersec">
+              <div *ngIf="tid==1" class="numberobjs">
+                <span *ngFor="let ditem of drawData.win_number; let dindex = index;" 
+                      class="numberobj" 
+                      [class.blueskybg]="dindex==0"      
+                      [class.greenbg]="dindex==1"      
+                      [class.orangebg]="dindex==2">{{drawData.win_number[dindex] | convert_block_to_num: 0}}</span>
+              </div>
+              <div *ngIf="tid==2" class="numberobjs_4">
+                <span *ngFor="let ditem of drawData.win_number; let dindex = index;" 
+                      class="numberobj" 
+                      [class.blueskybg]="dindex==0"      
+                      [class.greenbg]="dindex==1"      
+                      [class.orangebg]="dindex==2"
+                      [class.redbg]="dindex==3">{{drawData.win_number[dindex] | convert_block_to_num: 1}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12" style="margin-top: 10px;">
+            <div class="dd_resulttable" [class.table-responsive]="windowwidth<768">
+              <table>
+                <thead>
+                  <td class="dd_mediumfont font_asap" width="25%">Category</td>
+                  <td class="dd_mediumfont font_asap" width="15%">Ticket</td>
+                  <td class="dd_mediumfont font_asap" width="25%">Jackpot</td>
+                  <td class="dd_mediumfont font_asap" width="35%">Total pay BTC</td>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> <img src="assets/imgs/gold.png" /> </td>
+                    <td class="dd_mediumfont font_asap">1</td>
+                    <td class="dd_mediumfont font_asap">0.123456 
+                      <span class="lol_orange">BTC</span>
+                    </td>
+                    <td class="dd_mediumfont font_asap">0.123456
+                      <span class="lol_orange">BTC</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td> <img src="assets/imgs/iron.png" /> </td>
+                    <td class="dd_mediumfont font_asap">3</td>
+                    <td class="dd_mediumfont font_asap">0.123456 
+                      <span class="lol_orange">BTC</span>
+                    </td>
+                    <td class="dd_mediumfont font_asap">0.123456
+                      <span class="lol_orange">BTC</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td> <img src="assets/imgs/bronze.png" /> </td>
+                    <td class="dd_mediumfont font_asap">25</td>
+                    <td class="dd_mediumfont font_asap">0.123456 
+                      <span class="lol_orange">BTC</span>
+                    </td>
+                    <td class="dd_mediumfont font_asap">0.123456
+                      <span class="lol_orange">BTC</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-12" style="margin-top: 20px;">
+            <div class="prev_dd text-center dd_smallfont font_asap" style="float: left;">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;Prev
+            </div>
+            <div class="next_dd text-center dd_smallfont font_asap" style="float: right;">
+              Next&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="row blockbox">
+          <div class="col-md-12">
+            <p class="dd_topheader dd_bigfont font_asap">BLOCK</p>
+            <div class="loto-table blocktable" [class.table-responsive]="windowwidth<768 ">
+              <table>
+                <thead>
+                  <td class="dd_smallfont font_asap" width="10%">Number</td>
+                  <td class="dd_smallfont font_asap" width="10%">Height</td>
+                  <td class="dd_smallfont font_asap" width="10%">Time UTC</td>
+                  <td class="dd_smallfont font_asap" width="70%">Hash</td>
+                </thead>
+                <tbody *ngIf="tid==1">
+                  <tr *ngFor="let bitem of drawData.win_number; let dindex = index;">
+                      <td>
+                        <span class="blocknumber" 
+                              [class.blueskybg]="dindex==0"      
+                              [class.greenbg]="dindex==1"      
+                              [class.orangebg]="dindex==2">{{bitem | convert_block_to_num: 0}}</span>
+                      </td>
+                      <td class="dd_smallfont font_asap">{{bitem.block_height}}</td>
+                      <td class="dd_smallfont font_asap">{{bitem.block_date | double_dot_time_format}}</td>
+                      <td class="dd_smallfont font_asap">
+                          <a class="hashtag" target="_blank" href="{{'https://www.blockchain.com/btc/block/' + bitem.block_hash}}">
+                            {{bitem.block_hash}}
+                          </a>
+                      </td>
+                  </tr>
+                </tbody>
+                <tbody *ngIf="tid==2">
+                  <tr *ngFor="let bitem of drawData.win_number; let dindex = index;">
+                      <td>
+                        <span class="numberobj" 
+                              [class.blueskybg]="dindex==0"      
+                              [class.greenbg]="dindex==1"      
+                              [class.orangebg]="dindex==2"
+                              [class.redbg]="dindex==3">{{bitem | convert_block_to_num: 1}}</span>
+                      </td>
+                      <td class="dd_smallfont font_asap">{{bitem.block_height}}</td>
+                      <td class="dd_smallfont font_asap">{{bitem.block_date | double_dot_time_format}}</td>
+                      <td class="dd_smallfont font_asap">
+                        <a class="hashtag" target="_blank" href="{{'https://www.blockchain.com/btc/block/' + bitem.block_hash}}">
+                          {{bitem.block_hash}}
+                        </a>
+                      </td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

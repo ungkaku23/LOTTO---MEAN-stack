@@ -1,0 +1,98 @@
+<div class="lomotherbody">
+    <img src="assets/imgs/blugbg.png" class="ab_bg" />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+          <i class="fa fa-angle-left lol_arrow_icon lol_black" aria-hidden="true"></i>
+          <a routerLink="/" class="breadcums lol_black font_roboto">
+            Back
+          </a>
+        </div>
+        <div class="col-md-6">
+          <h1 class="lol_htitle lol_white font_asap">BIT NUMBER 3</h1>
+        </div>
+        <div class="col-md-6">
+          <div class="jackpot_balance">
+            <div class="jp_labels">
+              <img src="assets/imgs/jackpot_label.png"/>
+              <p class="font_asap">
+                <span *ngIf="TL_status == 1" class="lol_red">TIME LEFT</span>&nbsp;
+                <span class="lol_white"><app-time-left [type]="'bit3'" (TL_emitter)="updateTL_status($event)"></app-time-left></span>
+              </p>
+            </div>
+            <div class="jp_balance">
+              <img class="jp_rabbithead" src="assets/imgs/rabbit_head.png" />
+              <div class="jp_whiteboard">
+                <span class="jpw1 lol_black font_asap">0.001234</span>&nbsp;
+                <span class="jpw2 lol_orange font_asap">BTC</span>
+              </div>
+              <img class="jp_beticon" src="assets/imgs/bet3new.png" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 ticket_bettab_body">
+            <span class="ticket_bettab_item darkyellowbg font_asap" 
+                  [class.zindex1]="tabIndObj.ind1 == 1"
+                  [class.zindex2]="tabIndObj.ind1 == 2"
+                  [class.zindex3]="tabIndObj.ind1 == 3"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 0"
+                  (click)="setTabInfo(0)">
+              Buy ticket
+            </span>
+            <span class="ticket_bettab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind2 == 1"
+                  [class.zindex2]="tabIndObj.ind2 == 2"
+                  [class.zindex3]="tabIndObj.ind2 == 3"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 1"
+                  (click)="setTabInfo(1)" style="left: 30%;">
+              Rules
+            </span>
+            <span class="ticket_bettab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind3 == 1"
+                  [class.zindex2]="tabIndObj.ind3 == 2"
+                  [class.zindex3]="tabIndObj.ind3 == 3"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 2"
+                  (click)="setTabInfo(2)" style="left: 60%;">
+              Archive
+            </span>
+        </div>
+        <div class="col-md-1">
+        </div>
+        
+        <div class="col-md-12 tbt_origin_panel" 
+           [class.buyticket_border]="tabIndex == 0"
+           [class.rule_border]="tabIndex == 1"
+           [class.archive_border]="tabIndex == 2">
+           <h2 class="font_asap tbt_title">Rules</h2>
+           <div class="mparagraph">
+              <h3 class="font_roboto mpara_title">text text text text text text text text</h3>
+              <p class="font_roboto lol_graymorewhite mpara_contents">
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+              </p>
+           </div>
+           <div class="mparagraph">
+              <h3 class="font_roboto mpara_title">text text text text text text text text</h3>
+              <p class="font_roboto lol_graymorewhite mpara_contents">
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+                  text text text text text text text text text text text text text text text text
+              </p>
+           </div>
+        </div>
+      </div>
+    </div>
+</div>

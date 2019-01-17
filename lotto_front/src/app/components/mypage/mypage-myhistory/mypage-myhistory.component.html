@@ -1,0 +1,218 @@
+  <div class="lomotherbody">  
+    <img src="assets/imgs/blugbg.png" class="ab_bg" />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+          <i class="fa fa-angle-left lol_arrow_icon lol_black" aria-hidden="true"></i>
+          <a routerLink="/" class="breadcums lol_black font_roboto">
+            Back
+          </a>
+        </div>
+        <div class="col-md-6">
+          <h1 class="lol_htitle lol_white font_asap">MY PAGE</h1>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 ticket_bettab_body">
+            <span class="mypage_tab_item thickorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind1 == 1"
+                  [class.zindex2]="tabIndObj.ind1 == 2"
+                  [class.zindex3]="tabIndObj.ind1 == 3"
+                  [class.zindex4]="tabIndObj.ind1 == 4"
+                  [class.zindex5]="tabIndObj.ind1 == 5"
+                  [class.zindex6]="tabIndObj.ind1 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 0"
+                  (click)="setTabInfo(0)">
+              Account
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind2 == 1"
+                  [class.zindex2]="tabIndObj.ind2 == 2"
+                  [class.zindex3]="tabIndObj.ind2 == 3"
+                  [class.zindex4]="tabIndObj.ind2 == 4"
+                  [class.zindex5]="tabIndObj.ind2 == 5"
+                  [class.zindex6]="tabIndObj.ind2 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 1"
+                  (click)="setTabInfo(1)" style="left: 15%;">
+              Lottery results
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind3 == 1"
+                  [class.zindex2]="tabIndObj.ind3 == 2"
+                  [class.zindex3]="tabIndObj.ind3 == 3"
+                  [class.zindex4]="tabIndObj.ind3 == 4"
+                  [class.zindex5]="tabIndObj.ind3 == 5"
+                  [class.zindex6]="tabIndObj.ind3 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 2"
+                  (click)="setTabInfo(2)" style="left: 30%;">
+              Deposit withdraw
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind4 == 1"
+                  [class.zindex2]="tabIndObj.ind4 == 2"
+                  [class.zindex3]="tabIndObj.ind4 == 3"
+                  [class.zindex4]="tabIndObj.ind4 == 4"
+                  [class.zindex5]="tabIndObj.ind4 == 5"
+                  [class.zindex6]="tabIndObj.ind4 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 3"
+                  (click)="setTabInfo(3)" style="left: 45%;">
+              My history
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind5 == 1"
+                  [class.zindex2]="tabIndObj.ind5 == 2"
+                  [class.zindex3]="tabIndObj.ind5 == 3"
+                  [class.zindex4]="tabIndObj.ind5 == 4"
+                  [class.zindex5]="tabIndObj.ind5 == 5"
+                  [class.zindex6]="tabIndObj.ind5 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 4"
+                  (click)="setTabInfo(4)" style="left: 60%;">
+              Message
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind6 == 1"
+                  [class.zindex2]="tabIndObj.ind6 == 2"
+                  [class.zindex3]="tabIndObj.ind6 == 3"
+                  [class.zindex4]="tabIndObj.ind6 == 4"
+                  [class.zindex5]="tabIndObj.ind6 == 5"
+                  [class.zindex6]="tabIndObj.ind6 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 5"
+                  (click)="setTabInfo(5)" style="left: 75%;">
+              Settings
+            </span>
+        </div>
+        <div class="col-md-1">
+        </div>
+        
+        <div class="col-md-12 tbt_origin_panel buyticket_border">
+          <div class="row myp_header">
+            <div class="col-md-6">
+              <img *ngIf="!mydata.avatar" class="man_small" src="assets/imgs/mandummy.png" />
+              <img *ngIf="mydata.avatar" class="man_small" src="{{baseUrl + mydata.avatar}}" />
+              <span class="font_roboto myp_mediumfont mpheader_name">{{mydata.nickname}}</span>
+            </div>
+            <div class="col-md-6 font_roboto balance_panel">
+              <span class="myp_smallfont lol_orange myp_b1">Balance</span>
+              <span class="myp_mediumfont font_asap myp_b2">0.123456</span>
+              <span class="myp_smallfont lol_orange myp_b3">BTC</span>
+            </div>
+          </div>
+          <app-bit-tabs [tid]="tid" (myevent)="getTidFromTab($event)"></app-bit-tabs>
+            <div *ngIf="tid == 1" class="bet_tabbody">
+              <div class="table-responsive loto-table" style="margin-bottom: 30px;">
+                <table class="table">
+                  <thead>
+                    <td class="t_txts_normal font_asap" width="5%">Draw</td>
+                    <td class="t_txts_normal font_asap" width="10%">Date</td>
+                    <td class="t_txts_normal font_asap" width="22%">My Number</td>
+                    <td class="t_txts_normal font_asap" width="20%">Win Number</td>
+                    <td class="t_txts_normal font_asap" width="15%">JACKPOT</td>
+                    <td class="t_txts_normal font_asap" width="15%">BTC</td>
+                    <td class="t_txts_normal font_asap" width="13%">Block Height</td>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let hitem of paginatedData; let i=index;">
+                      <td class="t_txts_normal font_asap">
+                        <a class="todetail" routerLink="{{'/loto/draw-detail/' + tid + '/' + paginater.pages + '/' + paginater.per_page + '/' + hitem.drawData[0]._id}}">
+                          <span *ngIf="hitem.drawData[0].no < 10">0</span>{{hitem.drawData[0].no}}
+                        </a>
+                      </td>
+                      <td class="t_txts_normal font_asap">{{hitem.drawData[0].date | dot_date_format}}</td>
+                      <td class="t_txts_normal font_asap">
+                        <div *ngFor="let ltitem of hitem.lottery_ticket_arr; let j=index;">
+                          <div *ngIf="checkCaretVal(viewMoreNum, i, j)" class="wnumbers" 
+                               [class.topradius]="j == 0"
+                               [class.bottomradius]="j == (hitem.lottery_ticket_arr.length - 1)">
+                            <span class="blue_num">{{ltitem[0]}}</span>
+                            <span class="green_num">{{ltitem[1]}}</span>
+                            <span class="orange_num">{{ltitem[2]}}</span>
+                            <span *ngIf="j == 0" (click)="caret_clicked(i)" ><i id="{{'careticon' + i}}" class="fa cicon fa-caret-down" aria-hidden="true"></i></span>
+                            <span *ngIf="j > 0"><i class="fa fa-caret-down hiddens" aria-hidden="true"></i></span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="t_txts_normal font_asap">
+                        <div class="wnumbers radius">
+                          <span class="blue_num">{{hitem.drawData[0].original_win_number[0]}}</span>
+                          <span class="green_num">{{hitem.drawData[0].original_win_number[1]}}</span>
+                          <span class="orange_num">{{hitem.drawData[0].original_win_number[2]}}</span>
+                        </div>
+                      </td>
+                      <td class="t_txts_normal font_asap medal_col">
+                        <h4 class="medal_txt t_txts_normal font_asap">0.001234</h4>
+                        <h4 class="medal_unit t_txts_normal font_asap lol_orange">BTC</h4>
+                      </td>
+                      <td class="t_txts_normal font_asap medal_col">
+                        <h4 class="medal_txt t_txts_normal font_asap">0.001234</h4>
+                        <h4 class="medal_unit t_txts_normal font_asap lol_orange">BTC</h4>
+                      </td>
+                      <td class="t_txts_normal font_asap">123456</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <app-pagination-widget [total]="totalPages" [setTotal]="totalPages" [current_pos]="paginater.pages" (paginateEvent)="getPageindexFromPaginatewidget($event, 3)"></app-pagination-widget>
+            </div>
+    
+            <div *ngIf="tid == 2" class="bet_tabbody">
+              <div class="table-responsive loto-table" style="margin-bottom: 30px;">
+                <table class="table">
+                  <thead>
+                    <td class="t_txts_normal font_asap" width="5%">Draw</td>
+                    <td class="t_txts_normal font_asap" width="10%">Date</td>
+                    <td class="t_txts_normal font_asap" width="22%">My Number</td>
+                    <td class="t_txts_normal font_asap" width="20%">Win Number</td>
+                    <td class="t_txts_normal font_asap" width="15%">JACKPOT</td>
+                    <td class="t_txts_normal font_asap" width="15%">BTC</td>
+                    <td class="t_txts_normal font_asap" width="13%">Block Height</td>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let hitem of paginatedData_bit4; let i=index;">
+                      <td class="t_txts_normal font_asap">
+                        <a class="todetail" routerLink="{{'/loto/draw-detail/' + tid + '/' + paginater_bit4.pages + '/' + paginater_bit4.per_page + '/' + hitem.drawData[0]._id}}">
+                          <span *ngIf="hitem.drawData[0].no < 10">0</span>{{hitem.drawData[0].no}}
+                        </a>
+                      </td>
+                      <td class="t_txts_normal font_asap">{{hitem.drawData[0].date | dot_date_format}}</td>
+                      <td class="t_txts_normal font_asap">
+                        <div *ngFor="let ltitem of hitem.lottery_ticket_arr; let j=index;">
+                          <div *ngIf="checkCaretVal(viewMoreNum, i, j)" class="wnumbers_4" 
+                               [class.topradius]="j == 0"
+                               [class.bottomradius]="j == (hitem.lottery_ticket_arr.length - 1)">
+                            <span class="blue_num">{{ltitem[0]}}</span>
+                            <span class="green_num">{{ltitem[1]}}</span>
+                            <span class="orange_num">{{ltitem[2]}}</span>
+                            <span class="red_num">{{ltitem[3]}}</span>
+                            <span *ngIf="j == 0" (click)="caret_clicked(i)" ><i id="{{'careticon' + i}}" class="fa cicon fa-caret-down" aria-hidden="true"></i></span>
+                            <span *ngIf="j > 0"><i class="fa fa-caret-down hiddens" aria-hidden="true"></i></span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="t_txts_normal font_asap">
+                        <div class="wnumbers_4 radius">
+                          <span class="blue_num">{{hitem.drawData[0].original_win_number[0]}}</span>
+                          <span class="green_num">{{hitem.drawData[0].original_win_number[1]}}</span>
+                          <span class="orange_num">{{hitem.drawData[0].original_win_number[2]}}</span>
+                          <span class="red_num">{{hitem.drawData[0].original_win_number[3]}}</span>
+                        </div>
+                      </td>
+                      <td class="t_txts_normal font_asap medal_col">
+                        <h4 class="medal_txt t_txts_normal font_asap">0.001234</h4>
+                        <h4 class="medal_unit t_txts_normal font_asap lol_orange">BTC</h4>
+                      </td>
+                      <td class="t_txts_normal font_asap medal_col">
+                        <h4 class="medal_txt t_txts_normal font_asap">0.001234</h4>
+                        <h4 class="medal_unit t_txts_normal font_asap lol_orange">BTC</h4>
+                      </td>
+                      <td class="t_txts_normal font_asap">123456</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <app-pagination-widget [total]="totalPages_bit4" [setTotal]="totalPages_bit4" [current_pos]="paginater_bit4.pages" (paginateEvent)="getPageindexFromPaginatewidget($event, 4)"></app-pagination-widget>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,44 @@
+.lol_wrote_panel {
+    padding: 50px 60px;
+}
+
+.pp_contents {
+    font-size: 20px;
+    letter-spacing: .5px;
+}
+
+.wwo {
+    font-size: 35px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.wwo_title {
+    font-size: 23px;
+}
+
+.rowobj {
+    margin-top: 50px;
+}
+
+.startbtn{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .pp_contents {
+        font-size: 17px;
+    }
+    .wwo {
+        font-size: 30px;
+    }
+    .wwo_title {
+        font-size: 20px;
+    }
+
+    .rowobj img{
+        width: 60%;
+    }
+    .startbtn{
+        width: 100%;
+    }
+}

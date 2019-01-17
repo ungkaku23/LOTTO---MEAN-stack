@@ -1,0 +1,33 @@
+.pp_contents{
+    font-size: 20px;
+    margin-bottom: 0px;
+    letter-spacing: .5px;
+}
+.pp_title{
+    font-size: 25px;
+}
+.pp_contents_group{
+    margin-top: 50px;
+    padding: 0px 30px;
+}
+.pp_bluesky_border{
+    border-width: 10px;
+    border-color: #33a9e891;
+    margin: 2px 0px;
+}
+
+@media screen and (max-width: 992px) {
+    .pp_contents_group{
+        padding: 0px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .pp_contents{
+        font-size: 17px;
+    }
+    .pp_title{
+        font-size: 22px;
+    }
+}

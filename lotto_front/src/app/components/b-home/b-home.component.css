@@ -1,0 +1,234 @@
+.lotopbg{
+    background: url('/assets/imgs/lotopbg.png') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.jackpot{
+    margin-top: 20px;
+}
+
+.rabbit{
+    position: absolute;
+    top: 100px;
+}
+
+.lobetbtnpanels{
+    margin-top: 30px;
+}
+
+.bbox_header{
+    background-color: #ffe256;
+    padding: 15px 0px;
+    text-align: center;
+}
+.bbox_header h2{
+    font-family: 'Asap Condensed';
+    font-weight: bold;
+}
+.bbox_body{
+    border: solid 7px #ffe256;
+    padding: 10px 40px;
+}
+.lojackpot_label{
+    color: #dc0707;
+    font-family: 'Asap Condensed';
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.lobtc_label{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Asap Condensed';
+}
+.bbox_body1{
+    border-bottom: solid 2px #dbdbdb;
+}
+.lobtc_counter{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Asap Condensed';
+}
+.bbox_body3{
+    margin-top: 10px;
+}
+.loplaybtn{
+    font-size: 23px;
+    font-weight: bold;
+    font-family: 'Asap Condensed';
+
+    
+    border-radius: 7px;
+    padding: 1px 30px;
+}
+
+.num3play{
+    border: solid 6px #38c8d9;
+    cursor: pointer;
+}
+.num4play{
+    border: solid 6px red;
+    cursor: pointer;
+}
+
+.lobetboxes{
+    margin-top: 80px;
+}
+
+.lobet3logo{
+    width: 140px;
+    position: absolute;
+    top: -70px;
+    right: 70px;
+}
+
+.allbit_amount{
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    top: 210px;
+    left: 36.2%;
+    color: #bd1955;
+    text-shadow: 3px 3px 3px rgba(224, 0, 0, 0.3);
+}
+.alld_amount{
+    position: absolute;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    top: 265px;
+    left: 40.5%;
+    color: #bd1955;
+    text-shadow: 3px 3px 3px rgba(224, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 1500px) {
+    .jackpot{
+        width: 500px;
+        margin-top: 70px;
+    }
+    .rabbit{
+        width: 150px;
+        top: 140px;
+    }
+
+    .allbit_amount{
+        top: 230px;
+        letter-spacing: 4px;
+        left: 37%;
+    }
+    .alld_amount{
+        top: 280px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .bbox_body{
+        padding: 10px 5px;
+    }
+    .lobet3logo{
+        width: 140px;
+        position: absolute;
+        top: -70px;
+        right: 50px;
+    }
+
+    .allbit_amount{
+        top: 230px;
+        left: 34.6%;
+    }
+    .alld_amount{
+        left: 38.5%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .lobet3logo{
+        width: 140px;
+        position: absolute;
+        top: -70px;
+        right: 100px;
+    }
+    .lobetboxes{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .emlobetboxes{
+        display: none;
+    }
+
+    .allbit_amount{
+        left: 29.6%;
+    }
+    .alld_amount{
+        left: 34.4%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .jackpot{
+        width: 100%;
+        margin-top: 70px;
+    }
+    .bbox_body{
+        padding: 10px 45px;
+    }
+    .lobet3logo{
+        width: 140px;
+        position: absolute;
+        top: -70px;
+        right: 35%;
+    }
+    .lobetboxes{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .allbit_amount{
+        left: 22%;
+    }
+    .alld_amount{
+        left: 28.5%;
+    }
+    
+}
+
+@media screen and (max-width: 570px) {
+    .rabbit{
+        width: 120px;
+    }
+    .jackpot{
+        width: 290px;
+    }
+    .allbit_amount{
+        letter-spacing: 2px;
+        left: 36%;
+        top: 165px;
+        font-size: 20px;
+    }
+    .alld_amount{
+        letter-spacing: 2px;
+        left: 40%;
+        top: 195px;
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .rabbit{
+        width: 90px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .allbit_amount{
+        left: 30%;
+    }
+    .alld_amount{
+        left: 30%;
+    }
+}

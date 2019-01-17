@@ -1,0 +1,140 @@
+<div class="mainheader">
+    <div class="container topmenu">
+        <div class="row logout-menupanel">
+            <div [class.col-md-7]="!authService.loggedIn()" [class.col-md-5]="authService.loggedIn()">
+                <span class="zleftbtn" (click)="clickedZleftbtn()" id="leftbtn_target">
+                    <img *ngIf="zleftbtnflag == 0" src="assets/imgs/zleftbtn.png" id="leftbtn_target" />
+                    <img *ngIf="zleftbtnflag == 1" src="assets/imgs/zleftbtnx.png" id="leftbtn_target" />
+                </span>
+                <div id="leftdropdown" class="dropdown-content" style="z-index: 100;">
+                    <a id="ldd_item1" class="ldd_item" routerLink="/loto/check-fair-play" (click)="clickedLdditem('#ldd_item1')">Check Fairly Play</a>
+                    <a id="ldd_item2" class="ldd_item" routerLink="/loto/lottery-rules" (click)="clickedLdditem('#ldd_item2')">Lottery Rules</a>
+                    <a id="ldd_item3" class="ldd_item" routerLink="/loto/draws-history/1/1/10" (click)="clickedLdditem('#ldd_item3')">Draws history</a>
+                    <a *ngIf="authService.loggedIn()" id="ldd_item4" class="ldd_item" routerLink="/loto/mypage-account/0" (click)="clickedLdditem('#ldd_item4')">My account</a>
+                    <a *ngIf="!authService.loggedIn()" id="ldd_item4" class="ldd_item" routerLink="/loto/login/1" (click)="clickedLdditem('#ldd_item4')">My account</a>
+                    <a id="ldd_item5" class="ldd_item" routerLink="/loto/faq-home" (click)="clickedLdditem('#ldd_item5')">FAQ</a>
+                    <a id="ldd_item6" class="ldd_item" routerLink="/loto/contact-us" (click)="clickedLdditem('#ldd_item6')">Contact Us</a>
+                    <a id="ldd_item7" class="ldd_item" routerLink="/loto/terms-of-use" (click)="clickedLdditem('#ldd_item7')">Terms of Use</a>
+                    <a id="ldd_item8" class="ldd_item" routerLink="/loto/privacy-policy" (click)="clickedLdditem('#ldd_item8')">Privacy Policy</a>
+                </div>
+                <span class="mylogo">
+                    <a routerLink="/">
+                        <img src="assets/imgs/llogo.png" />
+                    </a>
+                </span>
+                <span class="demobtn">
+                    <a routerLink="/loto/demo-play-buyticket">
+                        <img src="assets/imgs/demobtn.png" />
+                    </a>
+                </span>
+            </div>
+            <div class="loright text-right" [class.col-md-5]="!authService.loggedIn()" [class.col-md-7]="authService.loggedIn()">
+                <span *ngIf="!authService.loggedIn()" class="regwidget lrwidgets">
+                    <a routerLink="register" style="text-decoration: none; color: black;">
+                        Register
+                    </a>
+                </span>
+                <span *ngIf="!authService.loggedIn()" class="lrwidgets" style="margin-right: 0px;">
+                    <a routerLink="login/0" style="text-decoration: none; color: black;">
+                        Login
+                    </a>
+                </span>
+                <div *ngIf="authService.loggedIn()" (click)="notify_clicked()" class="notify_menu" id="notify_target">
+                    <img src="assets/imgs/notify_menu.png" id="notify_target" />
+                    <span id="notify_target">2</span>
+                </div>
+                <div *ngIf="authService.loggedIn()" id="notify_popup" class="dropdown-content text-left" style="z-index: 100;">
+                    <div class="msg_box_brief">
+                        <span class="temp_img"></span>
+                        <div class="briefdetail">
+                            <p class="font_roboto lol_orange bfd_txt">2018.00.00 00.00.00</p>
+                            <p class="font_roboto lol_orange bfd_txt ctrun">text text text text text text text text text text text text text text text</p>
+                        </div>
+                    </div>
+                    <div class="msg_box_brief">
+                        <span class="temp_img"></span>
+                        <div class="briefdetail">
+                            <p class="font_roboto lol_orange bfd_txt">2018.00.00 00.00.00</p>
+                            <p class="font_roboto lol_orange bfd_txt ctrun">text text text text text text text text text text text text text text text</p>
+                        </div>
+                    </div>
+                    <a id="np_item1" class="np_item lol_orange bfd_moreitem" routerLink="/loto/mypage-message" (click)="clickednpitem('#np_item1')">more...</a>
+                </div>
+                <a (click)="resetMenuToggle()" id="wom"></a>
+                <div *ngIf="authService.loggedIn()" class="user_menu">
+                    <div class="userbox" id="rightbtn_target" (click)="clickedZrightbtn()">
+                        <img *ngIf="avatarImg == ''" src="assets/imgs/mandummy.png" id="rightbtn_target" />
+                        <img *ngIf="avatarImg != ''" src="{{baseUrl + avatarImg}}" id="rightbtn_target" />
+                        <i *ngIf="zrightbtnflag == 0" class="fa fa-caret-down" aria-hidden="true" id="rightbtn_target"></i>
+                        <i *ngIf="zrightbtnflag == 1" class="fa fa-caret-up" aria-hidden="true" id="rightbtn_target"></i>
+                    </div>
+                    <div class="userbalance">
+                        <span class="font_roboto lol_darkred ub_title">Balance</span>
+                        <span class="font_asap lol_black ub_price">
+                            0.12345
+                            <span class="ub_unit lol_darkred">BTC</span>
+                        </span> 
+                    </div>
+                </div>
+                <div *ngIf="authService.loggedIn()" id="rightdropdown" class="dropdown-content text-left" style="z-index: 100;">
+                    <a id="rdd_item1" class="rdd_item" routerLink="/loto/mypage-account/0" (click)="clickedRdditem('#rdd_item1')">Account</a>
+                    <a id="rdd_item2" class="rdd_item" routerLink="/loto/mypage-lottery-results" (click)="clickedRdditem('#rdd_item2')">Lottery results</a>
+                    <a id="rdd_item3" class="rdd_item" routerLink="/loto/mypage-deposit-withdraw" (click)="clickedRdditem('#rdd_item3')">Deposit withdraw</a>
+                    <a id="rdd_item4" class="rdd_item" routerLink="/loto/mypage-myhistory" (click)="clickedRdditem('#rdd_item4')">My history</a>
+                    <a id="rdd_item5" class="rdd_item" routerLink="/loto/mypage-message" (click)="clickedRdditem('#rdd_item5')">Message</a>
+                    <a id="rdd_item6" class="rdd_item" routerLink="/loto/mypage-settings/1" (click)="clickedRdditem('#rdd_item6')">Settings</a>
+                    <a id="rdd_item7" class="rdd_item" (click)="clickedRdditem('#rdd_item7')">log out</a>
+                </div>
+                <div *ngIf="authService.loggedIn()" class="bet4_playmenu">
+                    <a routerLink="/loto/bet4-play-buyticket">
+                        <img src="assets/imgs/bet4_withplay.png" />
+                    </a>
+                </div>
+                <div *ngIf="authService.loggedIn()" class="bet3_playmenu">
+                    <a routerLink="/loto/bet3-play-buyticket">
+                        <img src="assets/imgs/bet3_withplay.png" />
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row logout-menupanel">
+            <div class="col-md-12" style="margin-top: 10px;">
+                <div class="lang_panel">
+                    <i class="fa fa-language" aria-hidden="true"></i>
+                    <select class="lang_widget" [(ngModel)]="lang_val" (change)="langChanged()">
+                        <option value="en">English</option>
+                        <option value="jp">Jpanese</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade betRModal logoutModal" id="lgModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <img src="assets/imgs/logoutclose.png"/>
+              </button>
+          </div>
+          <div class="col-md-12 text-center">
+            <img class="successicon" src="assets/imgs/logoutflag.png" />
+            <h3 class="font_asap">Logout</h3>
+            <button class="betRBtn" (click)="doLogout()">
+              <img src="assets/imgs/logoutdone.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

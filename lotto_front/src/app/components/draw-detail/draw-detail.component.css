@@ -1,0 +1,272 @@
+.detailbox{
+    border: 40px solid transparent;
+    padding: 25px;
+    /*border-image-source: url(/assets/imgs/bet3_drawdetail.png);*/
+    border-image-slice: 50;
+    background-color: white;
+    margin: 30px 70px;
+}
+
+.dd_bigfont{
+    font-size: 35px;
+}
+.dd_mediumfont{
+    font-size: 30px;
+}
+.dd_smallfont{
+    font-size: 25px;
+}
+
+.dd_topheader{
+    font-weight: bold;
+}
+.dd_toprule{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.dd_b3 img{
+    width: 70px;
+    margin-top: -10px;
+}
+.dd_b3{
+    margin-left: 10px;
+}
+.dd_toprule{
+    margin-left: 5px;
+}
+.dd_topdate{
+    font-weight: bold;
+}
+
+.hrborder{
+    border: solid 1px #ababab;
+}
+
+.dd_header{
+    padding: 0px 60px;
+}
+
+
+.numbersec{
+    width: 400px;
+    height: 100px;
+    border: 40px solid transparent;
+    /* padding: 25px; */
+    border-image-source: url(/assets/imgs/yellow_origin.png);
+    border-image-slice: 30;
+    background-color: white;
+    margin: auto;
+}
+.numberobj{
+    padding: 5px 19px;
+    font-size: 35px;
+    border-radius: 50px;
+    color: white;
+    margin: 0px 5px;
+    margin-top: -21px;
+}
+.numberobjs{
+    width: 210px;
+    margin: auto;
+    margin-top: -15px;
+}
+.numberobjs_4{
+    width: 281px;
+    margin: auto;
+    margin-top: -15px;
+}
+
+
+.dd_resulttable table{
+    width: 100%;
+}
+.dd_resulttable thead td{
+    border-bottom: solid 3px #ababab;
+    
+}
+.dd_resulttable td{
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 0px;
+}
+
+.prev_dd{
+    width: 90px;
+    height: 50px;
+    background: #eeeeee;
+    position: relative;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+.prev_dd:before {
+    content: "";
+    position: absolute;
+    right: 97%;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-right: 15px solid #eeeeee;
+    border-bottom: 25px solid transparent;
+}
+.next_dd{
+    width: 90px;
+    height: 50px;
+    background: #eeeeee;
+    position: relative;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+.next_dd:before {
+    content: "";
+    position: absolute;
+    left: 98%;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 15px solid #eeeeee;
+    border-bottom: 25px solid transparent;
+}
+
+.blockbox .col-md-12{
+    background-color: #eeeeee;
+    padding: 25px;
+    border-radius: 8px;
+}
+.blockbox{
+    padding: 0px 30px;
+}
+.blocktable table{
+    width: 100%;
+    table-layout: fixed;
+}
+.blocktable td{
+    font-weight: bold;
+    padding: 12px 0px;
+    word-wrap: break-word;
+}
+.blocknumber{
+    padding: 5px 14px;
+    font-size: 25px;
+    border-radius: 50px;
+    color: white;
+    margin: 0px 5px;
+    margin-top: -21px;
+}
+.blocktable td:nth-child(4)
+{
+    border-right: none;
+}
+
+.hashtag {
+    color: black;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 992px) {
+    .dd_header{
+        padding: 0px 15px;
+    }
+
+    .dd_bigfont{
+        font-size: 30px;
+    }
+    .dd_mediumfont{
+        font-size: 28px;
+    }
+    .dd_smallfont{
+        font-size: 22px;
+    }
+
+    .dd_b3 img{
+        width: 50px;
+        margin-top: -10px;
+    }
+
+    .detailbox{
+        margin: 30px 0px;
+    }
+}
+
+@media screen and (max-width: 768px) {  
+    .numbersec{
+        margin-left: -10px;
+    }
+
+    .dd_resulttable td{
+        font-size: 22px;
+    }
+    .dd_resulttable table{
+        width: 500px;
+    }
+    .blocktable table{
+        width: 800px;
+    }
+
+    .prev_dd, .next_dd{
+        width: 60px;
+        padding-top: 12px;
+    }
+}
+
+@media screen and (max-width: 530px) {  
+    .numbersec{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .numberobjs{
+        width: 94px;
+        margin: auto;
+    }
+    .numberobjs_4{
+        width: 126px;
+        margin: auto;
+    }
+    .numberobj{
+        padding: 5px 10px;
+        font-size: 15px;
+        border-radius: 50px;
+        color: white;
+        margin: 0px 5px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .numberobjs_4{
+        margin-left: -10px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .numberobjs_4{
+        margin-left: -16px;
+    }
+
+    .dd_bigfont{
+        font-size: 20px;
+    }
+    .dd_mediumfont{
+        font-size: 18px;
+    }
+    .dd_smallfont{
+        font-size: 17px;
+    }
+
+    .dd_b3 img{
+        width: 40px;
+        margin-top: -10px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .numberobjs_4{
+        margin-left: -37px;
+    }
+    .numberobjs{
+        margin-left: -20px;
+    }
+}

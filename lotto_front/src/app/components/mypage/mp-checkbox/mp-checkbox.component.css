@@ -1,0 +1,32 @@
+.onbg {
+    background-color: #26c6da;
+}
+.offbg {
+    background-color: #c9c9c9;
+}
+
+.mpcheck_body {
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px -5px #333;
+    border-radius: 5px;
+}
+
+.mpoff {
+    margin-right: 10px;
+}
+.mpoff_box {
+    padding: 0px 11px;
+    background: white;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.mpon_box {
+    padding: 0px 11px;
+    background: white;
+    border-radius: 3px;
+}

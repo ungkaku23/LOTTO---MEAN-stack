@@ -1,0 +1,177 @@
+<div class="lomotherbody">
+  <img src="assets/imgs/blugbg.png" class="ab_bg" />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 15px;">
+        <i class="fa fa-angle-left lol_arrow_icon lol_black" aria-hidden="true"></i>
+        <a routerLink="/" class="breadcums lol_black font_roboto">
+          Back
+        </a>
+      </div>
+      <div class="col-md-6">
+        <h1 class="lol_htitle lol_white font_asap">Demo Play</h1>
+      </div>
+      <div class="col-md-6">
+        <div class="jackpot_balance">
+          <div class="jp_labels">
+            <img src="assets/imgs/jackpot_label.png"/>
+            <p class="font_asap">
+              <span class="lol_red">TIME LEFT</span>&nbsp;
+              <span class="lol_white">00:00:00</span>
+            </p>
+          </div>
+          <div class="jp_balance">
+            <img class="jp_rabbithead" src="assets/imgs/rabbit_head.png" />
+            <div class="jp_whiteboard">
+              <span class="jpw1 lol_black font_asap">0.001234</span>&nbsp;
+              <span class="jpw2 lol_orange font_asap">BTC</span>
+            </div>
+            <img class="jp_beticon" src="assets/imgs/bet4new.png" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10 ticket_bettab_body">
+          <span class="ticket_bettab_item darkyellowbg font_asap" 
+                [class.zindex1]="tabIndObj.ind1 == 1"
+                [class.zindex2]="tabIndObj.ind1 == 2"
+                [class.zindex3]="tabIndObj.ind1 == 3"
+                [class.ticket_bettab_item_chosen]="tabIndex == 0"
+                (click)="setTabInfo(0)">
+            Buy ticket
+          </span>
+          <span class="ticket_bettab_item whiteorangebg font_asap"
+                [class.zindex1]="tabIndObj.ind2 == 1"
+                [class.zindex2]="tabIndObj.ind2 == 2"
+                [class.zindex3]="tabIndObj.ind2 == 3"
+                [class.ticket_bettab_item_chosen]="tabIndex == 1"
+                (click)="setTabInfo(1)" style="left: 30%;">
+            Rules
+          </span>
+          <span class="ticket_bettab_item solidorangebg font_asap"
+                [class.zindex1]="tabIndObj.ind3 == 1"
+                [class.zindex2]="tabIndObj.ind3 == 2"
+                [class.zindex3]="tabIndObj.ind3 == 3"
+                [class.ticket_bettab_item_chosen]="tabIndex == 2"
+                (click)="setTabInfo(2)" style="left: 60%;">
+            Archive
+          </span>
+      </div>
+      <div class="col-md-1">
+      </div>
+      
+      <div class="col-md-12 tbt_origin_panel" 
+           [class.buyticket_border]="tabIndex == 0"
+           [class.rule_border]="tabIndex == 1"
+           [class.archive_border]="tabIndex == 2">
+           <h2 class="font_asap tbt_title">Archive</h2>
+           <div class="row tbt_eachline">
+              <div class="col-md-5">
+                <img class="bitcoin_icon" src="assets/imgs/bitcoin_yellow.png" />
+                <div class="dtitle_date">
+                  <h3 class="font_asap lol_whiteorange dtd_dtitle dtd_mediumf">Draw 009</h3>
+                  <p class="font_roboto dtd_msmallf"><span class="dtd_smallf lol_whiteorange" style="margin-left: 1px;">Date</span> 2018.00.00 00:00</p>
+                </div>
+              </div>
+              <div class="col-md-3 text-center">
+                <div class="dtd_graypacked whitegraybg">
+                  <span class="dtd_ticketspan font_asap blueskybg">3</span>
+                  <span class="dtd_ticketspan font_asap greenbg">3</span>
+                  <span class="dtd_ticketspan font_asap orangebg">3</span>
+                  <span class="dtd_ticketspan font_asap redbg">3</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <p class="font_roboto dtd_msmallf" style="margin-bottom: -10px;"><span class="dtd_smallf lol_whiteorange">Jackpot</span></p>
+                <h2 class="font_asap dtd_dtitle dtd_bigf">0.0001234 <span class="lol_whiteorange">BTC</span></h2>
+              </div>
+           </div>
+           <div class="row tbt_eachline">
+              <div class="col-md-5">
+                <img class="bitcoin_icon" src="assets/imgs/bitcoin_yellow.png" />
+                <div class="dtitle_date">
+                  <h3 class="font_asap lol_whiteorange dtd_dtitle dtd_mediumf">Draw 009</h3>
+                  <p class="font_roboto dtd_msmallf"><span class="dtd_smallf lol_whiteorange" style="margin-left: 1px;">Date</span> 2018.00.00 00:00</p>
+                </div>
+              </div>
+              <div class="col-md-3 text-center">
+                <div class="dtd_graypacked whitegraybg">
+                  <span class="dtd_ticketspan font_asap blueskybg">3</span>
+                  <span class="dtd_ticketspan font_asap greenbg">3</span>
+                  <span class="dtd_ticketspan font_asap orangebg">3</span>
+                  <span class="dtd_ticketspan font_asap redbg">3</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <p class="font_roboto dtd_msmallf" style="margin-bottom: -10px;"><span class="dtd_smallf lol_whiteorange">Jackpot</span></p>
+                <h2 class="font_asap dtd_dtitle dtd_bigf">0.0001234 <span class="lol_whiteorange">BTC</span></h2>
+              </div>
+           </div>
+           <div class="row tbt_eachline">
+              <div class="col-md-5">
+                <img class="bitcoin_icon" src="assets/imgs/bitcoin_yellow.png" />
+                <div class="dtitle_date">
+                  <h3 class="font_asap lol_whiteorange dtd_dtitle dtd_mediumf">Draw 009</h3>
+                  <p class="font_roboto dtd_msmallf"><span class="dtd_smallf lol_whiteorange" style="margin-left: 1px;">Date</span> 2018.00.00 00:00</p>
+                </div>
+              </div>
+              <div class="col-md-3 text-center">
+                <div class="dtd_graypacked whitegraybg">
+                  <span class="dtd_ticketspan font_asap blueskybg">3</span>
+                  <span class="dtd_ticketspan font_asap greenbg">3</span>
+                  <span class="dtd_ticketspan font_asap orangebg">3</span>
+                  <span class="dtd_ticketspan font_asap redbg">3</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <p class="font_roboto dtd_msmallf" style="margin-bottom: -10px;"><span class="dtd_smallf lol_whiteorange">Jackpot</span></p>
+                <h2 class="font_asap dtd_dtitle dtd_bigf">0.0001234 <span class="lol_whiteorange">BTC</span></h2>
+              </div>
+           </div>
+           <div class="row tbt_eachline">
+              <div class="col-md-5">
+                <img class="bitcoin_icon" src="assets/imgs/bitcoin_yellow.png" />
+                <div class="dtitle_date">
+                  <h3 class="font_asap lol_whiteorange dtd_dtitle dtd_mediumf">Draw 009</h3>
+                  <p class="font_roboto dtd_msmallf"><span class="dtd_smallf lol_whiteorange" style="margin-left: 1px;">Date</span> 2018.00.00 00:00</p>
+                </div>
+              </div>
+              <div class="col-md-3 text-center">
+                <div class="dtd_graypacked whitegraybg">
+                  <span class="dtd_ticketspan font_asap blueskybg">3</span>
+                  <span class="dtd_ticketspan font_asap greenbg">3</span>
+                  <span class="dtd_ticketspan font_asap orangebg">3</span>
+                  <span class="dtd_ticketspan font_asap redbg">3</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <p class="font_roboto dtd_msmallf" style="margin-bottom: -10px;"><span class="dtd_smallf lol_whiteorange">Jackpot</span></p>
+                <h2 class="font_asap dtd_dtitle dtd_bigf">0.0001234 <span class="lol_whiteorange">BTC</span></h2>
+              </div>
+           </div>
+           <div class="row tbt_eachline">
+              <div class="col-md-5">
+                <img class="bitcoin_icon" src="assets/imgs/bitcoin_yellow.png" />
+                <div class="dtitle_date">
+                  <h3 class="font_asap lol_whiteorange dtd_dtitle dtd_mediumf">Draw 009</h3>
+                  <p class="font_roboto dtd_msmallf"><span class="dtd_smallf lol_whiteorange" style="margin-left: 1px;">Date</span> 2018.00.00 00:00</p>
+                </div>
+              </div>
+              <div class="col-md-3 text-center">
+                <div class="dtd_graypacked whitegraybg">
+                  <span class="dtd_ticketspan font_asap blueskybg">3</span>
+                  <span class="dtd_ticketspan font_asap greenbg">3</span>
+                  <span class="dtd_ticketspan font_asap orangebg">3</span>
+                  <span class="dtd_ticketspan font_asap redbg">3</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <p class="font_roboto dtd_msmallf" style="margin-bottom: -10px;"><span class="dtd_smallf lol_whiteorange">Jackpot</span></p>
+                <h2 class="font_asap dtd_dtitle dtd_bigf">0.0001234 <span class="lol_whiteorange">BTC</span></h2>
+              </div>
+           </div>
+      </div>
+    </div>
+  </div>
+</div>

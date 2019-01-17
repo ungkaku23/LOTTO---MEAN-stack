@@ -1,0 +1,214 @@
+<div class="lomotherbody">
+  <img src="assets/imgs/blugbg.png" class="ab_bg" />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 15px;">
+        <i class="fa fa-angle-left lol_arrow_icon lol_black" aria-hidden="true"></i>
+        <a routerLink="/" class="breadcums lol_black font_roboto">
+          Back
+        </a>
+      </div>
+      <div class="col-md-6">
+        <h1 class="lol_htitle lol_white font_asap">Demo Play</h1>
+      </div>
+      <div class="col-md-6">
+        <div class="jackpot_balance">
+          <div class="jp_labels">
+            <img src="assets/imgs/jackpot_label.png"/>
+            <p class="font_asap">
+              <span class="lol_red">TIME LEFT</span>&nbsp;
+              <span class="lol_white">00:00:00</span>
+            </p>
+          </div>
+          <div class="jp_balance">
+            <img class="jp_rabbithead" src="assets/imgs/rabbit_head.png" />
+            <div class="jp_whiteboard">
+              <span class="jpw1 lol_black font_asap">0.001234</span>&nbsp;
+              <span class="jpw2 lol_orange font_asap">BTC</span>
+            </div>
+            <img class="jp_beticon" src="assets/imgs/bet4new.png" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10 ticket_bettab_body">
+          <span class="ticket_bettab_item darkyellowbg font_asap" 
+                [class.zindex1]="tabIndObj.ind1 == 1"
+                [class.zindex2]="tabIndObj.ind1 == 2"
+                [class.zindex3]="tabIndObj.ind1 == 3"
+                [class.ticket_bettab_item_chosen]="tabIndex == 0"
+                (click)="setTabInfo(0)">
+            Buy ticket
+          </span>
+          <span class="ticket_bettab_item whiteorangebg font_asap"
+                [class.zindex1]="tabIndObj.ind2 == 1"
+                [class.zindex2]="tabIndObj.ind2 == 2"
+                [class.zindex3]="tabIndObj.ind2 == 3"
+                [class.ticket_bettab_item_chosen]="tabIndex == 1"
+                (click)="setTabInfo(1)" style="left: 30%;">
+            Rules
+          </span>
+          <span class="ticket_bettab_item solidorangebg font_asap"
+                [class.zindex1]="tabIndObj.ind3 == 1"
+                [class.zindex2]="tabIndObj.ind3 == 2"
+                [class.zindex3]="tabIndObj.ind3 == 3"
+                [class.ticket_bettab_item_chosen]="tabIndex == 2"
+                (click)="setTabInfo(2)" style="left: 60%;">
+            Archive
+          </span>
+      </div>
+      <div class="col-md-1">
+      </div>
+      
+      <div class="col-md-12 tbt_origin_panel" 
+           [class.buyticket_border]="tabIndex == 0"
+           [class.rule_border]="tabIndex == 1"
+           [class.archive_border]="tabIndex == 2">
+           <div class="buyticket_notice font_roboto">
+              <span>
+                This is a demo play. You can pick the numbers and see how much you could win in previous games. 
+                Simply choose the numbers and then click on the button <span class="lol_green">"BUY"</span> . 
+                If you like the results or believe that you can win even more, Buy the real ticket to win real bitcoins.
+              </span>
+           </div>
+           <div class="row" style="margin-top: 20px;">
+              <div class="col-md-6 total_fee lol_orange font_asap">
+                <div class="tfmoneybox">
+                  <span>Total fee</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span class="tfmoney lol_black">0.00005</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span>BTC</span>
+                </div>
+              </div>
+              <div class="col-md-6 tfbuypanel">
+                <img src="assets/imgs/green_buyticket_btn.png" />
+                <span class="font_asap">Block Height</span>
+              </div>
+           </div>
+           <div class="row">
+              <div class="col-md-6" style="margin-top: 40px;">
+                <div class="slot_head">
+                  <span class="slot_title lol_darkred font_roboto" style="float: left;">Select 4 numbers</span>
+                  <span class="slot_actions lol_darkred font_asap" style="float: right; cursor: pointer;" (click)="resetChosenCards()">Reset</span>
+                  <span class="slot_actions lol_darkred font_asap" style="float: right; cursor: pointer;" (click)="get4RandomNumbers()">Auto-fill</span>
+                </div>
+                <div class="row slot_panel">
+                  <div class="col-md-3 ga_panel">
+                    <p class="swidgetlabels font_roboto" style="color: #2b91ff;">A</p>
+                    <img class="suparrow" src="assets/imgs/blue_arrow_up.png" (click)="manualChoose(0)" />
+                    <div class="game-area">  
+                      <div class="card" *ngFor="let card of cardsArray[0]" [@cardSpinner]="card.state" style="color: #2b91ff;">
+                          <p>{{card.value}}</p>
+                      </div>
+                    </div>
+                    <img class="sdownarrow" src="assets/imgs/blue_arrow_down.png" (click)="manualChoose(1)" />
+                  </div>
+                  <div class="col-md-3 ga_panel">
+                    <p class="swidgetlabels font_roboto" style="color: #32ba7c;">B</p>
+                    <img class="suparrow" src="assets/imgs/green_arrow_up.png" (click)="manualChoose(2)" />
+                    <div class="game-area">
+                      <div class="card" *ngFor="let card of cardsArray[1]" [@cardSpinner]="card.state" style="color: #32ba7c;">
+                          <p>{{card.value}}</p>
+                      </div>
+                    </div>
+                    <img class="sdownarrow" src="assets/imgs/green_arrow_down.png" (click)="manualChoose(3)" />
+                  </div>
+                  <div class="col-md-3 ga_panel">
+                    <p class="swidgetlabels font_roboto" style="color: #fb8b01;">C</p>
+                    <img class="suparrow" src="assets/imgs/yellow_arrow_up.png" (click)="manualChoose(4)" />
+                    <div class="game-area">
+                      <div class="card" *ngFor="let card of cardsArray[2]" [@cardSpinner]="card.state" style="color: #fb8c00;">
+                          <p>{{card.value}}</p>
+                      </div>
+                    </div>
+                    <img class="sdownarrow" src="assets/imgs/yellow_arrow_down.png" (click)="manualChoose(5)" />
+                  </div>
+                  <div class="col-md-3 ga_panel">
+                    <p class="swidgetlabels font_roboto" style="color: #e53935;">D</p>
+                    <img class="suparrow" src="assets/imgs/red_arrow_up.png" (click)="manualChoose(6)" />
+                    <div class="game-area">
+                      <div class="card" *ngFor="let card of cardsArray[3]" [@cardSpinner]="card.state" style="color: #e53935;">
+                          <p>{{card.value}}</p>
+                      </div>
+                    </div>
+                    <img class="sdownarrow" src="assets/imgs/red_arrow_down.png" (click)="manualChoose(7)" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 chosen_body">
+                <h2 class="font_asap lol_orange chosen_panel_title">Your tickets</h2>
+                <div class="row chosen_panel">
+                  <span *ngIf="checkTodisplay(chosenArray)" class="numberobj blueskybg">{{chosenArray[0].value}}</span>
+                  <span *ngIf="checkTodisplay(chosenArray)" class="numberobj greenbg">{{chosenArray[1].value}}</span>
+                  <span *ngIf="checkTodisplay(chosenArray)" class="numberobj orangebg">{{chosenArray[2].value}}</span>
+                  <span *ngIf="checkTodisplay(chosenArray)" class="numberobj redbg">{{chosenArray[3].value}}</span>
+                </div>
+              </div>
+           </div>
+           <div class="row blockbox">
+              <div class="col-md-12">
+                <div class="loto-table blocktable" [class.table-responsive]="windowwidth<768 ">
+                  <table>
+                    <thead>
+                      <td class="dd_smallfont font_asap" width="5%">Draw</td>
+                      <td class="dd_smallfont font_asap" width="15%">Date</td>
+                      <td class="dd_smallfont font_asap" width="20%">My Number</td>
+                      <td class="dd_smallfont font_asap" width="20%">Win Number</td>
+                      <td class="dd_smallfont font_asap" width="15%">JACPOT</td>
+                      <td class="dd_smallfont font_asap" width="15%">BTC</td>
+                      <td class="dd_smallfont font_asap" width="10%">Block Height</td>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="dd_smallfont font_asap">1</td>
+                        <td class="dd_smallfont font_asap">2018.05.24</td>
+                        <td class="dd_smallfont font_asap">
+                          <span class="ttspan blueskybg">0</span>
+                          <span class="ttspan greenbg">1</span>
+                          <span class="ttspan orangebg">3</span>
+                          <span class="ttspan redbg">9</span>
+                        </td>
+                        <td class="dd_smallfont font_asap">
+                          <span class="ttspan blueskybg">0</span>
+                          <span class="ttspan greenbg">1</span>
+                          <span class="ttspan orangebg">3</span>
+                          <span class="ttspan redbg">9</span>
+                        </td>
+                        <td class="dd_smallfont font_asap">
+                          0.0003456 &nbsp;&nbsp;<span class="lol_orange">BTC</span>
+                        </td>
+                        <td class="dd_smallfont font_asap">
+                          0.0003456 &nbsp;&nbsp;<span class="lol_orange">BTC</span>
+                        </td>
+                        <td class="dd_smallfont font_asap">
+                          987654
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+    
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-center" style="margin-top: 40px;">
+                <h4 class="font_roboto buyticket_why">
+                  Why do not you actually play?
+                </h4>
+              </div>
+              <div class="col-md-3"></div>
+              <div class="col-md-3 text-center">
+                <img class="toRealbetTab" src="assets/imgs/bet3big_shadow.png" />
+              </div>
+              <div class="col-md-3 text-center">
+                <img class="toRealbetTab" src="assets/imgs/bet4big_shadow.png" />
+              </div>
+              <div class="col-md-3"></div>
+              
+            </div>
+      </div>
+
+    </div>
+  </div>
+</div>

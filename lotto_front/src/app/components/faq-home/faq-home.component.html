@@ -1,0 +1,77 @@
+<div class="lomotherbody">
+  <img src="assets/imgs/blugbg.png" class="ab_bg" [class.myromblue]="searchval != ''" />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 15px;">
+        <a routerLink="/" class="breadcums lol_graywhite font_roboto">
+          TOP
+        </a>
+        <i class="fa fa-angle-right lol_arrow_icon lol_graywhite" aria-hidden="true"></i>
+        <a routerLink="/loto/faq-home" class="breadcums lol_black font_roboto">
+          FAQ
+        </a>
+      </div>
+      <div class="col-md-12">
+        <h1 class="lol_htitle lol_black font_asap">Frequently Asked Question</h1>
+      </div>
+      <div class="col-md-12 lol_wrote_panel">
+        <div class="col-md-10 searchpanel">
+          <div class="searchpanel_obj">
+            <input placeholder="Search" class="cu_input" [(ngModel)]="searchval" (ngModelChange)="loadSearchedFaq()" />
+          </div>
+        </div>
+        <div *ngIf="searchval == ''" class="col-md-10 imgbtn_panel">
+          <img (click)="goToFAQCategory(1)" src="assets/imgs/faq_generalbtn.png" />
+        </div>
+        <div *ngIf="searchval == ''" class="col-md-10 imgbtn_panel">
+          <img (click)="goToFAQCategory(2)" src="assets/imgs/faq_security.png" />
+        </div>
+        <div *ngIf="searchval == ''" class="col-md-10 imgbtn_panel">
+          <img (click)="goToFAQCategory(3)" src="assets/imgs/faq_payment.png" />
+        </div>
+        <div *ngIf="searchval == ''" class="col-md-10 imgbtn_panel">
+          <img (click)="goToFAQCategory(4)" src="assets/imgs/faq_winning.png" />
+        </div>
+
+        <div *ngIf="(searchval != '') && (SearchedFaq.length == 0)" class="col-md-10 imgbtn_panel">
+          <p class="font_roboto lol_darkgray noticecontents" style="margin-left: 0px;">Oops! There is no results what you're looking for.</p>
+        </div>
+
+        <div *ngIf="(searchval != '') && (SearchedFaq.length != 0)" class="col-md-10 imgbtn_panel searchedBody">
+          <div *ngFor="let fitem of SearchedFaq;">
+            <p class="lol_whitebluesky font_roboto question">{{fitem.question}}</p>
+            <p *ngFor="let faitem of fitem.answer; let fai=index;" class="lol_black font_roboto answer" [class.doubleheight]="(fitem.type == 2) && (fai % 2 == 0)">
+              {{faitem}}
+              <!--div *ngIf="(fitem.type == 2) && (fai % 2 == 0)" style="height: 20px;"></div-->
+            </p>
+            <div *ngIf="fitem.type == 1" class="faq_bordered_box">
+              <p class="lol_black font_roboto answer">Address:
+                <span class="lol_dirtybluesky">{{fitem.address}}</span>
+              </p>
+              <p class="lol_black font_roboto answer">Message:
+                <span class="lol_dirtybluesky">{{fitem.message}}</span>
+              </p>
+              <p class="lol_black font_roboto answer">Signature:
+                <span class="lol_dirtybluesky">{{fitem.signature}}</span>
+              </p>
+            </div>
+            <div class="mb30"></div>
+          </div>
+        </div>
+
+        <div class="col-md-10 imgbtn_panel">
+          <div class="noticetxt">
+            <p class="font_roboto lol_back noticetitle">
+              <i class="fa fa-question-circle-o" aria-hidden="true"></i> Couldn't find the answer?
+            </p>
+            <p class="font_roboto lol_darkgray noticecontents">
+              If you were unable to find the info you were looking for, please contact our customer support service using 
+              <a href="/loto/contact-us" class="lol_whitebluesky">this</a> contact form.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

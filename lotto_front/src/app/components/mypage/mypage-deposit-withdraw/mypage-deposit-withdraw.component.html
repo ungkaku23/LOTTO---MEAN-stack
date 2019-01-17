@@ -1,0 +1,328 @@
+  <div class="lomotherbody">  
+    <img src="assets/imgs/blugbg.png" class="ab_bg" />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+          <i class="fa fa-angle-left lol_arrow_icon lol_black" aria-hidden="true"></i>
+          <a routerLink="/" class="breadcums lol_black font_roboto">
+            Back
+          </a>
+        </div>
+        <div class="col-md-6">
+          <h1 class="lol_htitle lol_white font_asap">MY PAGE</h1>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 ticket_bettab_body">
+            <span class="mypage_tab_item thickorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind1 == 1"
+                  [class.zindex2]="tabIndObj.ind1 == 2"
+                  [class.zindex3]="tabIndObj.ind1 == 3"
+                  [class.zindex4]="tabIndObj.ind1 == 4"
+                  [class.zindex5]="tabIndObj.ind1 == 5"
+                  [class.zindex6]="tabIndObj.ind1 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 0"
+                  (click)="setTabInfo(0)">
+              Account
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind2 == 1"
+                  [class.zindex2]="tabIndObj.ind2 == 2"
+                  [class.zindex3]="tabIndObj.ind2 == 3"
+                  [class.zindex4]="tabIndObj.ind2 == 4"
+                  [class.zindex5]="tabIndObj.ind2 == 5"
+                  [class.zindex6]="tabIndObj.ind2 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 1"
+                  (click)="setTabInfo(1)" style="left: 15%;">
+              Lottery results
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind3 == 1"
+                  [class.zindex2]="tabIndObj.ind3 == 2"
+                  [class.zindex3]="tabIndObj.ind3 == 3"
+                  [class.zindex4]="tabIndObj.ind3 == 4"
+                  [class.zindex5]="tabIndObj.ind3 == 5"
+                  [class.zindex6]="tabIndObj.ind3 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 2"
+                  (click)="setTabInfo(2)" style="left: 30%;">
+              Deposit withdraw
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind4 == 1"
+                  [class.zindex2]="tabIndObj.ind4 == 2"
+                  [class.zindex3]="tabIndObj.ind4 == 3"
+                  [class.zindex4]="tabIndObj.ind4 == 4"
+                  [class.zindex5]="tabIndObj.ind4 == 5"
+                  [class.zindex6]="tabIndObj.ind4 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 3"
+                  (click)="setTabInfo(3)" style="left: 45%;">
+              My history
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind5 == 1"
+                  [class.zindex2]="tabIndObj.ind5 == 2"
+                  [class.zindex3]="tabIndObj.ind5 == 3"
+                  [class.zindex4]="tabIndObj.ind5 == 4"
+                  [class.zindex5]="tabIndObj.ind5 == 5"
+                  [class.zindex6]="tabIndObj.ind5 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 4"
+                  (click)="setTabInfo(4)" style="left: 60%;">
+              Message
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind6 == 1"
+                  [class.zindex2]="tabIndObj.ind6 == 2"
+                  [class.zindex3]="tabIndObj.ind6 == 3"
+                  [class.zindex4]="tabIndObj.ind6 == 4"
+                  [class.zindex5]="tabIndObj.ind6 == 5"
+                  [class.zindex6]="tabIndObj.ind6 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 5"
+                  (click)="setTabInfo(5)" style="left: 75%;">
+              Settings
+            </span>
+        </div>
+        <div class="col-md-1">
+        </div>
+        
+        <div class="col-md-12 tbt_origin_panel buyticket_border">
+          <div class="row myp_header">
+            <div class="col-md-6">
+              <img *ngIf="!mydata.avatar" class="man_small" src="assets/imgs/mandummy.png" />
+              <img *ngIf="mydata.avatar" class="man_small" src="{{baseUrl + mydata.avatar}}" />
+              <span class="font_roboto myp_mediumfont mpheader_name">{{mydata.nickname}}</span>
+            </div>
+            <div class="col-md-6 font_roboto balance_panel">
+              <span class="myp_smallfont lol_orange myp_b1">Balance</span>
+              <span class="myp_mediumfont font_asap myp_b2">0.123456</span>
+              <span class="myp_smallfont lol_orange myp_b3">BTC</span>
+            </div>
+          </div>
+          <div *ngIf="pageState == 'home'" class="row myp_body1">
+            <div class="col-md-12">
+              <span class="font_roboto myp_smallfont" style="float: left;">
+                Total Balance
+              </span>
+              <span class="font_roboto myp_smallfont" style="float: right;">
+                1.123456 BTC
+              </span>
+            </div>
+          </div>
+          <div *ngIf="pageState == 'home'" class="row myp_body2">
+            <div class="col-md-12">
+              <span class="font_roboto lol_thickwhitebluesky myp_msmallfont" style="float: left;">
+                Deposit
+              </span>
+              <span class="history_btn lol_white font_roboto myp_mmsmallfont" style="float: right;" (click)="changePageState('deposithistory')">
+                history
+              </span>
+            </div>
+            <div class="col-md-12" style="margin-top: 15px;">
+              <p class="font_roboto lol_darkgray myp_mmsmallfont">
+                  Scan the QR code or copy the wallet address and make a payment from your BTC wallet app. Your funds will be received after 3 confirmations on blockchain. You will be notified by email once it's done.
+              </p>
+            </div>
+            <div class="col-md-12" style="margin-top: 15px;">
+              <div class="row">
+                <div class="col-md-3 dwimg1">
+                  <img src="assets/imgs/dw_img1.png" />
+                </div>
+                <div class="col-md-6 dwwalletaddr">
+                  <p class="font_roboto lol_darkgray myp_mmsmallfont">
+                    {{mydata.w_address}}
+                  </p>
+                  <p>
+                    <span class="font_roboto lol_white whiteblueskybg myp_mmsmallfont ccbtn" ngxClipboard [cbContent]="ccval" (click)="toClipboard()" >
+                      <span *ngIf="!copied">Copy to clipboard</span>
+                      <span *ngIf="copied">Copied to clipboard</span>
+                    </span>
+                  </p>
+                </div>
+                <div class="col-md-3 dwwalletqr">
+                  <qrcode [qrdata]="mydata.w_address" [size]="100" [level]="'L'"></qrcode>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="pageState == 'home'" class="row myp_body2" style="padding-bottom: 50px;">
+            <div class="col-md-12">
+              <span class="font_roboto lol_thickwhitebluesky myp_msmallfont" style="float: left;">
+                Withdraw
+              </span>
+              <span class="history_btn lol_white font_roboto myp_mmsmallfont" style="float: right;" (click)="changePageState('withdrawhistory')">
+                history
+              </span>
+            </div>
+            <div class="col-md-12 waddrlist">
+              <div class="row waddrline m2darkgraybg">
+                <div class="col-md-3"></div>
+                <div class="col-md-7 font_roboto lol_white myp_mmsmallfont">
+                  Bitcoin address
+                </div>
+                <div class="col-md-2"></div>
+              </div>
+              <div *ngFor="let addritem of addr_list; let i = index;" class="row waddrline whitebg">
+                <div *ngIf="eindex != i" class="col-md-3 walw">
+                  <input type="radio" id="{{'m1' + i}}" name="b" [checked]='addritem.usage_status == 1' (change)="changedUsage(i)" />
+                  <label for="{{'m1' + i}}" class="font_roboto lol_darkgray myp_mmsmallfont addrname">{{addritem.name}}</label>
+                </div>
+                <div *ngIf="eindex != i" class="col-md-7 walw font_roboto lol_darkgray myp_mmsmallfont addrcontent">
+                    {{addritem.address}}
+                </div>
+                <div *ngIf="eindex != i" class="col-md-2 walw addredit">
+                  <span class="font_roboto myp_3msmallfont lol_white m2darkgraybg" (click)="willEdit(i)">
+                    Editing
+                  </span>
+                </div>
+                <form *ngIf="eindex == i" class="row col-md-12" style="margin: 0px; padding: 0px;" name="form" (ngSubmit)="updateAddr.form.valid  && addrValidator(addritem.address) && this.doUpdateAddr(i)" #updateAddr="ngForm" validate>
+                    <div class="form-group col-md-3 walw font_roboto lol_darkgray myp_mmsmallfont"
+                        [ngClass]="{ 'has-error': updateAddr.submitted && !name.valid }">
+                      <input class="form-control newaddr_input" placeholder="Label" type="text" name="name" [(ngModel)]="addritem.name" #name="ngModel" required />
+                      <div *ngIf="updateAddr.submitted && !name.valid" class="help-block">Label is required</div>
+                    </div>
+                    <div class="form-group col-md-7 walw font_roboto lol_darkgray myp_mmsmallfont addrcontent"
+                        [ngClass]="{ 'has-error': (updateAddr.submitted && !address.valid) || (updateAddr.submitted && address.valid && !addrValidator(addritem.address)) }">
+                      <input class="form-control newaddr_input" placeholder="Bitcoin Address" type="text" name="address" [(ngModel)]="addritem.address" #address="ngModel" required />
+                      <div *ngIf="updateAddr.submitted && !address.valid" class="help-block">Addressa is required</div>
+                      <div *ngIf="updateAddr.submitted && address.valid && !addrValidator(addritem.address)" class="help-block">Address is invalid</div>
+                    </div>
+                    <div class="col-md-2 walw addredit">
+                      <button class="font_roboto myp_3msmallfont lol_white wa_updatebtn">
+                        Update
+                      </button>
+                      <p style="margin-bottom: 10px;"></p>
+                      <span (click)="removeAddr(i)" class="font_roboto myp_3msmallfont lol_white wa_removebtn" style="padding: 5px 15px;">
+                        Remove
+                      </span>
+                    </div>
+                </form>
+              </div>
+              <form name="form" (ngSubmit)="addAddr.form.valid && addrValidator(amodel.address) && this.doAddAddr(addAddr)" #addAddr="ngForm" validate>
+                <div class="row waddrline whitebg">
+                    <div class="form-group col-md-3 walw font_roboto lol_darkgray myp_mmsmallfont"
+                        [ngClass]="{ 'has-error': addAddr.submitted && !name.valid }">
+                      <input class="form-control newaddr_input" placeholder="Label" type="text" name="name" [(ngModel)]="amodel.name" #name="ngModel" required />
+                      <div *ngIf="addAddr.submitted && !name.valid" class="help-block">Label is required</div>
+                    </div>
+                    <div class="form-group col-md-7 walw font_roboto lol_darkgray myp_mmsmallfont addrcontent"
+                        [ngClass]="{ 'has-error': (addAddr.submitted && !address.valid) || (addAddr.submitted && address.valid && !addrValidator(amodel.address)) }">
+                      <input class="form-control newaddr_input" placeholder="Bitcoin Address" type="text" name="address" [(ngModel)]="amodel.address" #address="ngModel" required />
+                      <div *ngIf="addAddr.submitted && !address.valid" class="help-block">Address is required</div>
+                      <div *ngIf="addAddr.submitted && address.valid && !addrValidator(amodel.address)" class="help-block">Address is invalid</div>
+                    </div>
+                    <div class="col-md-2 walw addredit">
+                      <button class="font_roboto myp_3msmallfont lol_white wa_addbtn">
+                        Confirm
+                      </button>
+                    </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-9 whitebg withdraw_quantity_body">
+                  <p class="font_roboto myp_mmsmallfont" style="margin-bottom: 0px;">Please enter the quantity to be remittance.</p>
+                  <p class="font_roboto lol_thickwhitebluesky myp_mmsmallfont">Bitcoin address : 68nChsLvjfBjsnfHksiKsgdy7FbGU</p>
+                  <div class="row">
+                    <div class="col-md-6 wqb_panel">
+                      <label class="font_roboto lol_darkgray myp_mmsmallfont">Send quantity</label>
+                      <div class="input-group">
+                          <input type="text" [(ngModel)]="wmodel.quantity" class="form-control quantity_input" aria-describedby="basic-addon2">
+                          <span class="input-group-addon font_roboto lol_darkgray myp_mmsmallfont inputaria" id="basic-addon2">BTC</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 wqb_panel">
+                      <label class="font_roboto lol_darkgray myp_mmsmallfont">Reference total</label>
+                      <div class="input-group">
+                          <input type="text" [(ngModel)]="wmodel.rtotal1" class="form-control mdarkgraybg quantity_input" aria-describedby="basic-addon3">
+                          <span class="input-group-addon font_roboto lol_darkgray myp_mmsmallfont inputaria" id="basic-addon3">Dollar</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 wqb_panel">
+                      <label class="font_roboto lol_darkgray myp_mmsmallfont">Priority</label>
+                      <div class="input-group">
+                          <select [(ngModel)]="wmodel.priority" class="form-control font_asap myp_mmsmallfont lol_black priority_selectbox">
+                            <option value="">-SELECT-</option>
+                            <option value="low">LOW</option>
+                            <option value="normal">NORMAL</option>
+                            <option value="high">HIGH</option>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6 wqb_panel">
+                      <label class="font_roboto lol_darkgray myp_mmsmallfont">Reference total</label>
+                      <div class="input-group">
+                          <input type="text" [(ngModel)]="wmodel.rtotal2" class="form-control mdarkgraybg quantity_input" aria-describedby="basic-addon4">
+                          <span class="input-group-addon font_roboto lol_darkgray myp_mmsmallfont inputaria" id="basic-addon4">Dollar</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row" style="margin-top: 30px; margin-bottom: 30px;">
+                    <div class="col-md-12 text-center">
+                      <span *ngIf="!check_confirmflag()" class="gray_confirm_withdraw font_roboto lol_white myp_mmsmallfont">Confirm</span>
+                      <span *ngIf="check_confirmflag()" class="yello_confirm_withdraw font_roboto lol_white myp_mmsmallfont" (click)="doWithdraw()">Confirm</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 withdraw_img">
+                  <img src="assets/imgs/dw_img2.png" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- historys -->
+          <div *ngIf="pageState == 'deposithistory'" class="row myp_body1">
+            <div class="col-md-12 font_roboto myp_msmallfont" style="margin-bottom: 20px;">
+              <span class="lol_thickwhitebluesky" style="cursor: pointer;" (click)="changePageState('home')">Deposit</span>&nbsp;
+              <span>></span>&nbsp;
+              <span>History</span>
+            </div>
+            <div class="col-md-12 historytable">
+              <table>
+                <thead class="mdarkgraybg">
+                  <td class="font_roboto myp_mmsmallfont" width="25%">Date and Time</td>
+                  <td class="font_roboto myp_mmsmallfont" width="15%">Event</td>
+                  <td class="font_roboto myp_mmsmallfont" width="30%">Amount (BTC)</td>
+                  <td class="font_roboto myp_mmsmallfont" width="30%">Balance (BTC)</td>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let hitem of historyData;">
+                    <td class="font_roboto myp_mmsmallfont">1</td>
+                    <td class="font_roboto myp_mmsmallfont">1</td>
+                    <td class="font_roboto myp_mmsmallfont">1</td>
+                    <td class="font_roboto myp_mmsmallfont">1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div *ngIf="pageState == 'withdrawhistory'" class="row myp_body1">
+            <div class="col-md-12 font_roboto myp_msmallfont" style="margin-bottom: 20px;">
+              <span class="lol_thickwhitebluesky" style="cursor: pointer;" (click)="changePageState('home')">Withdraw</span>&nbsp;
+              <span>></span>&nbsp;
+              <span>History</span>
+            </div>
+            <div class="col-md-12 historytable">
+              <table>
+                <thead class="mdarkgraybg">
+                  <td class="font_roboto myp_mmsmallfont" width="25%">Date and Time</td>
+                  <td class="font_roboto myp_mmsmallfont" width="15%">Event</td>
+                  <td class="font_roboto myp_mmsmallfont" width="30%">Amount (BTC)</td>
+                  <td class="font_roboto myp_mmsmallfont" width="30%">Balance (BTC)</td>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let hitem of historyData;">
+                    <td class="font_roboto myp_mmsmallfont">1</td>
+                    <td class="font_roboto myp_mmsmallfont">1</td>
+                    <td class="font_roboto myp_mmsmallfont">1</td>
+                    <td class="font_roboto myp_mmsmallfont">1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,118 @@
+<div class="betvideo_body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <span class="skipbtn font_roboto" (click)="toSkip()" >SKIP</span>
+      </div>
+      <div class="col-md-12 yellowbg">
+        <img *ngIf="videotype=='bit3'" class="bityellowborder" src="assets/imgs/bet3_video_icon.png" />
+        <img *ngIf="videotype=='bit4' || videotype=='demo'" class="bityellowborder" src="assets/imgs/bet4_video_icon.png" />
+        <h2 *ngIf="videotype=='bit3'" class="font_asap">BIT NUMBER 3</h2>
+        <h2 *ngIf="videotype=='bit4' || videotype=='demo'" class="font_asap">BIT NUMBER 4</h2>
+        <div class="sharepanel">
+          <img src="assets/imgs/facebook_bet_video.png" />
+          <img src="assets/imgs/tweet_bet_video.png" />
+        </div>
+      </div>
+      <div class="col-md-12 yellowbg ymainbg" >
+        <div *ngIf="videotype=='bit3'" class="row">
+          <div class="col-md-4">
+            <div class="whitebg text-center" [class.emptywhite]="gotArr[0] == undefined">
+              <div *ngIf="gotArr[0] != undefined" class="roundnum pink_round font_roboto">
+                {{gotArr[0]}}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="whitebg text-center" [class.emptywhite]="gotArr[1] == undefined">
+              <div *ngIf="gotArr[1] != undefined" class="roundnum green_round font_roboto">
+                {{gotArr[1]}}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="whitebg text-center" [class.emptywhite]="gotArr[2] == undefined">
+              <div *ngIf="gotArr[2] != undefined" class="roundnum blue_round font_roboto">
+                {{gotArr[2]}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="videotype=='bit4' || videotype=='demo'" class="row">
+          <div class="col-md-3">
+            <div class="whitebg text-center" [class.emptywhite]="gotArr[0] == undefined">
+              <div *ngIf="gotArr[0] != undefined" class="roundnum pink_round font_roboto">
+                {{gotArr[0]}}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="whitebg text-center" [class.emptywhite]="gotArr[1] == undefined">
+              <div *ngIf="gotArr[1] != undefined" class="roundnum green_round font_roboto">
+                {{gotArr[1]}}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="whitebg text-center" [class.emptywhite]="gotArr[2] == undefined">
+              <div *ngIf="gotArr[2] != undefined" class="roundnum blue_round font_roboto">
+                {{gotArr[2]}}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="whitebg text-center" [class.emptywhite]="gotArr[3] == undefined">
+              <div *ngIf="gotArr[3] != undefined" class="roundnum red_round font_roboto">
+                {{gotArr[3]}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="cardDialog" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="roundnum_big font_roboto"
+               [class.pink_round]="dialogSpan.style == 0"
+               [class.green_round]="dialogSpan.style == 1"
+               [class.blue_round]="dialogSpan.style == 2"
+               [class.red_round]="dialogSpan.style == 3">
+            <span>{{dialogSpan.num}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="bet_ResultDialog" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="col-md-12 text-right">
+            <img src="assets/imgs/betresult_close.png" (click)="closeResultDialog()" class="bet_resultclose"/>
+          </div>
+          <div class="col-md-12 text-center">
+            <img src="assets/imgs/betresult_failed.png" class="bet_resultbg" />
+            <img src="assets/imgs/betresult_goresult.png" class="bet_resultbtn" />
+            <img src="assets/imgs/betresult_gochallenge.png" class="bet_channelbtn" />
+          </div>
+          <div class="col-md-12 text-center" style="margin-top: 20px;">
+            <span>
+              <img src="assets/imgs/facebook_bet_video.png" />
+            </span>
+            <span style="margin-left: 10px;">
+              <img src="assets/imgs/tweet_bet_video.png" style="margin-top: 1px;"/>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

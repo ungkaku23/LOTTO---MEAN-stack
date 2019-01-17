@@ -1,0 +1,384 @@
+.tbt_origin_panel {
+    padding: 40px 20px;
+    padding-bottom: 80px;
+}
+
+.myp_bigfont {
+    font-size: 64px;
+}
+.myp_mediumfont {
+    font-size: 45px;
+}
+.myp_normalfont {
+    font-size: 35px;
+}
+.myp_smallfont {
+    font-size: 29px;
+}
+.myp_msmallfont {
+    font-size: 23px;
+}
+.myp_mmsmallfont {
+    font-size: 18px;
+}
+.myp_3msmallfont {
+    font-size: 16px;
+}
+
+.man_small {
+    width: 50px;
+    height: 50px;
+    border-radius: 200px;
+    float: left;
+    margin-top: 10px;
+}
+.mpheader_name {
+    float: left;
+    margin-top: 6px;
+    margin-bottom: -5px;
+    margin-left: 20px;
+}
+.balance_panel {
+    text-align: right;
+}
+
+.myp_b2 {
+    margin-left: 20px;
+    font-weight: bold;
+}
+.myp_b3 {
+    margin-left: 20px;
+}
+
+.settingbody {
+    padding: 20px 0px;
+    margin-top: 20px;
+}
+.smenu_item {
+    background-color: white;
+    border-bottom: solid 1px #cccccc;
+    padding: 15px 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.smenu_item_active {
+    background: #fee7cd;
+    border-left: solid 4px #f8881d;
+}
+
+.setting_bodies {
+    background: white;
+    padding: 10px;
+}
+.setting_bodies label{
+    font-weight: bold;
+}
+.sbodies_title {
+    font-weight: bold;
+    border-bottom: solid 2px #cccccc;
+    padding-bottom: 5px;
+}
+.bbig_man {
+    width: 100%;
+    border-radius: 100px;
+}
+.sb_pbody {
+    margin-top: 30px; 
+    padding: 0px 30px;
+}
+.sb_prow {
+    margin-bottom: 20px;
+}
+.setting_input {
+    border-color: #f8881d;
+    border-radius: 15px;
+}
+.setting_input::placeholder {
+    font-weight: bold;
+    color: #999999;
+}
+.setting_dtp {
+    width: 120px;
+    float: left;
+    margin-left: 10px;
+}
+.surnamepanel {
+    padding-top: 35px;
+}
+
+input[type="radio"] {
+  appearance: none;
+  margin: 0 5px;
+  width: 16px;
+  height: 16px;
+  background: transparent;
+  box-shadow: inset 0 0 0 0.0em #666666, 0 0 0 0.05em;
+  border-radius: 50%;
+  transition: 0.2s;
+  cursor: pointer;
+  color: #dcdee0;
+  border: solid 1px #fab830;
+}
+input[type="radio"]:hover, input[type="radio"]:checked {
+  background: #666666;
+  box-shadow: inset 0 0 0 0.2em #f2f2f2, 0 0 0 0.1em;
+}
+input[type="radio"]:checked {
+  border: none;
+  background: #666666;
+  box-shadow: inset 0 0 0 0.2em #f2f2f2, 0 0 0 0.1em #fab830;
+}
+input[type="radio"]:focus {
+  outline: 0;
+}
+
+.radioobj {
+    float: left;
+    margin-right: 15px;
+}
+
+.skysubbtn {
+    background-color: #00acc1;
+    border: solid 5px #26c6da;
+    border-radius: 20px;
+    padding: 0px 20px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.graysubbtn {
+    background-color: #999999;
+    border: solid 5px #b3b3b3;
+    border-radius: 20px;
+    padding: 0px 20px;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.editPhoto {
+    padding: 5px 20px;
+    background-color: #f8881d;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.DoneCrop {
+    margin: auto;
+    background: #f8881d;
+    color: white;
+}
+.modal-title {
+    color: #f8881d;
+}
+
+
+
+
+.previous_email_show {
+    margin-top: 30px; 
+    padding: 0px 30px;
+}
+.uemail_body {
+    padding: 10px 30px;
+}
+.ts_head {
+    padding: 0px 30px;
+}
+.ts_head label {
+    float: left;
+}
+.ts_head app-mp-checkbox {
+    float: right;
+}
+.ts_body {
+    padding: 0px 30px;
+}
+
+
+.for5thtab {
+    margin-bottom: 240px;
+}
+
+.mpss_resultPanel {
+    background: #fee7cd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.social_header {
+    background: #fee7cd;
+    border-bottom: solid #f8871e;
+    padding-top: 6px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+}
+.social_header label {
+    float: left;
+}
+.social_header i {
+    float: right;
+    margin-top: 4px;
+    color: #f8881d;
+}
+.social_part {
+    margin-top: 30px;
+    padding: 0px 15px;
+}
+.social_body {
+    background: #fee7cd;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.myp_social_icon {
+    width: 30px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .myp_bigfont {
+        font-size: 54px;
+    }
+    .myp_mediumfont {
+        font-size: 40px;
+    }
+    .myp_normalfont {
+        font-size: 30px;
+    }
+    .myp_smallfont {
+        font-size: 24px;
+    }
+    .myp_msmallfont {
+        font-size: 20px;
+    }
+    .myp_mmsmallfont {
+        font-size: 16px;
+    }
+    .myp_3msmallfont {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .man_small {
+        margin-top: -5px;
+        margin-bottom: 10px;
+    }
+    .mpheader_name {
+        margin-left: 0px;
+    }
+
+    .myp_bigfont {
+        font-size: 45px;
+    }
+    .myp_mediumfont {
+        font-size: 30px;
+    }
+    .myp_normalfont {
+        font-size: 20px;
+    }
+    .myp_smallfont {
+        font-size: 18px;
+    }
+    .myp_msmallfont {
+        font-size: 17px;
+    }
+
+    .dbline {
+        padding: 0px;
+    }
+
+    .codediv {
+        padding: 0px;
+        margin-left: 15px;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .myp_header {
+        padding: 0px;
+    }
+
+    .myp_bigfont {
+        font-size: 35px;
+    }
+    .myp_mediumfont {
+        font-size: 27px;
+    }
+    .myp_normalfont {
+        font-size: 20px;
+    }
+    .myp_smallfont {
+        font-size: 17px;
+    }
+    .myp_mmsmallfont {
+        font-size: 15px;
+    }
+    .myp_3msmallfont {
+        font-size: 14px;
+    }
+
+    .dbline {
+        margin-top: 10px;
+        padding: 0px 15px;
+    }
+
+    .uemail_body {
+        padding: 10px 0px;
+    }
+
+    .codediv {
+        padding: 0px 15px;
+        margin-left: 0px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .ts_body {
+        padding: 0px 15px;
+    }
+
+    .mpss_resultPanel {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .balance_panel {
+        text-align: left;
+        margin-top: 10px;
+    }
+    .mpheader_name {
+        margin-left: 0px;
+    }
+
+    .myp_b2 {
+        margin-left: 2px;
+    }
+    .myp_b3 {
+        margin-left: 2px;
+    }
+
+    .myp_bigfont {
+        font-size: 30px;
+        line-height: 30px;
+        margin-top: 30px;
+    }
+    .myp_mediumfont {
+        font-size: 20px;
+    }
+    .myp_normalfont {
+        font-size: 17px;
+    }
+    .myp_smallfont {
+        font-size: 15px;
+    }
+}

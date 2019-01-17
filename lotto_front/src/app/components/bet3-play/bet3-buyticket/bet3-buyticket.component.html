@@ -1,0 +1,184 @@
+<div class="lomotherbody">
+    <img src="assets/imgs/blugbg.png" class="ab_bg" />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+          <i class="fa fa-angle-left lol_arrow_icon lol_black" aria-hidden="true"></i>
+          <a routerLink="/" class="breadcums lol_black font_roboto">
+            Back
+          </a>
+        </div>
+        <div class="col-md-6">
+          <h1 class="lol_htitle lol_white font_asap">BIT NUMBER 3</h1>
+        </div>
+        <div class="col-md-6">
+          <div class="jackpot_balance">
+            <div class="jp_labels">
+              <img src="assets/imgs/jackpot_label.png"/>
+              <p class="font_asap">
+                <span *ngIf="TL_status == 1" class="lol_red">TIME LEFT</span>&nbsp;
+                <span class="lol_white"><app-time-left [type]="'bit3'" (TL_emitter)="updateTL_status($event)"></app-time-left></span>
+              </p>
+            </div>
+            <div class="jp_balance">
+              <img class="jp_rabbithead" src="assets/imgs/rabbit_head.png" />
+              <div class="jp_whiteboard">
+                <span class="jpw1 lol_black font_asap">0.001234</span>&nbsp;
+                <span class="jpw2 lol_orange font_asap">BTC</span>
+              </div>
+              <img class="jp_beticon" src="assets/imgs/bet3new.png" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 ticket_bettab_body">
+            <span class="ticket_bettab_item darkyellowbg font_asap" 
+                  [class.zindex1]="tabIndObj.ind1 == 1"
+                  [class.zindex2]="tabIndObj.ind1 == 2"
+                  [class.zindex3]="tabIndObj.ind1 == 3"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 0"
+                  (click)="setTabInfo(0)">
+              Buy ticket
+            </span>
+            <span class="ticket_bettab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind2 == 1"
+                  [class.zindex2]="tabIndObj.ind2 == 2"
+                  [class.zindex3]="tabIndObj.ind2 == 3"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 1"
+                  (click)="setTabInfo(1)" style="left: 30%;">
+              Rules
+            </span>
+            <span class="ticket_bettab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind3 == 1"
+                  [class.zindex2]="tabIndObj.ind3 == 2"
+                  [class.zindex3]="tabIndObj.ind3 == 3"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 2"
+                  (click)="setTabInfo(2)" style="left: 60%;">
+              Archive
+            </span>
+        </div>
+        <div class="col-md-1">
+        </div>
+        
+        <div class="col-md-12 tbt_origin_panel" 
+             [class.buyticket_border]="tabIndex == 0"
+             [class.rule_border]="tabIndex == 1"
+             [class.archive_border]="tabIndex == 2">
+             <div class="row" style="margin-top: 20px;">
+                <div class="col-md-6 total_fee lol_orange font_asap">
+                  <div class="tfmoneybox">
+                    <span>Total fee</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="tfmoney lol_black">0.00005</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>BTC</span>
+                  </div>
+                </div>
+                <div class="col-md-6 tfbuypanel">
+                  <img *ngIf="chosenArraies.length != 0 && lastDrawDatas[0].flag == 1" style="cursor: pointer;" (click)="goToBit3Video()" src="assets/imgs/green_buyticket_btn.png" />
+                  <img *ngIf="chosenArraies.length == 0 || lastDrawDatas[0].flag != 1" src="assets/imgs/green_buyticket_btn_disabled.png" />
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-md-6" style="margin-top: 40px;">
+                  <div class="slot_head">
+                    <span class="slot_title lol_darkred font_roboto" style="float: left;">Select 3 numbers</span>
+                    <span class="slot_actions lol_darkred font_asap" style="float: right; cursor: pointer;" (click)="resetChosenCards()">Reset</span>
+                    <span class="slot_actions lol_darkred font_asap" style="float: right; cursor: pointer;" (click)="get3RandomNumbers()">Auto-fill</span>
+                  </div>
+                  <div class="row slot_panel">
+                    <div class="col-md-3 ga_panel">
+                      <p class="swidgetlabels font_roboto" style="color: #2b91ff;">A</p>
+                      <img class="suparrow" src="assets/imgs/blue_arrow_up.png" (click)="manualChoose(0)" />
+                      <div class="game-area">  
+                        <div class="card" *ngFor="let card of cardsArray[0]" [@cardSpinner]="card.state" style="color: #2b91ff;">
+                            <p>{{card.value}}</p>
+                        </div>
+                      </div>
+                      <img class="sdownarrow" src="assets/imgs/blue_arrow_down.png" (click)="manualChoose(1)" />
+                    </div>
+                    <div class="col-md-3 ga_panel">
+                      <p class="swidgetlabels font_roboto" style="color: #32ba7c;">B</p>
+                      <img class="suparrow" src="assets/imgs/green_arrow_up.png" (click)="manualChoose(2)" />
+                      <div class="game-area">
+                        <div class="card" *ngFor="let card of cardsArray[1]" [@cardSpinner]="card.state" style="color: #32ba7c;">
+                            <p>{{card.value}}</p>
+                        </div>
+                      </div>
+                      <img class="sdownarrow" src="assets/imgs/green_arrow_down.png" (click)="manualChoose(3)" />
+                    </div>
+                    <div class="col-md-3 ga_panel">
+                      <p class="swidgetlabels font_roboto" style="color: #fb8b01;">C</p>
+                      <img class="suparrow" src="assets/imgs/yellow_arrow_up.png" (click)="manualChoose(4)" />
+                      <div class="game-area">
+                        <div class="card" *ngFor="let card of cardsArray[2]" [@cardSpinner]="card.state" style="color: #fb8c00;">
+                            <p>{{card.value}}</p>
+                        </div>
+                      </div>
+                      <img class="sdownarrow" src="assets/imgs/yellow_arrow_down.png" (click)="manualChoose(5)" />
+                    </div>
+                  </div>
+                  <div class="row add_slot_panel">
+                    <div class="col-md-12 text-center" style="margin-top: 15px;">
+                      <img *ngIf="addFlag && lastDrawDatas[0].flag == 1" src="assets/imgs/bet_add_ticket_btn.png" (click)="addTicket()" />
+                      <img *ngIf="!addFlag || lastDrawDatas[0].flag != 1" src="assets/imgs/bet_add_ticket_btn_disabled.png" />
+                      <p style="color: red;">{{addError}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 chosen_body">
+                  <h2 class="font_asap lol_orange chosen_panel_title">Your tickets</h2>
+                  <div class="row chosen_panel">
+                    <span *ngIf="checkTodisplay(chosenArray)" class="numberobj blueskybg">{{chosenArray[0].value}}</span>
+                    <span *ngIf="checkTodisplay(chosenArray)" class="numberobj greenbg">{{chosenArray[1].value}}</span>
+                    <span *ngIf="checkTodisplay(chosenArray)" class="numberobj orangebg">{{chosenArray[2].value}}</span>
+                  </div>
+                  <div class="row added_tickets_panel" *ngFor="let caritem of chosenArraies;">
+                    <div class="col-md-3">
+                      <span class="font_asap lol_darkgray added_tno">Ticket {{caritem.id}}</span>
+                    </div>
+                    <div class="col-md-9 added_ticket_item">
+                      <span class="numberobj_added blueskybg">{{caritem.data[0].value}}</span>
+                      <span class="numberobj_added greenbg">{{caritem.data[1].value}}</span>
+                      <span class="numberobj_added orangebg">{{caritem.data[2].value}}</span>
+                      <img src="assets/imgs/added_ticket_close.png" (click)="removeFromAddedlist(caritem.id)" />
+                    </div>
+                  </div>
+                </div>
+             </div>
+             
+        </div>
+  
+      </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade betRModal" [class.successModal]="modalresult == 1" [class.failedModal]="modalresult == 2" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img *ngIf="modalresult == 1" src="assets/imgs/successclose.png"/>
+                    <img *ngIf="modalresult == 2" src="assets/imgs/failedclose.png"/>
+                </button>
+            </div>
+            <div class="col-md-12 text-center">
+              <img *ngIf="modalresult == 1" class="successicon" src="assets/imgs/successflag.png" />
+              <img *ngIf="modalresult == 2" class="successicon" src="assets/imgs/failedflag.png" />
+              <h3 *ngIf="modalresult == 1" class="font_asap">Success!!</h3>
+              <h3 *ngIf="modalresult == 2" class="font_asap">Error!!</h3>
+              <button class="betRBtn">
+                <img *ngIf="modalresult == 1" src="assets/imgs/successdone.png" />
+                <img *ngIf="modalresult == 2" src="assets/imgs/faileddone.png" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

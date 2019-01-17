@@ -1,0 +1,75 @@
+{
+  "_from": "angular2-countrypicker",
+  "_id": "angular2-countrypicker@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-k5xi2xFbDG76oymZ9bwr6xdDufg=",
+  "_location": "/angular2-countrypicker",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "angular2-countrypicker",
+    "name": "angular2-countrypicker",
+    "escapedName": "angular2-countrypicker",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular2-countrypicker/-/angular2-countrypicker-1.0.0.tgz",
+  "_shasum": "939c62db115b0c6efaa32999f5bc2beb1743b9f8",
+  "_spec": "angular2-countrypicker",
+  "_where": "E:\\DevDatas\\Testforprj\\LOTTO\\lotto_app\\lotto_front",
+  "author": {
+    "name": "Domonkos Pal",
+    "email": "public@dpal.hu"
+  },
+  "bugs": {
+    "url": "https://github.com/Paldom/angular2-countrypicker/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "world-countries": "git+https://github.com/mledoze/countries.git"
+  },
+  "deprecated": false,
+  "description": "**Angular 2 Country Picker - Country selector with Bootstrap support by default, but can be used with any other UI framework (e.g. Ionic or Angular Material)**",
+  "devDependencies": {
+    "@angular/common": "^2.0.0",
+    "@angular/core": "^2.0.0",
+    "@types/es6-shim": "^0.31.32",
+    "@types/jasmine": "^2.5.40",
+    "@types/protractor": "^4.0.0",
+    "@types/selenium-webdriver": "^2.53.39",
+    "codelyzer": "^0.0.28",
+    "rxjs": "^5.0.1",
+    "tslint": "^3.15.1",
+    "typescript": "2.0.2",
+    "zone.js": "0.7.2"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "homepage": "https://github.com/Paldom/angular2-countrypicker#readme",
+  "keywords": [
+    "angular",
+    "angular2"
+  ],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "name": "angular2-countrypicker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paldom/angular2-countrypicker.git"
+  },
+  "scripts": {
+    "lint": "tslint src/**/*.ts",
+    "prepublish": "tsc",
+    "test": "tsc && karma start",
+    "tsc": "tsc"
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,55 @@
+<div class="lotopbg">
+    <div class="container">
+        <div class="row" style="padding-bottom: 30px;">
+            <div class="col-md-12 text-center">
+                <img class="rabbit" src="assets/imgs/standup_rabbit.png" />
+                <img class="jackpot" src="assets/imgs/jackpot.png"/>
+                <h3 class="font_asap allbit_amount">0.123456789 BTC</h3>
+                <h3 class="font_asap alld_amount">$ 0123456789</h3>
+            </div>
+            <div class="col-md-12 lobetbtnpanels">
+                <div class="row">
+                    <div class="col-md-3 emlobetboxes"></div>
+                    <div class="col-md-3 lobetboxes">
+                        <div class="bbox_header">
+                            <img src="assets/imgs/bet3big.png" class="lobet3logo"/>
+                            <h2>{{'#bitnumber3' | translate}}</h2>
+                        </div>
+                        <div class="bbox_body">
+                            <div class="bbox_body1 text-left">
+                                <h5 class="lojackpot_label">JACKPOT</h5>
+                                <span class="lobtc_label">1.512300</span><span class="lobtc_label" style="color: #f7a535;">BTC</span>
+                            </div>
+                            <div class="bbox_body2 text-center">
+                                <span class="lobtc_counter"><span *ngIf="TL3_status == 1">CLOSE</span> <app-time-left [type]="'bit3'" (TL_emitter)="updateTL3_status($event)"></app-time-left></span>
+                            </div>
+                            <div class="bbox_body3 text-center">
+                                <span class="loplaybtn num3play" (click)="goToPlaying(3)" >Play Now!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 lobetboxes">
+                        <div class="bbox_header">
+                            <img src="assets/imgs/bet4big.png" class="lobet3logo" />
+                            <h2>BIT NUMBER4</h2>
+                        </div>
+                        <div class="bbox_body">
+                            <div class="bbox_body1 text-left">
+                                <h5 class="lojackpot_label">JACKPOT</h5>
+                                <span class="lobtc_label">1.512300</span>
+                                <span class="lobtc_label" style="color: #f7a535;">BTC</span>
+                            </div>
+                            <div class="bbox_body2 text-center">
+                                <span class="lobtc_counter"><span *ngIf="TL4_status == 1">CLOSE</span> <app-time-left [type]="'bit4'" (TL_emitter)="updateTL4_status($event)"></app-time-left></span>
+                            </div>
+                            <div class="bbox_body3 text-center">
+                                <span class="loplaybtn num4play" (click)="goToPlaying(4)">Play Now!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 emlobetboxes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+.mainfooter{
+    background-color: #ffdc39;
+}
+
+.bottomfooter{
+    background-color: #ffdc39;
+}
+
+.f1left{
+    text-align: right;
+    border-right: solid 1px gray;
+}
+
+.f1right{
+    text-align: left;
+}
+
+.socialb_widget{
+
+}
+
+.footerpanel{
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.f2body{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.f2body h6{
+    font-family: 'Roboto';
+}
+
+@media screen and (max-width: 768px) {
+    .f1left{
+        text-align: center;
+        border-right: none;
+    }
+    .f1right{
+        text-align: center;
+        margin-top: 20px;
+    }
+}

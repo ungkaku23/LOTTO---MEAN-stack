@@ -1,0 +1,31 @@
+<div class="container p-3">
+
+  <div class="jumbotron">
+    <h1 class="display-3">{{title}}</h1>
+    <p class="lead">Demo page for Angular 2 Country Picker Component and Service. Please check <a href="https://github.com/Paldom/angular2-countrypicker">github</a> for detailed documentation.</p>
+  </div>
+
+  Country Picker with default options (supporting Bootstrap by default):
+  <countryPicker></countryPicker>
+
+  <hr> Country Picker with custom name and value:
+  <countryPicker [setName]="cca3" [setValue]="ccn2" [flag]="true"></countryPicker>
+
+  <hr> Country Picker can be used with any other UI framework (like Angular Material or Ionic) by using CountryPickerService:
+
+  <div class="p-3 mt-3">
+
+    <md-card class="demo-card demo-basic">
+      <md-card-content>
+        <form>
+          <md-select name="countrypicker">
+            <md-option *ngFor="let c of countries">{{c.capital}}</md-option>
+          </md-select>
+        </form>
+      </md-card-content>
+    </md-card>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,428 @@
+  <div class="lomotherbody">  
+    <img src="assets/imgs/blugbg.png" class="ab_bg" />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+          <i class="fa fa-angle-left lol_arrow_icon lol_black" aria-hidden="true"></i>
+          <a routerLink="/" class="breadcums lol_black font_roboto">
+            Back
+          </a>
+        </div>
+        <div class="col-md-6">
+          <h1 class="lol_htitle lol_white font_asap">MY PAGE</h1>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 ticket_bettab_body">
+            <span class="mypage_tab_item thickorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind1 == 1"
+                  [class.zindex2]="tabIndObj.ind1 == 2"
+                  [class.zindex3]="tabIndObj.ind1 == 3"
+                  [class.zindex4]="tabIndObj.ind1 == 4"
+                  [class.zindex5]="tabIndObj.ind1 == 5"
+                  [class.zindex6]="tabIndObj.ind1 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 0"
+                  (click)="setTabInfo(0)">
+              Account
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind2 == 1"
+                  [class.zindex2]="tabIndObj.ind2 == 2"
+                  [class.zindex3]="tabIndObj.ind2 == 3"
+                  [class.zindex4]="tabIndObj.ind2 == 4"
+                  [class.zindex5]="tabIndObj.ind2 == 5"
+                  [class.zindex6]="tabIndObj.ind2 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 1"
+                  (click)="setTabInfo(1)" style="left: 15%;">
+              Lottery results
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind3 == 1"
+                  [class.zindex2]="tabIndObj.ind3 == 2"
+                  [class.zindex3]="tabIndObj.ind3 == 3"
+                  [class.zindex4]="tabIndObj.ind3 == 4"
+                  [class.zindex5]="tabIndObj.ind3 == 5"
+                  [class.zindex6]="tabIndObj.ind3 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 2"
+                  (click)="setTabInfo(2)" style="left: 30%;">
+              Deposit withdraw
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind4 == 1"
+                  [class.zindex2]="tabIndObj.ind4 == 2"
+                  [class.zindex3]="tabIndObj.ind4 == 3"
+                  [class.zindex4]="tabIndObj.ind4 == 4"
+                  [class.zindex5]="tabIndObj.ind4 == 5"
+                  [class.zindex6]="tabIndObj.ind4 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 3"
+                  (click)="setTabInfo(3)" style="left: 45%;">
+              My history
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind5 == 1"
+                  [class.zindex2]="tabIndObj.ind5 == 2"
+                  [class.zindex3]="tabIndObj.ind5 == 3"
+                  [class.zindex4]="tabIndObj.ind5 == 4"
+                  [class.zindex5]="tabIndObj.ind5 == 5"
+                  [class.zindex6]="tabIndObj.ind5 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 4"
+                  (click)="setTabInfo(4)" style="left: 60%;">
+              Message
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind6 == 1"
+                  [class.zindex2]="tabIndObj.ind6 == 2"
+                  [class.zindex3]="tabIndObj.ind6 == 3"
+                  [class.zindex4]="tabIndObj.ind6 == 4"
+                  [class.zindex5]="tabIndObj.ind6 == 5"
+                  [class.zindex6]="tabIndObj.ind6 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 5"
+                  (click)="setTabInfo(5)" style="left: 75%;">
+              Settings
+            </span>
+        </div>
+        <div class="col-md-1">
+        </div>
+        
+        <div class="col-md-12 tbt_origin_panel buyticket_border" [class.for5thtab]="smenu_clicked == 5">
+          <div class="row myp_header">
+            <div class="col-md-6">
+              <img *ngIf="!userData.avatar" class="man_small" src="assets/imgs/mandummy.png" />
+              <img *ngIf="userData.avatar" class="man_small" src="{{baseUrl + userData.avatar}}" />
+              <span class="font_roboto myp_mediumfont mpheader_name">{{userData.nickname}}</span>
+            </div>
+            <div class="col-md-6 font_roboto balance_panel">
+              <span class="myp_smallfont lol_orange myp_b1">Balance</span>
+              <span class="myp_mediumfont font_asap myp_b2">0.123456</span>
+              <span class="myp_smallfont lol_orange myp_b3">BTC</span>
+            </div>
+          </div>
+          <div class="row mdarkgraybg settingbody">
+            <div class="col-md-4 setting_menu" style="margin-top: 15px;">
+              <div class="smenu_item myp_mmsmallfont font_roboto" (click)="clickSmenu(1)" [class.smenu_item_active]="smenu_clicked == 1">
+                Profile
+              </div>
+              <div class="smenu_item myp_mmsmallfont font_roboto" (click)="clickSmenu(2)" [class.smenu_item_active]="smenu_clicked == 2">
+                Change the e-mail address
+              </div>
+              <div class="smenu_item myp_mmsmallfont font_roboto" (click)="clickSmenu(3)" [class.smenu_item_active]="smenu_clicked == 3">
+                Change the password
+              </div>
+              <div class="smenu_item myp_mmsmallfont font_roboto" (click)="clickSmenu(4)" [class.smenu_item_active]="smenu_clicked == 4">
+                Two-step verification
+              </div>
+              <div class="smenu_item myp_mmsmallfont font_roboto" (click)="clickSmenu(5)" [class.smenu_item_active]="smenu_clicked == 5">
+                Notifications
+              </div>
+            </div>
+            <div class="col-md-8" style="margin-top: 15px;">
+              <div *ngIf="smenu_clicked == 1" class="setting_bodies">
+                <span class="myp_msmallfont font_roboto sbodies_title">Profile</span>
+                <div class="row">
+                  <div class="col-md-3 text-center" style="margin-top: 30px;">
+                    <div *ngIf="!Avatardata.image">
+                      <img *ngIf="!profile_model.avatar" class="bbig_man" src="assets/imgs/mandummy.png" />
+                      <img *ngIf="profile_model.avatar" class="bbig_man" src="{{baseUrl + profile_model.avatar}}" />
+                    </div>
+                    <img *ngIf="Avatardata.image" class="bbig_man" [src]="Avatardata.image" />
+                    <p></p>
+                    <input id="fileInput" type="file" style="display:none;" (change)="readUrl($event)" #avatarInput />
+                    <span class="editPhoto" (click)="clickedPhotoEdit()">
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                  <div class="col-md-9 sb_pbody">
+                    <form name="form" (ngSubmit)="updateProfile.form.valid && checkValidDate() && this.doUpdateProfile()" #updateProfile="ngForm" validate>
+                      <div class="row sb_prow">
+                        <div class="form-group col-md-6" [ngClass]="{ 'has-error': updateProfile.submitted && !first_name.valid }">
+                          <label class="myp_mmsmallfont font_roboto">User Name</label>
+                          <input type="text" placeholder="First name" class="form-control cu_input setting_input"
+                                 name="first_name" [(ngModel)]="profile_model.first_name" #first_name="ngModel" required />
+                          <div *ngIf="updateProfile.submitted && !first_name.valid" class="help-block">First name is required</div>  
+                        </div>
+                        <div class="form-group col-md-6 surnamepanel" [ngClass]="{ 'has-error': updateProfile.submitted && !sur_name.valid }">
+                          <input type="text" placeholder="Surname" class="form-control cu_input setting_input"
+                                 name="sur_name" [(ngModel)]="profile_model.sur_name" #sur_name="ngModel" required />
+                          <div *ngIf="updateProfile.submitted && !sur_name.valid" class="help-block">Surname is required</div>  
+                        </div>
+                      </div>
+                      <div class="row sb_prow">
+                        <div class="form-group col-md-12" [ngClass]="{ 'has-error': updateProfile.submitted && !nickname.valid }">
+                          <label class="myp_mmsmallfont font_roboto">Nick Name</label>
+                          <input type="text" placeholder="Nick name" class="form-control cu_input setting_input"
+                                 name="nickname" [(ngModel)]="profile_model.nickname" #nickname="ngModel" required />
+                          <div *ngIf="updateProfile.submitted && !nickname.valid" class="help-block">Nickname is required</div>  
+                        </div>
+                      </div>
+                      <div class="row sb_prow">
+                        <div class="col-md-12">
+                          <label class="myp_mmsmallfont font_roboto">Date of Birth</label>
+                          <div class="row">
+                            <div class="form-group col-md-4 dbline">
+                              <input type="number" placeholder="Month" class="form-control cu_input setting_input"
+                                     name="month" [(ngModel)]="profile_model.month" #month="ngModel" />
+                            </div>
+                            <div class="form-group col-md-4 dbline">
+                              <input type="number" placeholder="Day" class="form-control cu_input setting_input"
+                                     name="day" [(ngModel)]="profile_model.day" #day="ngModel" />
+                            </div>
+                            <div class="col-md-4 dbline">
+                              <input type="number" placeholder="Year" class="form-control cu_input setting_input"
+                                     name="year" [(ngModel)]="profile_model.year" #year="ngModel" />
+                            </div>
+                          </div>
+                          <div *ngIf="updateProfile.submitted && !checkValidDate()" class="help-block">{{this.profile_errs.date_of_birth}} is invalid</div>  
+                        </div>
+                      </div>
+                      <div class="row sb_prow">
+                        <div class="col-md-12">
+                          <label class="myp_mmsmallfont font_roboto">Gender</label>
+                          <div>
+                            <div class="radioobj">
+                              <input type="radio" value="male" id="m11" name="b"
+                                     name="male" [(ngModel)]="profile_model.gender" />
+                              <label for="m11" class="font_roboto myp_mmsmallfont">Male</label>
+                            </div>
+                            <div class="radioobj">
+                              <input type="radio" value="female" id="m12" name="b"
+                                     name="female" [(ngModel)]="profile_model.gender" />
+                              <label for="m12" class="font_roboto myp_mmsmallfont">Female</label>
+                            </div>
+                            <div class="radioobj">
+                              <input type="radio" value="other" id="m13" name="b" 
+                                     name="other" [(ngModel)]="profile_model.gender" />
+                              <label for="m13" class="font_roboto myp_mmsmallfont">Other</label>
+                            </div>
+                            <div class="radioobj">
+                              <input type="radio" value="notsay" id="m14" name="b"
+                                     name="notsay" [(ngModel)]="profile_model.gender"/>
+                              <label for="m14" class="font_roboto myp_mmsmallfont">Rather not say</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row sb_prow">
+                        <div class="col-md-12">
+                          <label class="myp_mmsmallfont font_roboto">Country</label>
+                          <select class="form-control cu_input setting_input" style="font-weight: bold; color: #999999;"
+                                  name="country" [(ngModel)]="profile_model.country" #country="ngModel" >
+                            <option value=''>Please select...</option>
+                            <option *ngFor="let c of countries; let i = index;" value='{{c.name.common}}' >{{c.name.common}}</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row sb_row social_part">
+                        <div class="col-md-12 social_header" (click)="socialAccPart = !socialAccPart">
+                          <label class="myp_mmsmallfont font_roboto">Social Accounts</label>
+                          <i class="fa" 
+                             [class.fa-chevron-down]="!socialAccPart"
+                             [class.fa-chevron-up]="socialAccPart" aria-hidden="true"></i>
+                        </div>
+                        <div *ngIf="socialAccPart" class="col-md-12 social_body">
+                          <label class="myp_mmsmallfont font_roboto">
+                            <img class="myp_social_icon" src="assets/imgs/facebook_small.png" />Facebook
+                          </label>
+                          <input type="text" placeholder="Link" class="form-control cu_input setting_input"
+                                 name="facebook" [(ngModel)]="profile_model.facebook" #facebook="ngModel" />
+                          <p></p>
+                          <label class="myp_mmsmallfont font_roboto">
+                            <img class="myp_social_icon" src="assets/imgs/twitter_small.png" />Twitter
+                          </label>
+                          <input type="text" placeholder="Link" class="form-control cu_input setting_input"
+                                 name="twitter" [(ngModel)]="profile_model.twitter" #twitter="ngModel" />
+                          <p></p>
+                          <label class="myp_mmsmallfont font_roboto">
+                            <img class="myp_social_icon" src="assets/imgs/google_small.png" />Google
+                          </label>
+                          <input type="text" placeholder="Link" class="form-control cu_input setting_input"
+                                 name="google" [(ngModel)]="profile_model.google" #google="ngModel" />
+                        </div>
+                      </div>
+                      <div class="row sb_prow">
+                        <div class="col-md-12 text-center" style="margin-top: 40px;">
+                          <button class="font_roboto skysubbtn">SAVE</button>
+                          <span class="font_roboto graysubbtn" (click)="doCancelProfile(updateProfile)">CANCEL</span>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="smenu_clicked == 2" class="setting_bodies">
+                <span class="myp_msmallfont font_roboto sbodies_title">Change the e-mail address</span>
+                <div class="row uemail_body">
+                  <div class="col-md-12 previous_email_show">
+                    <h3 class="myp_mmsmallfont font_roboto" style="font-weight: bold;"><span class="lol_orange">Your e-mail address:</span> {{userData.email}}</h3>
+                  </div>
+                  <div class="col-md-12" style="margin-top: 30px;">
+                    <form name="form" (ngSubmit)="updateEmail.form.valid && this.doUpdateMail(updateEmail)" #updateEmail="ngForm" validate>
+                      <div class="form-group col-md-12" [ngClass]="{ 'has-error': updateEmail.submitted && !new_email.valid }">
+                        <label class="myp_mmsmallfont font_roboto">New e-mail address</label>
+                        <input type="text" placeholder="New e-mail address" class="form-control cu_input setting_input"
+                               name="new_email" [(ngModel)]="email_model.new_email" #new_email="ngModel" required />
+                        <div *ngIf="updateEmail.submitted && !new_email.valid" class="help-block">New Email is required</div>  
+                      </div>
+                      <div class="form-group col-md-12" [ngClass]="{ 'has-error': updateEmail.submitted && !confirm_new_email.valid }">
+                        <label class="myp_mmsmallfont font_roboto">Confirm new e-mail address</label>
+                        <input type="text" placeholder="Repeat new e-mail address" class="form-control cu_input setting_input"
+                               name="confirm_new_email" [(ngModel)]="email_model.confirm_new_email" #confirm_new_email="ngModel" required />
+                        <div *ngIf="updateEmail.submitted && !confirm_new_email.valid" class="help-block">Confirm new email is required</div>  
+                      </div>
+                      <div class="form-group col-md-12" style="margin-top: 40px;" [ngClass]="{ 'has-error': updateEmail.submitted && !password.valid }">
+                        <label class="myp_mmsmallfont font_roboto">Password</label>
+                        <input type="password" placeholder="Password" class="form-control cu_input setting_input"
+                               name="password" [(ngModel)]="email_model.password" #password="ngModel" required />
+                        <div *ngIf="updateEmail.submitted && !password.valid" class="help-block">Password is required</div>  
+                      </div>
+                      <div class="form-group col-md-12 text-center" style="margin-top: 40px;">
+                        <button class="font_roboto skysubbtn">SAVE</button>
+                        <span class="font_roboto graysubbtn" (click)="doCancelEmail(updateEmail)">CANCEL</span>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="smenu_clicked == 3" class="setting_bodies">
+                <span class="myp_msmallfont font_roboto sbodies_title">Change the password</span>
+                <div class="row uemail_body">
+                  <div class="col-md-12" style="margin-top: 30px;">
+                      <form name="form" (ngSubmit)="updatePw.form.valid && this.doUpdatePw(updatePw)" #updatePw="ngForm" validate>
+                        <div class="form-group col-md-12" [ngClass]="{ 'has-error': updatePw.submitted && !old_password.valid }">
+                          <label class="myp_mmsmallfont font_roboto">Old password</label>
+                          <input type="password" placeholder="Old password" class="form-control cu_input setting_input"
+                                name="old_password" [(ngModel)]="pw_model.old_password" #old_password="ngModel" required />
+                          <div *ngIf="updatePw.submitted && !old_password.valid" class="help-block">Old password is required</div>  
+                        </div>
+                        <div class="form-group col-md-12" [ngClass]="{ 'has-error': updatePw.submitted && !new_password.valid }">
+                          <label class="myp_mmsmallfont font_roboto">New password</label>
+                          <input type="password" placeholder="New password" class="form-control cu_input setting_input"
+                                name="new_password" [(ngModel)]="pw_model.new_password" #new_password="ngModel" required />
+                          <div *ngIf="updatePw.submitted && !new_password.valid" class="help-block">New password is required</div>  
+                        </div>
+                        <div class="form-group col-md-12" [ngClass]="{ 'has-error': updatePw.submitted && !confirm_password.valid }">
+                          <label class="myp_mmsmallfont font_roboto">Confirm password</label>
+                          <input type="password" placeholder="Confirm password" class="form-control cu_input setting_input"
+                                name="confirm_password" [(ngModel)]="pw_model.confirm_password" #confirm_password="ngModel" required />
+                          <div *ngIf="updatePw.submitted && !confirm_password.valid" class="help-block">Confirm password is required</div>  
+                        </div>
+                        <div class="form-group col-md-12 text-center" style="margin-top: 40px;">
+                          <button class="font_roboto skysubbtn">SAVE</button>
+                          <span class="font_roboto graysubbtn" (click)="doCancelPw(updatePw)">CANCEL</span>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="smenu_clicked == 4" class="setting_bodies">
+                <span class="myp_msmallfont font_roboto sbodies_title">Two-step verification</span>
+                <div class="row uemail_body">
+                  <div class="col-md-12 ts_head" style="margin-top: 30px;">
+                    <label class="myp_mmsmallfont font_roboto">Two-step Verification</label>
+                    <app-mp-checkbox [value]="step2_verifyflag" [type]="1" (sender)="getvf_value($event)"></app-mp-checkbox>
+                  </div>
+                  <div *ngIf="userData.two_step_verification && !userData.phonenumber_verified" class="col-md-12 ts_body mpss_resultPanel" style="margin-top: 30px;">
+                    <p class="myp_3msmallfont font_roboto" style="margin: 1px;">2step-verification is now pending, To make this approved, please complete below whole flow.</p>
+                  </div>
+                  <div *ngIf="!userData.phonenumber_verified" class="col-md-12 ts_body" style="margin-top: 30px;">
+                    <form name="form" (ngSubmit)="smsSender.form.valid && this.doSendSMS(smsSender)" #smsSender="ngForm" validate>
+                        <div class="form-group col-md-12" [ngClass]="{ 'has-error': smsSender.submitted && !smscountry.valid }">
+                          <label class="myp_mmsmallfont font_roboto">Country/Area</label>
+                          <select class="form-control cu_input setting_input" style="font-weight: bold; color: #999999;"
+                                  name="smscountry" [(ngModel)]="sms_sender_model.smscountry" #smscountry="ngModel" >
+                            <option value=''>Please select...</option>
+                            <option *ngFor="let c of countries; let i = index;" value="{{'+' + c.callingCode}}" >{{c.name.common}}</option>
+                          </select>
+                          <div *ngIf="smsSender.submitted && !smscountry.valid" class="help-block">Country is required</div>  
+                        </div>
+                        <div class="col-md-12">
+                          <label class="myp_mmsmallfont font_roboto">Mobile Phone number</label>
+                          <div class="row">
+                            <div class="form-group col-md-3 codediv">
+                                <input type="text" placeholder="+xx" class="form-control cu_input setting_input"
+                                       name="code" [(ngModel)]="sms_sender_model.smscountry" #code="ngModel" disabled />
+                            </div>
+                            <div class="form-group col-md-9" [ngClass]="{ 'has-error': smsSender.submitted && !number.valid }">
+                              <input type="text" placeholder="phone number" class="form-control cu_input setting_input"
+                                     name="number" [(ngModel)]="sms_sender_model.number" #number="ngModel" required />
+                              <div *ngIf="smsSender.submitted && !number.valid" class="help-block">Phone number is required</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group col-md-12 text-center" style="margin-top: 20px;">
+                          <button *ngIf="step2_verifyflag" class="font_roboto skysubbtn">Send SMS</button>
+                          <span *ngIf="!step2_verifyflag" class="font_roboto graysubbtn" style="margin-left: 0px;">Send SMS</span>
+                        </div>
+                      </form>
+                  </div>
+                  <div *ngIf="!userData.phonenumber_verified" class="col-md-12 ts_body" style="margin-top: 30px;">
+                    <form name="form" (ngSubmit)="smsAuth.form.valid && this.doVerifyAuthCode(smsAuth)" #smsAuth="ngForm" validate>
+                        <div class="form-group col-md-12" [ngClass]="{ 'has-error': smsAuth.submitted && !smscode.valid }">
+                          <label class="myp_mmsmallfont font_roboto">Verification Code</label>
+                          <input type="text" placeholder="6 digits" class="form-control cu_input setting_input"
+                                 name="smscode" [(ngModel)]="sms_auth_model.smscode" #smscode="ngModel" required />
+                          <div *ngIf="smsAuth.submitted && !smscode.valid" class="help-block">Verification code is required</div>  
+                        </div>
+                        <div class="form-group col-md-12 text-center" style="margin-top: 20px;">
+                          <button *ngIf="step2_verifyflag" class="font_roboto skysubbtn">Submit</button>
+                          <span *ngIf="!step2_verifyflag" class="font_roboto graysubbtn" style="margin-left: 0px;">Submit</span>
+                        </div>
+                      </form>
+                  </div>
+                  <div *ngIf="userData.phonenumber_verified" class="col-md-12 ts_body mpss_resultPanel" style="margin-top: 30px;">
+                    <p class="myp_3msmallfont font_roboto" style="margin: 1px;">Now your 2-step-verification is approved</p>
+                    <p class="myp_3msmallfont font_roboto" style="margin: 1px;">You can use this verification with your registered phone number</p>
+                    <p class="myp_3msmallfont font_roboto" style="margin: 1px;">Registered phone number : {{userData.phonenumber}}</p>
+                    <p></p>
+                    <p class="myp_3msmallfont font_roboto" style="margin: 1px;">If you want to change your phone number, Remove current phone number with above checkbox and try again.</p>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="smenu_clicked == 5" class="setting_bodies">
+                <span class="myp_msmallfont font_roboto sbodies_title">Notifications</span>
+                <div class="row uemail_body">
+                  <div class="col-md-12 ts_head" style="margin-top: 30px;">
+                    <label class="myp_mmsmallfont font_roboto">Send login notification by e-mail </label>
+                    <app-mp-checkbox [value]="notification_model.login_notification" [type]="2" (sender)="getvf_value($event)"></app-mp-checkbox>
+                  </div>
+                  <div class="col-md-12 ts_head" style="margin-top: 30px;">
+                    <label class="myp_mmsmallfont font_roboto">Notice from the operation </label>
+                    <app-mp-checkbox [value]="notification_model.operation_notice" [type]="3" (sender)="getvf_value($event)"></app-mp-checkbox>
+                  </div>
+                  <div class="col-md-12 ts_head" style="margin-top: 30px;">
+                    <label class="myp_mmsmallfont font_roboto">Lottery results </label>
+                    <app-mp-checkbox [value]="notification_model.lottery_results" [type]="4" (sender)="getvf_value($event)"></app-mp-checkbox>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left font_roboto">Image Crop</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <img-cropper #cropper [image]="Avatardata" [settings]="AvatarcropperSettings"></img-cropper>
+        <p></p>
+        <span class="result rounded" *ngIf="Avatardata.image">
+          <img style="width: 128px; height: 128px;" [src]="Avatardata.image" [width]="AvatarcropperSettings.croppedWidth" [height]="AvatarcropperSettings.croppedHeight">
+        </span>
+      </div>
+      <div class="modal-footer">
+        <button class='btn font_roboto DoneCrop' data-dismiss="modal">Done</button>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.lol_wrote_panel {
+    padding: 50px 60px;
+}
+
+.pp_contents {
+    font-size: 20px;
+    letter-spacing: .5px;
+    margin-bottom: 30px;
+}
+
+.agree_referral_conditions {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .pp_contents {
+        font-size: 17px;
+    }
+
+    .agree_referral_conditions {
+        width: 100%;
+    }
+}

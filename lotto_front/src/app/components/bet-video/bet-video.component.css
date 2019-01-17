@@ -1,0 +1,175 @@
+.betvideo_body {
+
+    background-image: url(/assets/imgs/video_bg.png);
+    background-color: black;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.skipbtn {
+    color: white;
+    font-size: 40px;
+    padding: 0px 12px;
+    border: solid 2px white;
+    border-radius: 5px;
+    float: right;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.yellowbg{
+    background-color: #ffe742;
+    margin-top: 50vh;
+}
+.ymainbg{
+    margin: 0px;
+    padding: 15px 17px;
+    margin-bottom: 25vh;
+}
+.yellowbg .col-md-12{
+    padding-top: 15px;
+}
+.bityellowborder {
+    position: absolute;
+    top: -35px;
+}
+.yellowbg h2{
+    font-weight: bold;
+    float: left;
+    margin-top: 10px;
+    margin-left: 140px;
+}
+.sharepanel {
+    float: right;
+    margin-top: 14px;
+}
+
+.whitebg {
+    background-color: white;
+    padding: 10px 0px;
+}
+
+.roundnum {
+    border: 18px solid transparent;
+    border-image-slice: 22;
+    border-radius: 400px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: auto;
+    background-color: white;
+}
+.roundnum_big {
+    width: 150px;
+    height: 150px;
+    border: 60px solid transparent;
+    border-image-slice: 38;
+    border-radius: 400px;
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    background-color: white;
+}
+.roundnum_big span{
+    position: absolute;
+    top: 45px;
+    left: 47%;
+}
+
+.pink_round {
+    border-image-source: url(/assets/imgs/pink_round.png) !important;
+    color: #f06292;
+}
+.green_round {
+    border-image-source: url(/assets/imgs/green_round.png) !important;
+    color: #66bb6a;
+}
+.blue_round {
+    border-image-source: url(/assets/imgs/blue_round.png) !important;
+    color: #1a75ad;
+}
+.red_round {
+    border-image-source: url(/assets/imgs/red_round.png) !important;
+    color: #ef5350;
+}
+
+.emptywhite {
+    height: 100px;
+}
+
+#cardDialog .modal-dialog {
+    margin-top: 150px;
+}
+#cardDialog .modal-content {
+    background: transparent;
+    border: none;
+}
+
+#bet_ResultDialog .modal-dialog {
+    max-width: 700px;
+}
+#bet_ResultDialog .modal-body {
+    background: #ffe742;
+}
+.bet_resultbg {
+    width: 100%;
+}
+.bet_resultbtn {
+    width: 200px;
+    position: absolute;
+    top: 58%;
+    left: 15%;
+}
+.bet_channelbtn {
+    width: 200px;
+    position: absolute;
+    top: 58%;
+    right: 15%;
+}
+.bet_resultclose {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .ymainbg .col-md-3,
+    .ymainbg .col-md-4{
+        margin-bottom: 15px;
+    }
+
+    .skipbtn {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .bet_resultbtn {
+        width: 150px;
+        position: inherit;
+        top: unset;
+        left: unset;
+        margin-top: 20px;
+    }
+    .bet_channelbtn {
+        width: 150px;
+        position: inherit;
+        top: unset;
+        right: unset;
+        margin-top: 20px;
+    }
+    .bet_resultclose{
+        width: 35px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .roundnum_big span{
+        position: absolute;
+        top: 45px;
+        left: 45%;
+    }
+}

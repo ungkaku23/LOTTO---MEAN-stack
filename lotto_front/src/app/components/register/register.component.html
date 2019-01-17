@@ -1,0 +1,92 @@
+<div class="loregister">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 15px;">
+        <i class="fa fa-angle-left lor_back_icon" aria-hidden="true"></i>
+          <a routerLink="/" class="lor_back font_roboto">
+          &nbsp;Back
+        </a>
+      </div>
+      <div class="col-md-12" >
+        <h1 class="lor_htitle font_asap">REGISTER</h1>
+      </div>
+      <div class="col-md-12 bordered_outer reg_mainbody">
+        <div class="row bordered_inner">
+
+          <div class="col-md-12 text-right">
+            <a routerLink="/loto/login/0">
+              <img src="assets/imgs/orloginbtn.png"/>
+            </a>
+          </div>
+          <div class="col-md-5 socialgroups text-center">
+            <h4 class="font_roboto regwithsocial">Register with social network</h4>
+            <span class="socialbtns">
+              <img (click)="doRegisterWithSocial('facebook')" src="assets/imgs/facebookbtn.png"/>
+            </span>
+            <p></p>
+            <span class="socialbtns">
+              <img (click)="doRegisterWithSocial('twitter')" src="assets/imgs/twitterbtn.png" />
+            </span>
+            <p></p>
+            <span class="socialbtns">
+              <img (click)="doRegisterWithSocial('google')" src="assets/imgs/googlebtn.png" />
+            </span>
+          </div>
+          <div class="col-md-7 reg_inputgroups">
+            <form name="form" (ngSubmit)="register.form.valid && (captchaResponse != '') && this.doRegister() " #register="ngForm" validate>
+              <div class="form-group reg_widgets" [ngClass]="{ 'has-error': register.submitted && !nickname.valid }">
+                <label class="font_roboto reg_labels">Nickname</label>
+                <p class="m0"></p>
+                <input type="text" class="form-control reg_inputs" name="nickname" [(ngModel)]="model.nickname" #nickname="ngModel" required />
+                <div *ngIf="register.submitted && !nickname.valid" class="font_roboto help-block">Nickname is required</div>
+              </div>
+              <p></p>
+              <div class="reg_widgets">
+                <div class="form-group reg_widgets" [ngClass]="{ 'has-error': register.submitted && !email.valid }">
+                  <label class="font_roboto reg_labels">Mail address</label>
+                  <p class="m0"></p>
+                  <input type="email" class="form-control reg_inputs" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+                  <div *ngIf="register.submitted && !email.valid" class="font_roboto help-block">Mail address is required</div>
+                </div>
+              </div>
+              <p></p>
+              <div class="reg_widgets">
+                <div class="form-group reg_widgets" [ngClass]="{ 'has-error': register.submitted && !password.valid }">
+                  <label class="font_roboto reg_labels">Password</label>
+                  <p class="m0"></p>
+                  <input type="password" class="form-control reg_inputs" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                  <div *ngIf="register.submitted && !password.valid" class="font_roboto help-block">Password is required</div>
+                </div>
+              </div>
+              <p></p>
+              <div class="reg_widgets">
+                <div class="form-group reg_widgets" [ngClass]="{ 'has-error': register.submitted && !confirm_password.valid }">
+                  <label class="font_roboto reg_labels">Confirm Password</label>
+                  <p class="m0"></p>
+                  <input type="password" class="form-control reg_inputs" name="confirm_password" [(ngModel)]="model.confirm_password" #confirm_password="ngModel" required />
+                  <div *ngIf="register.submitted && !confirm_password.valid" class="font_roboto help-block">Confirm Password is required</div>
+                </div>
+              </div>
+              <p></p>
+              <div class="reg_widgets">
+                <re-captcha class="captcha_widget" (resolved)="resolved($event)" siteKey="6LdkTWAUAAAAAGKrAlDQyPKC_dOL_YgiDFYTLPcc"></re-captcha>
+                <button class="reg_btn">
+                  <img src="assets/imgs/registerbtn.png"/>
+                </button>
+              </div>
+              <p></p>
+            </form>
+          </div>
+          <div class="col-md-5">
+
+          </div>
+          <div class="col-md-7 reg_inputgroups">
+            <div *ngIf="register.submitted && (captchaResponse == '')" class="font_roboto help-block">Please check the Recaptcha</div>
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

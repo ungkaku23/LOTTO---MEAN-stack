@@ -1,0 +1,737 @@
+/*scrolltop*/
+.scrolltop {
+	display:none;
+	width:100%;
+	margin:0 auto;
+	position:fixed;
+	bottom:20px;
+	right:10px;	
+}
+.scroll {
+	position:absolute;
+	right:20px;
+	bottom:20px;
+	background:#ffdc39;
+	text-align: center;
+	margin: 0 0 0 0;
+	cursor:pointer;
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+    -o-transition: 0.5s; 	
+    
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    padding-top: 13px;
+    color: white;
+    box-shadow:  0 0 10px  rgba(0,0,0,0.6);
+}
+.scroll:hover {
+    background: white;
+    color: #ffdc39;
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s; 		
+}
+.scroll:hover .fa {
+	padding-top:-10px;
+}
+.scroll .fa {
+	font-size:30px;
+	margin-top:-5px;
+	margin-left:1px;
+	transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s; 	
+}
+
+
+/*fonts*/
+.font_asap{
+	font-family: 'Asap Condensed';
+}
+.font_roboto{
+	font-family: 'Roboto';
+}
+
+/*double border panel*/
+.bordered_outer{
+    border: solid 35px #fdd736;
+    border-radius: 25px;
+}
+.bordered_inner{
+    border: solid 10px #f7ab24;
+    border-radius: 10px;
+    margin-right: -25px;
+    margin-left: -25px;
+    
+    background-color: white;
+    padding: 20px;
+}
+
+/*form invalid*/
+.help-block{
+	color: red;
+}
+.has-error input{
+	border-color: red !important;
+}
+
+/*layouts*/
+.m0{
+	margin: 0;
+}
+
+/*show/hide*/
+.show{
+	display: block;
+}
+.hide{
+	display: none;
+}
+
+/*customized input*/
+.cu_input{
+	border: solid 3px #f9a823;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+    width: 100%;
+    height: 35px;
+}
+
+/*zleftmenus- pages*/
+.lomotherbody{
+    /*background: url('/assets/imgs/blugbg.png') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+}
+.ab_bg{
+	width: 100%;
+    min-height: 500px;
+    position: absolute;
+}
+.lol_graywhite{
+    color: #b2b4cc;
+}
+.lol_darkgray{
+    color: #666569;
+}
+.lol_graymorewhite{
+    color: #9e9e9e;
+}
+.lol_black{
+    color: black;
+}
+.lol_bluesky{
+    color: #089be7;
+}
+.lol_thickwhitebluesky{
+    color: #29b6f6;
+}
+.lol_whitebluesky{
+    color: #29c6d6;
+}
+.lol_dirtybluesky{
+    color: #52b5a5;
+}
+.lol_orange{
+    color: #fc8a04;
+}
+.lol_whiteorange{
+    color: #fb8c00;
+}
+.lol_white{
+    color: white;
+}
+.lol_red {
+    color: red;
+}
+.lol_green {
+    color: #48a24c;
+}
+.lol_darkred {
+    color: #e53934;
+}
+
+.orangebg{
+    background-color: #fb8c00;
+}
+.greenbg{
+    background-color: #30ba7c;
+}
+.blueskybg{
+    background-color: #2c90ff;
+}
+.whiteblueskybg{
+    background-color: #29b6f6;
+}
+.redbg{
+    background-color: red;
+}
+.darkyellowbg{
+    background-color: #fdd648;
+}
+.whiteorangebg{
+    background-color: #f7ab24;
+}
+.solidorangebg{
+    background-color: #f8881d;
+}
+.whitebg{
+    background-color: white;
+}
+.whitegraybg{
+    background-color: #e6e6e6;
+}
+.thickorangebg{
+    background-color: #faa926;
+}
+.mdarkgraybg{
+    background-color: #cccccc;
+}
+.m2darkgraybg{
+    background-color: #b3b3b3;
+}
+.m3darkgraybg{
+    background-color: #646464;
+}
+
+.darkyellowborder{
+    border-color: #fdd648;
+}
+.whiteorangeborder{
+    border-color: #f7ab24;
+}
+.solidorangeborder{
+    border-color: #f8881d;
+}
+
+
+.breadcums{
+    font-size: 25px;
+    float: left;
+    margin-top: 2px;
+    text-decoration: none;
+}
+.breadcums:hover{
+	color:#ffdc39;
+}
+.lol_arrow_icon{
+    font-size: 40px; 
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.lol_htitle{
+    font-size: 4rem;
+    font-weight: bold;
+}
+.lol_sub_htitle{
+    font-size: 3rem;
+}
+.lol_wrote_panel{
+    margin-bottom: 60px;
+    margin-top: 5px;
+
+    background-color: #faf8eb;
+    padding: 25px 40px;
+    padding-bottom: 60px;
+    box-shadow: 40px 0 0px 0px #00000052, -40px 0 0px 0px #00000052;
+}
+
+/*bet tabs*/
+.bet_tabs{
+    margin-top: 20px;
+    height: 90px;
+}
+.btitems{
+    float: left;
+    margin-right: 25px;
+    cursor: pointer;
+}
+.bactive{
+    position: absolute;
+    margin-top: 2px;
+}
+.bet_tabbody{
+    margin-top: 10px;
+}
+
+/*tables*/
+.t_txts_normal{
+    font-size: 25px;
+    font-weight: bold;
+}
+.loto-table table{
+    overflow-x: auto;
+    width: 1060px;
+}
+.loto-table td{
+    border-top: none;
+    border-right: dashed 1px #8d8c89;
+    text-align: center;
+}
+.loto-table thead td{
+    border-bottom: solid 2px #8d8c89;
+}
+
+
+.loto-whitetable table{
+    width: 100%;
+    border-radius: .7em;
+    border: solid 7px white;
+    border-collapse: unset;
+}
+.loto-whitetable tbody td{
+    border-top: none;
+    border-right: solid 7px white;
+    text-align: center;
+    color: white;
+}
+.loto-whitetable thead td{
+    
+    border-bottom: solid 7px white;
+    border-right: solid 7px white;
+    color: white;
+    text-align: center;
+}
+
+.has-error textarea {
+    border-color: red !important;
+}
+.has-error select {
+    border-color: red !important;
+}
+
+/*modal style*/
+.betRModal .modal-header{
+    padding: 0px 1rem;
+    border-bottom: none;
+}
+.betRModal .modal-content:after {
+    content : "";
+    position: absolute;
+    right    : 0;
+    z-index: 100;
+    top  : 0;
+    width  : 13px;
+    height   : 90%;  /* or 100px */
+}
+.betRModal .modal-content:before {
+    content : "";
+    position: absolute;
+    right    : 0;
+    z-index: 100;
+    top  : 0;
+    width  : 90%;
+    height   : 13px;  /* or 100px */
+}
+.betRModal .modal-content {
+    padding: 13px;
+    border: none;
+    background-color: transparent;
+}
+.betRModal .modal-body {
+    background-color: white;
+    border-radius: 0px;
+    background-color: none;
+}
+.betRModal h3 {
+    font-size: 45px;
+    font-weight: bold;
+}
+.betRModal .modal-dialog {
+    max-width: 350px;
+    margin: 10.75rem auto;
+}
+.betRBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.betRBtn img {
+    width: 130px;
+}
+
+.successModal h3{
+    color: #f9a825;
+}
+.successModal .modal-body{
+    border-bottom: solid 13px #f9a825;
+}
+.successModal .modal-content:before {
+    background: #f9a825;
+}
+.successModal .modal-content:after {
+    background: #f9a825;
+}
+
+.failedModal h3{
+    color: red;
+}
+.failedModal .modal-body{
+    border-bottom: solid 13px red;
+}
+.failedModal .modal-content:before {
+    background: red;
+}
+.failedModal .modal-content:after {
+    background: red;
+}
+
+.logoutModal h3{
+    color: #26c6da;
+}
+.logoutModal .modal-body{
+    border-bottom: solid 13px #26c6da;
+}
+.logoutModal .modal-content:before {
+    background: #26c6da;
+}
+.logoutModal .modal-content:after {
+    background: #26c6da;
+}
+
+.close img {
+    width: 32px;
+}
+
+.successicon {
+    width: 110px;
+}
+
+.jackpot_balance {
+    background: url('/assets/imgs/jackpot_balance_bg.png') center center no-repeat;
+    width: 551px;
+    height: 90px;
+    border-radius: 20px;
+}
+.jp_labels {
+    padding: 10px 20px;
+    width: 155px;
+    text-align: center;
+    float: left;
+}
+jp_labels img{
+    width: 100px;
+}
+jp_labels p{
+    font-size:20px;
+    padding: 0px 5px;
+}
+.jp_balance {
+    width: 340px;
+    height: 90px;
+    float: right;
+    padding: 20px;
+}
+.jp_balance .jp_whiteboard {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    overflow-x: auto;
+}
+.jp_whiteboard .jpw1 {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: bold;
+}
+.jp_whiteboard .jpw2 {
+    font-size: 30px;
+    line-height: 50px;
+    font-weight: bold;
+}
+.jp_rabbithead {
+    position: absolute;
+    top: -10px;
+    left: 200px;
+}
+.jp_beticon {
+    position: absolute;
+    top: -30px;
+    right: -15px;
+}
+
+.mypage_tab_item {
+    width: 19%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+
+    font-size: 30px;
+    line-height: 70px;
+
+    /*font-weight: bold;*/
+    color: white;
+}
+.mypage_tab_item:nth-child(3) {
+    line-height: 35px;
+}
+.mypage_tab_item_chosen {
+    color: black;
+}
+
+.ticket_bettab_item {
+    width: 35%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+
+    font-size: 35px;
+    line-height: 70px;
+
+    font-weight: bold;
+    color: white;
+}
+.ticket_bettab_item_chosen {
+    color: black;
+}
+.ticket_bettab_body {
+    height: 70px;
+    margin-top: 30px;
+}
+
+.zindex1 {
+    z-index: 1;
+}
+.zindex2 {
+    z-index: 2;
+}
+.zindex3 {
+    z-index: 3;
+}
+.zindex4 {
+    z-index: 4;
+}
+.zindex5 {
+    z-index: 5;
+}
+.zindex6 {
+    z-index: 6;
+}
+.tbt_origin_panel {
+    border: 40px solid transparent;
+    border-image-slice: 40;
+    background-color: white;
+    border-radius: 60px;
+    padding: 20px;
+    margin-bottom: 100px;
+}
+.tbt_title{
+    font-size: 50px;
+    font-weight: bold;   
+    border-bottom: solid 1px #666569;
+}
+.buyticket_border{
+    border-image-source: url(/assets/imgs/buyticket_panel.png) !important;
+}
+.rule_border{
+    border-image-source: url(/assets/imgs/rule_panel.png) !important;
+}
+.archive_border{
+    border-image-source: url(/assets/imgs/archive_panel.png) !important;
+}
+
+.myp_header {
+    border-bottom: solid 1px #666569;
+    padding: 0px 30px;
+}
+
+@media screen and (min-width: 576px)
+{
+    
+}
+
+@media screen and (max-width: 1200px) {
+    .jackpot_balance {
+        width: 451px;
+    }
+    .jp_balance {
+        width: 260px;
+    }
+    .jp_rabbithead {
+        left: 180px;
+    }
+    .jp_whiteboard .jpw1 {
+        font-size: 30px;
+    }
+    .jp_whiteboard .jpw2 {
+        font-size: 20px;
+    }
+    .jp_beticon {
+        top: -20px;
+        right: 0px;
+        width: 80px;
+    }
+
+    .mypage_tab_item:nth-child(2) {
+        line-height: 35px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+	.lol_htitle{
+		font-size: 3rem;
+    }
+    .lol_sub_htitle{
+        font-size: 2rem;
+    }
+
+
+    .jp_labels img {
+        width: 70px;
+    }
+    .jp_labels {
+        width: 105px;
+    }
+    .jp_labels p{
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    .jackpot_balance {
+        width: 341px;
+    }
+    .jp_rabbithead {
+        top: 20px;
+        left: 110px;
+        width: 50px;
+    }
+
+    .jp_balance {
+        width: 230px;
+    }
+    .jp_balance .jp_whiteboard {
+        border-radius: 5px;
+    }
+
+    .jp_whiteboard .jpw1 {
+        font-size: 23px;
+    }
+    .jp_whiteboard .jpw2 {
+        font-size: 16px;
+    }
+    .jp_beticon {
+        width: 70px;
+    }
+
+    .ticket_bettab_body {
+        height: 60px;
+    }
+    .ticket_bettab_item {
+        font-size: 25px;
+        line-height: 60px;
+    }
+
+    .tbt_title {
+        font-size: 40px;
+    }
+
+
+    .mypage_tab_item {
+        font-size: 20px;
+        line-height: 60px;
+    }
+    .mypage_tab_item:nth-child(2) {
+        line-height: 60px;
+    }
+    .mypage_tab_item:nth-child(3) {
+        line-height: 29px;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+	.lol_wrote_panel{
+        padding: 25px 15px;
+    }
+
+    .bactive{
+        width: 70px;
+    }
+    .btitems img{
+        width: 70px;
+    }
+
+    .betRModal h3 {
+        font-size: 45px;
+    }
+    .betRBtn img {
+        width: 120px;
+    }
+
+
+    .jackpot_balance {
+        width: 291px;
+        margin-top: 20px;
+    }
+    .jp_balance {
+        width: 180px;
+    }
+    .jp_balance .jp_whiteboard {
+        padding-left: 14px;
+    }
+    .jp_beticon {
+        top: 15px;
+        right: 0;
+        left: 245px;
+    }
+
+
+    .ticket_bettab_body {
+        margin-bottom: -1px;
+        margin-left: 13px;
+    }
+    .ticket_bettab_item {
+        font-size: 20px;
+        line-height: 60px;
+    }
+
+    .tbt_title {
+        font-size: 35px;
+    }
+
+    .mypage_tab_item {
+        font-size: 15px;
+        line-height: 60px;
+    }
+    .mypage_tab_item:nth-child(2) {
+        line-height: 60px;
+    }
+    .mypage_tab_item:nth-child(3) {
+        line-height: 60px;
+    }
+
+}
+
+@media screen and (max-width: 543px) {
+	.mypage_tab_item:nth-child(3) {
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-width: 451px) {
+	.mypage_tab_item:nth-child(2) {
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+	.lol_htitle{
+		font-size: 2.5rem;
+	}
+}

@@ -1,0 +1,52 @@
+<div class="lomotherbody">
+  <img src="assets/imgs/blugbg.png" class="ab_bg" />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 15px;">
+        <a routerLink="/" class="breadcums lol_graywhite font_roboto">
+          TOP
+        </a>
+        <i class="fa fa-angle-right lol_arrow_icon lol_graywhite" aria-hidden="true"></i>
+        <a routerLink="/loto/faq-home" class="breadcums lol_graywhite font_roboto">
+          FAQ
+        </a>
+        <i class="fa fa-angle-right lol_arrow_icon lol_graywhite" aria-hidden="true"></i>
+        <a routerLink="{{'/loto/faq-category/' + fid}}" class="breadcums lol_black font_roboto">
+          General FAQs
+        </a>
+      </div>
+      <div class="col-md-12">
+        <h1 class="lol_htitle lol_black font_asap">Frequently Asked Questions</h1>
+      </div>
+      <div class="col-md-12 lol_wrote_panel faqcheader">
+          <h4 class="lol_white font_roboto">
+            <img src="{{fimglogo}}"/>
+            {{fheader}}
+          </h4>
+      </div>
+      <div class="col-md-12 lol_wrote_panel faqcbody" style="margin-top: 0;">
+        <div class="faq_category_header">
+          <div *ngFor="let fitem of fdata;">
+            <p class="lol_whitebluesky font_roboto question">{{fitem.question}}</p>
+            <p *ngFor="let faitem of fitem.answer; let fai=index;" class="lol_black font_roboto answer" [class.doubleheight]="(fitem.type == 2) && (fai % 2 == 0)">
+              {{faitem}}
+              <!--div *ngIf="(fitem.type == 2) && (fai % 2 == 0)" style="height: 20px;"></div-->
+            </p>
+            <div *ngIf="fitem.type == 1" class="faq_bordered_box">
+              <p class="lol_black font_roboto answer">Address: 
+                <span class="lol_dirtybluesky">{{fitem.address}}</span>
+              </p>
+              <p class="lol_black font_roboto answer">Message:
+                <span class="lol_dirtybluesky">{{fitem.message}}</span>
+              </p>
+              <p class="lol_black font_roboto answer">Signature:
+                <span class="lol_dirtybluesky">{{fitem.signature}}</span>
+              </p>
+            </div>
+            <div class="mb30"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

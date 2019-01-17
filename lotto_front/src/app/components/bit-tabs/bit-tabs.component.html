@@ -1,0 +1,10 @@
+<div class="bet_tabs">
+  <span class="btitems" (click)="clickedTabs(1)">
+    <img src="assets/imgs/bet3other.png" />
+    <img *ngIf="tid == 1" src="assets/imgs/betactive.png" class="bactive" />
+  </span>
+  <span class="btitems" (click)="clickedTabs(2)">
+    <img src="assets/imgs/bet4other.png" />
+    <img *ngIf="tid == 2" src="assets/imgs/betactive.png" class="bactive" />
+  </span>
+</div>

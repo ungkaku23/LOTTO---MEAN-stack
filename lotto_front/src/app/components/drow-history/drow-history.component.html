@@ -1,0 +1,127 @@
+<div class="lomotherbody">
+  <img src="assets/imgs/blugbg.png" class="ab_bg" />
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12" style="margin-top: 15px;">
+        <a routerLink="/" class="breadcums lol_graywhite font_roboto">
+          TOP
+        </a>
+        <i class="fa fa-angle-right lol_arrow_icon lol_graywhite" aria-hidden="true"></i>
+        <a *ngIf="tid == 1" routerLink="{{'/loto/draws-history/' + tid + '/' +paginater.pages + '/' + paginater.per_page}}" class="breadcums lol_black font_roboto">
+          Draws History 
+          <span >NUMBER 3</span>
+        </a>
+        <a *ngIf="tid == 2" routerLink="{{'/loto/draws-history/' + tid + '/' +paginater_bit4.pages + '/' + paginater_bit4.per_page}}" class="breadcums lol_black font_roboto">
+          Draws History
+          <span>NUMBER 4</span>
+        </a>
+      </div>
+      <div class="col-md-12">
+        <h1 class="lol_htitle lol_black font_asap">Draws History</h1>
+      </div>
+      <div class="col-md-12 lol_wrote_panel">
+        <app-bit-tabs [tid]="tid" (myevent)="getTidFromTab($event)"></app-bit-tabs>
+        <div *ngIf="tid == 1" class="bet_tabbody">
+          <div class="table-responsive loto-table" style="margin-bottom: 30px;">
+            <table class="table">
+              <thead>
+                <td class="t_txts_normal font_asap" width="5%">Draw</td>
+                <td class="t_txts_normal font_asap" width="10%">Date</td>
+                <td class="t_txts_normal font_asap" width="20%">Win Number</td>
+                <td class="t_txts_normal font_asap" width="50%" colspan="3">JACKPOT</td>
+                <td class="t_txts_normal font_asap" width="15%">Status</td>
+              </thead>
+              <tbody>
+                <tr *ngFor="let hitem of paginatedData;">
+                  <td class="t_txts_normal font_asap">
+                    <a class="todetail" routerLink="{{'/loto/draw-detail/' + tid + '/' + paginater.pages + '/' + paginater.per_page + '/' + hitem._id}}">{{hitem.no}}</a>
+                  </td>
+                  <td class="t_txts_normal font_asap">{{hitem.date | dot_date_format}}</td>
+                  <td class="t_txts_normal font_asap">
+                    <div class="wnumbers">
+                      <span class="blue_num">{{hitem.win_number[0] | convert_block_to_num: 0}}</span>
+                      <span class="green_num">{{hitem.win_number[1] | convert_block_to_num: 0}}</span>
+                      <span class="orange_num">{{hitem.win_number[2] | convert_block_to_num: 0}}</span>
+                    </div>
+                  </td>
+                  <td class="t_txts_normal font_asap medal_col">
+                    <img class="medal" src="assets/imgs/gold.png" /> 
+                    <h4 *ngIf="hitem.jackpot != undefined" class="medal_txt t_txts_normal font_asap">{{hitem.jackpot.gold | to_fixed: 6}}</h4>
+                    <h4 class="medal_unit t_txts_normal font_asap lol_orange">BTC</h4>
+                  </td>
+                  <td class="t_txts_normal font_asap medal_col">
+                    <img class="medal" src="assets/imgs/iron.png" />
+                    <h4 *ngIf="hitem.jackpot != undefined" class="medal_txt t_txts_normal font_asap">{{hitem.jackpot.silver | to_fixed: 6}}</h4>
+                    <h4 class="medal_unit t_txts_normal font_asap lol_orange">BTC</h4>
+                  </td>
+                  <td class="t_txts_normal font_asap medal_col">
+                    <img class="medal" src="assets/imgs/bronze.png" />
+                    <h4 *ngIf="hitem.jackpot != undefined" class="medal_txt t_txts_normal font_asap">{{hitem.jackpot.bronze | to_fixed: 6}}</h4>
+                    <h4 class="medal_unit t_txts_normal font_asap lol_orange">BTC</h4>
+                  </td>
+                  <td class="t_txts_normal font_asap">
+                    <span *ngIf="hitem.status == 0">Processing</span>
+                    <span *ngIf="hitem.status == 1">Processed</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <app-pagination-widget [total]="totalPages" [setTotal]="totalPages" [current_pos]="paginater.pages" (paginateEvent)="getPageindexFromPaginatewidget($event, 3)"></app-pagination-widget>
+        </div>
+
+        <div *ngIf="tid == 2" class="bet_tabbody">
+          <div class="table-responsive loto-table" style="margin-bottom: 30px;">
+            <table class="table">
+              <thead>
+                <td class="t_txts_normal font_asap" width="5%">Draw</td>
+                <td class="t_txts_normal font_asap" width="10%">Date</td>
+                <td class="t_txts_normal font_asap" width="20%">Win Number</td>
+                <td class="t_txts_normal font_asap" width="50%" colspan="3">JACKPOT</td>
+                <td class="t_txts_normal font_asap" width="15%">Status</td>
+              </thead>
+              <tbody>
+                <tr *ngFor="let hitem of paginatedData_bit4;">
+                  <td class="t_txts_normal font_asap">
+                    <a class="todetail" routerLink="{{'/loto/draw-detail/' + tid + '/' + paginater_bit4.pages + '/' + paginater_bit4.per_page + '/' + hitem._id}}">{{hitem.no}}</a>
+                  </td>
+                  <td class="t_txts_normal font_asap">{{hitem.date | dot_date_format}}</td>
+                  <td class="t_txts_normal font_asap">
+                    <div class="wnumbers_4">
+                      <span class="blue_num">{{hitem.win_number[0] | convert_block_to_num: 1}}</span>
+                      <span class="green_num">{{hitem.win_number[1] | convert_block_to_num: 1}}</span>
+                      <span class="orange_num">{{hitem.win_number[2] | convert_block_to_num: 1}}</span>
+                      <span class="red_num">{{hitem.win_number[3] | convert_block_to_num: 1}}</span>
+                    </div>
+                  </td>
+                  <td class="t_txts_normal font_asap medal_col">
+                    <img class="medal" src="assets/imgs/gold.png" />
+                    <h4 *ngIf="hitem.jackpot != undefined" class="medal_txt t_txts_normal font_asap">{{hitem.jackpot.gold | to_fixed: 6}}</h4>
+                    <h4 class="medal_unit t_txts_normal font_asap lol_orange">BTC</h4>
+                  </td>
+                  <td class="t_txts_normal font_asap medal_col">
+                    <img class="medal" src="assets/imgs/iron.png" />
+                    <h4 *ngIf="hitem.jackpot != undefined" class="medal_txt t_txts_normal font_asap">{{hitem.jackpot.silver | to_fixed: 6}}</h4>
+                    <h4 class="medal_unit t_txts_normal font_asap lol_orange">BTC</h4>
+                  </td>
+                  <td class="t_txts_normal font_asap medal_col">
+                    <img class="medal" src="assets/imgs/bronze.png" />
+                    <h4 *ngIf="hitem.jackpot != undefined" class="medal_txt t_txts_normal font_asap">{{hitem.jackpot.bronze | to_fixed: 6}}</h4>
+                    <h4 class="medal_unit t_txts_normal font_asap lol_orange">BTC</h4>
+                  </td>
+                  <td class="t_txts_normal font_asap">
+                    <span *ngIf="hitem.status == 0">Processing</span>
+                    <span *ngIf="hitem.status == 1">Processed</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <app-pagination-widget [total]="totalPages_bit4" [setTotal]="totalPages_bit4" [current_pos]="paginater_bit4.pages" (paginateEvent)="getPageindexFromPaginatewidget($event, 4)"></app-pagination-widget>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

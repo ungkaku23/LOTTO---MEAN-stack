@@ -1,0 +1,45 @@
+<div class="lologin">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 15px;">
+        <i class="fa fa-angle-left lol_back_icon" aria-hidden="true"></i>
+        <a routerLink="/" class="lol_back font_roboto">
+          &nbsp;Back
+        </a>
+      </div>
+      <div class="col-md-12">
+        <h1 class="lol_htitle font_asap">Verification</h1>
+      </div>
+      <div class="col-md-12 bordered_outer login_mainbody">
+        <div class="row bordered_inner">
+          <div *ngIf="showForm == 0" class="col-md-12 text-center">
+            <p class="font_roboto verfiying">Now verifying your code... Please be patient.</p>
+          </div>
+          <div *ngIf="showForm == 1" class="col-md-12 text-center">
+            <p class="font_roboto verfiying">Your code is invalid, please try again.</p>
+          </div>
+          <div *ngIf="showForm == 1" class="col-md-12 resendPanel">
+            <form name="form" (ngSubmit)="resendEmail.form.valid && this.doResendEmail() " #resendEmail="ngForm" validate>
+              <div class="form-group" [ngClass]="{ 'has-error': resendEmail.submitted && !email.valid }">
+                <label class="font_roboto login_labels">Email</label>
+                <p class="fcomment">Please enter your e-mail address what you used to register before.</p>
+                <input class="form-control login_inputs" type="email" name="email" [(ngModel)]="resendModel.email" #email="ngModel" required />
+                <div *ngIf="resendEmail.submitted && !email.valid" class="font_roboto help-block">Mail address is required</div>
+              </div>
+              <div class="form-group text-center">
+                <button class="resend_btn font_roboto">Resend Email</button>
+              </div>
+            </form>
+          </div>
+          <div *ngIf="showForm != 0" class="col-md-12 email_submitted_notify text-center" [class.show]="showForm == 2" [class.hide]="showForm == 1">
+            <h3 class="font_roboto notify_contents">I sent you an e-mail.</h3>
+            <h3 class="font_roboto notify_contents">Please confirm the reception of this e-mail</h3>
+            <img class="mailboxer" src="assets/imgs/mailbox.png">
+            <p></p>
+            <a routerLink="/loto/login/0" class="resend_btn font_roboto" style="text-decoration: none; padding: 4px 10px;">Go to login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

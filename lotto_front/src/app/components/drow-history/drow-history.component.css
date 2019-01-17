@@ -1,0 +1,97 @@
+.loto-table .wnumbers{
+    background-color: #e6e6e6;
+    padding: 6px 0px;
+    text-align: center;
+    border-radius: 10px;
+}
+.loto-table .blue_num{
+    background-color: #2b91ff;
+    padding: 5px 13px;
+    font-size: 25px;
+    border-radius: 50px;
+    color: white;
+    margin: 0px 5px;
+}
+.loto-table .green_num{
+    background-color: #32ba7c;
+    padding: 5px 13px;
+    font-size: 25px;
+    border-radius: 50px;
+    color: white;
+    margin: 0px 5px;
+}
+.loto-table .orange_num{
+    background-color: #fb8c00;
+    padding: 5px 13px;
+    font-size: 25px;
+    border-radius: 50px;
+    color: white;
+    margin: 0px 5px;
+}
+
+
+.loto-table .wnumbers_4{
+    background-color: #e6e6e6;
+    padding: 6px 0px;
+    text-align: center;
+    border-radius: 10px;
+}
+.wnumbers_4 .blue_num{
+    background-color: #2b91ff;
+    padding: 5px 13px;
+    font-size: 25px;
+    border-radius: 50px;
+    color: white;
+    margin: 0px 0px;
+}
+.wnumbers_4 .green_num{
+    background-color: #32ba7c;
+    padding: 5px 13px;
+    font-size: 25px;
+    border-radius: 50px;
+    color: white;
+    margin: 0px 0px;
+}
+.wnumbers_4 .orange_num{
+    background-color: #fb8c00;
+    padding: 5px 13px;
+    font-size: 25px;
+    border-radius: 50px;
+    color: white;
+    margin: 0px 0px;
+}
+.wnumbers_4 .red_num{
+    background-color: red;
+    padding: 5px 13px;
+    font-size: 25px;
+    border-radius: 50px;
+    color: white;
+    margin: 0px 0px;
+}
+
+.loto-table .medal{
+    width: 30px;
+    float: left;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+.loto-table .medal_txt{
+    float: left;
+    margin-right: 4px;
+}
+.loto-table .medal_unit{
+    float: left;
+}
+.loto-table .medal_col{
+    padding: 1rem .25rem;
+}
+.loto-table tbody tr td:nth-child(3){
+    padding: .4rem .75rem;
+}
+
+.todetail{
+    color: black;
+}
+.todetail:hover{
+    color: #ffdc39;
+}

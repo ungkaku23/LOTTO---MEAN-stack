@@ -1,0 +1,192 @@
+<div class="lomotherbody">
+  <img src="assets/imgs/blugbg.png" class="ab_bg" />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="margin-top: 15px;">
+        <a routerLink="/" class="breadcums lol_graywhite font_roboto">
+          TOP
+        </a>
+        <i class="fa fa-angle-right lol_arrow_icon lol_graywhite" aria-hidden="true"></i>
+        <a routerLink="/loto/check-fair-play" class="breadcums lol_black font_roboto">
+          Check Fair Play
+        </a>
+      </div>
+      <div class="col-md-12">
+        <h1 class="lol_htitle lol_black font_asap">Check Fair Play</h1>
+      </div>
+      <div class="col-md-12 lol_wrote_panel">
+        <p class="wrote_contents font_roboto">
+           We use an open source algorithm for calculating drawn numbers so everyone could check the results of each draw. Please see
+          below the detailed explanation:
+        </p>
+        <div class="wrote_bit3big">
+          <img src="assets/imgs/bet3big.png" />
+        </div>
+        <p class="wrote_contents font_roboto">
+           ForNo.３ lottery, we start determining the numbers at 10:00 UTC. Our formula takes every even block from the blockchain found
+          after 10:00 UTC and, based on its hash, height, hash of the previous block, calculates the drawn number. If the same number
+          gets drawn once again in the same draw, the formula will simply skip such block and take the very next even block. So basically,
+          we repeat the even block examination until all 5 numbers are received. The block is considered to be even if its height gives
+          you an integer value after halving.
+        </p>
+        <p class="wrote_contents font_roboto">
+           You may choose the draw you are interested in, see what numbers exactly have drawn, and use the Calculator to check the
+          results yourself. Let’s imagine you want to check Draw #1. You might want to open this page in a separate tab: https://….club/draw/5-36/1
+          and you will see that the first drawn number was 31, block 513162 that was found at 10:01:48 gave this number.
+        </p>
+        <p class="wrote_contents font_roboto">
+           If you click on the "?" sign on the draw details page, the Calculator will pop up and you will see the details of that block,
+          the formula and the drawn number. At this stage you may go to ◯◯◯◯◯◯◯ website, find the same block using its height for example
+          and then take all the info required by the formula from blockchain and fill out the Calculator fields with that info to see
+          if you get the same drawn number that we received. Please make sure to put in the data in the same format you see it on
+          ◯◯◯◯◯◯◯
+        </p>
+        <p class="wrote_contents font_roboto">
+           So basically this way you can see that we don’t know in advance the details of the next block thus we can’t predict the
+          drawn number, we calculate it after the block is found. All the info is displayed correctly on our website, you may check
+          each drawn number using this Calculator and compare the data. The formula is working properly and if you are good in coding,
+          you can easily check it or just show it to somebody who’s good in coding. We hope this will help everybody understand that
+          we do everything in a fair and transparent way, which is why our lottery is considered to be a provably fair one.
+        </p>
+        <div class="row calcpanel_row">
+          <div class="col-md-12 calcpanels">
+            <h3 class="calctitle lol_bluesky font_roboto">Number Calculator</h3>
+            <p class="calctxts font_roboto">You can easily check the drawn numbers. Fill these fields with relevant data from ◯◯◯◯</p>
+            <div class="row">
+                <div class="col-md-4 calcimgpanel ccsmall">
+                  <img src="assets/imgs/calcimg.png" class="calcimg" />
+                </div>
+                <div class="col-md-8 calcform">
+                  <label class="calctxts lol_bluesky font_roboto">Previous Block Hash</label>
+                  <input class="cu_input calcinput" [(ngModel)]="bit3_model.previous_block_hash" type="text" />
+                  <p></p>
+                  <label class="calctxts lol_bluesky font_roboto">Block Height</label>
+                  <input class="cu_input calcinput" [(ngModel)]="bit3_model.block_height" type="text" />
+                  <p></p>
+                  <label class="calctxts lol_bluesky font_roboto">Block Hash</label>
+                  <input class="cu_input calcinput" [(ngModel)]="bit3_model.block_hash" type="text" />
+                </div>
+                <div class="col-md-4 calcimgpanel ccbig">
+                  <img src="assets/imgs/calcimg.png" class="calcimg" />
+                </div>
+            </div>
+            <div class="row calcresultrow">
+              <div class="col-md-12 calcresult">
+                <div class="font_roboto">
+                  <p>(</p>
+                  <p style="margin-left: 10px;">crc32(</p>
+                  <p style="margin-left: 30px;">md5(</p>
+                  <p style="margin-left: 50px;">
+                    md5({{bit3_model.previous_block_hash}}) +
+                  </p>
+                  <p style="margin-left: 50px;">
+                    md5({{bit3_model.block_height}}) +
+                  </p>
+                  <p style="margin-left: 50px;">
+                    md5({{bit3_model.block_hash}})
+                  </p>
+                  <p style="margin-left: 50px;">
+                  <p style="margin-left: 30px;">
+                    )
+                  </p>
+                  <p style="margin-left: 10px;">
+                    ) MOD 9
+                  </p>
+                  <p>
+                    ) + 1 = <span>{{bit3_model | convert_block_to_num: 0}}</span>
+                  </p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="wrote_bit3big">
+          <img src="assets/imgs/bet4big.png" />
+        </div>
+        <p class="wrote_contents font_roboto">
+           For No.４ lottery, we start determining the numbers at 10:00 UTC. Our formula takes every odd block from the blockchain found
+          after 10:00 UTC and, based on its hash, height, hash of the previous block, calculates the drawn number. If the same number
+          gets drawn once again in the same draw, the formula will simply skip such block and take the very next odd block. So basically,
+          we repeat the odd block examination until all 6 numbers are received. The block is considered to be odd if its height gives
+          you a non-integral after halving.
+        </p>
+        <p class="wrote_contents font_roboto">
+           You may choose the draw you are interested in, see what numbers exactly have drawn, and use the Calculator to check the
+          results yourself. Let’s imagine you want to check Draw #1. You might want to open this page in a separate tab: https://….club/draw/6-45/1
+          and you will see that the first drawn number was 8, block 498211 that was found at 10:02:31 gave this number.
+        </p>
+        <p class="wrote_contents font_roboto">
+           If you click on the "?" sign on the draw details page, the Calculator will pop up and you will see the details of that block,
+          the formula and the drawn number. At this stage you may go to ◯◯◯◯◯◯◯ website, find the same block using its height for example
+          and then take all the info required by the formula from blockchain and fill out the Calculator fields with that info to see
+          if you get the same drawn number that we received. Please make sure to put in the data in the same format you see it on ◯◯◯◯◯◯◯.
+        </p>
+        <p class="wrote_contents font_roboto">
+           So basically this way you can see that we don’t know in advance the details of the next block thus we can’t predict the
+          drawn number, we calculate it after the block is found. All the info is displayed correctly on our website, you may check
+          each drawn number using this Calculator and compare the data.
+        </p>
+        <p class="wrote_contents font_roboto">
+           The formula is working properly and if you are good in coding, you can easily check it or just show it to somebody who’s
+          good in coding. We hope this will help everybody understand that we do everything in a fair and transparent way, which is
+          why our lottery is considered to be a provably fair one.
+        </p>
+        <div class="row calcpanel_row">
+          <div class="col-md-12 calcpanels">
+            <h3 class="calctitle lol_bluesky font_roboto">Number Calculator</h3>
+            <p class="calctxts font_roboto">You can easily check the drawn numbers. Fill these fields with relevant data from ◯◯◯◯</p>
+            <div class="row">
+              <div class="col-md-4 calcimgpanel ccsmall">
+                <img src="assets/imgs/calcimg.png" class="calcimg" />
+              </div>
+              <div class="col-md-8 calcform">
+                <label class="calctxts lol_bluesky font_roboto">Previous Block Hash</label>
+                <input class="cu_input calcinput" [(ngModel)]="bit4_model.previous_block_hash" type="text" />
+                <p></p>
+                <label class="calctxts lol_bluesky font_roboto">Block Height</label>
+                <input class="cu_input calcinput" [(ngModel)]="bit4_model.block_height" type="text" />
+                <p></p>
+                <label class="calctxts lol_bluesky font_roboto">Block Hash</label>
+                <input class="cu_input calcinput" [(ngModel)]="bit4_model.block_hash" type="text" />
+              </div>
+              <div class="col-md-4 calcimgpanel ccbig">
+                <img src="assets/imgs/calcimg.png" class="calcimg" />
+              </div>
+            </div>
+            <div class="row calcresultrow">
+              <div class="col-md-12 calcresult">
+                <div class="font_roboto">
+                  <p>(</p>
+                  <p style="margin-left: 10px;">crc32(</p>
+                  <p style="margin-left: 30px;">md5(</p>
+                  <p style="margin-left: 50px;">
+                    md5({{bit4_model.previous_block_hash}}) +
+                  </p>
+                  <p style="margin-left: 50px;">
+                    md5({{bit4_model.block_height}}) +
+                  </p>
+                  <p style="margin-left: 50px;">
+                    md5({{bit4_model.block_hash}})
+                  </p>
+                  <p style="margin-left: 50px;">
+                  <p style="margin-left: 30px;">
+                    )
+                  </p>
+                  <p style="margin-left: 10px;">
+                    ) MOD 9
+                  </p>
+                  <p>
+                    ) + 1 = <span>{{bit4_model | convert_block_to_num: 1}}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

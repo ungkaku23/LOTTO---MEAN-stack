@@ -1,0 +1,253 @@
+  <div class="lomotherbody">
+    <img src="assets/imgs/blugbg.png" class="ab_bg" />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+          <i class="fa fa-angle-left lol_arrow_icon lol_black" aria-hidden="true"></i>
+          <a routerLink="/" class="breadcums lol_black font_roboto">
+            Back
+          </a>
+        </div>
+        <div class="col-md-6">
+          <h1 class="lol_htitle lol_white font_asap">MY PAGE</h1>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 ticket_bettab_body">
+            <span class="mypage_tab_item thickorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind1 == 1"
+                  [class.zindex2]="tabIndObj.ind1 == 2"
+                  [class.zindex3]="tabIndObj.ind1 == 3"
+                  [class.zindex4]="tabIndObj.ind1 == 4"
+                  [class.zindex5]="tabIndObj.ind1 == 5"
+                  [class.zindex6]="tabIndObj.ind1 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 0"
+                  (click)="setTabInfo(0)">
+              Account
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind2 == 1"
+                  [class.zindex2]="tabIndObj.ind2 == 2"
+                  [class.zindex3]="tabIndObj.ind2 == 3"
+                  [class.zindex4]="tabIndObj.ind2 == 4"
+                  [class.zindex5]="tabIndObj.ind2 == 5"
+                  [class.zindex6]="tabIndObj.ind2 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 1"
+                  (click)="setTabInfo(1)" style="left: 15%;">
+              Lottery results
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind3 == 1"
+                  [class.zindex2]="tabIndObj.ind3 == 2"
+                  [class.zindex3]="tabIndObj.ind3 == 3"
+                  [class.zindex4]="tabIndObj.ind3 == 4"
+                  [class.zindex5]="tabIndObj.ind3 == 5"
+                  [class.zindex6]="tabIndObj.ind3 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 2"
+                  (click)="setTabInfo(2)" style="left: 30%;">
+              Deposit withdraw
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind4 == 1"
+                  [class.zindex2]="tabIndObj.ind4 == 2"
+                  [class.zindex3]="tabIndObj.ind4 == 3"
+                  [class.zindex4]="tabIndObj.ind4 == 4"
+                  [class.zindex5]="tabIndObj.ind4 == 5"
+                  [class.zindex6]="tabIndObj.ind4 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 3"
+                  (click)="setTabInfo(3)" style="left: 45%;">
+              My history
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind5 == 1"
+                  [class.zindex2]="tabIndObj.ind5 == 2"
+                  [class.zindex3]="tabIndObj.ind5 == 3"
+                  [class.zindex4]="tabIndObj.ind5 == 4"
+                  [class.zindex5]="tabIndObj.ind5 == 5"
+                  [class.zindex6]="tabIndObj.ind5 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 4"
+                  (click)="setTabInfo(4)" style="left: 60%;">
+              Message
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind6 == 1"
+                  [class.zindex2]="tabIndObj.ind6 == 2"
+                  [class.zindex3]="tabIndObj.ind6 == 3"
+                  [class.zindex4]="tabIndObj.ind6 == 4"
+                  [class.zindex5]="tabIndObj.ind6 == 5"
+                  [class.zindex6]="tabIndObj.ind6 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 5"
+                  (click)="setTabInfo(5)" style="left: 75%;">
+              Settings
+            </span>
+        </div>
+        <div class="col-md-1">
+        </div>
+        
+        <div class="col-md-12 tbt_origin_panel buyticket_border">
+          <div class="row myp_header">
+            <div class="col-md-6">
+              <img *ngIf="!mydata.avatar" class="man_small" src="assets/imgs/mandummy.png" />
+              <img *ngIf="mydata.avatar" class="man_small" src="{{baseUrl + mydata.avatar}}" />
+              <span class="font_roboto myp_mediumfont mpheader_name">{{mydata.nickname}}</span>
+            </div>
+            <div class="col-md-6 font_roboto balance_panel">
+              <span class="myp_smallfont lol_orange myp_b1">Balance</span>
+              <span class="myp_mediumfont font_asap myp_b2">0.123456</span>
+              <span class="myp_smallfont lol_orange myp_b3">BTC</span>
+            </div>
+          </div>
+          <div class="row myp_body1">
+            <div class="col-md-5 text-center">
+              <img *ngIf="!mydata.avatar" class="man_big" src="assets/imgs/mandummy.png" />
+              <img *ngIf="mydata.avatar" class="man_big" src="{{baseUrl + mydata.avatar}}" />
+            </div>
+            <div class="col-md-7 myp_big_namepanel">
+              <h2 class="font_roboto myp_bigfont big_manname">{{mydata.nickname}}</h2>
+            </div>
+          </div>
+          <div class="row myp_body2">
+            <div class="col-md-5">
+              <h3 class="font_asap myp_normalfont" style="font-weight: bold;">Mail address</h3>
+            </div>
+            <div class="col-md-7">
+              <h2 class="font_roboto myp_normalfont">{{mydata.email}}</h2>
+            </div>
+          </div>
+          <div class="row myp_body2" style="margin-top: 15px;">
+            <div class="col-md-5">
+              <h3 class="font_asap myp_normalfont" style="font-weight: bold;">Password</h3>
+            </div>
+            <div class="col-md-7">
+              <h2 class="font_roboto myp_normalfont">{{getMozaikPw(mydata.origin_password)}}</h2>
+            </div>
+          </div>
+          <div *ngIf="mydata.facebook" class="row myp_body2" style="margin-top: 30px;">
+            <div class="col-md-5">
+              <img class="myp_social_icon" src="assets/imgs/facebook_small.png" />
+              <h3 class="font_asap myp_normalfont myp_social_title" style="font-weight: bold;">Facebook</h3>
+            </div>
+            <div class="col-md-7 link_panel">
+              <h2 class="font_roboto myp_normalfont">{{mydata.facebook}}</h2>
+            </div>
+          </div>
+          <div *ngIf="mydata.twitter" class="row myp_body2" style="margin-top: 30px;">
+            <div class="col-md-5">
+              <img class="myp_social_icon" src="assets/imgs/twitter_small.png" />
+              <h3 class="font_asap myp_normalfont myp_social_title" style="font-weight: bold;">Twitter</h3>
+            </div>
+            <div class="col-md-7 link_panel">
+              <h2 class="font_roboto myp_normalfont">{{mydata.twitter}}</h2>
+            </div>
+          </div>
+          <div *ngIf="mydata.google" class="row myp_body2" style="margin-top: 30px;">
+            <div class="col-md-5">
+              <img class="myp_social_icon" src="assets/imgs/google_small.png" />
+              <h3 class="font_asap myp_normalfont myp_social_title" style="font-weight: bold;">Google</h3>
+            </div>
+            <div class="col-md-7 link_panel">
+              <h2 class="font_roboto myp_normalfont">{{mydata.google}}</h2>
+            </div>
+          </div>
+          <div class="row myp_body2" style="margin-top: 30px;">
+            <div class="myp_btndiv" (click)="goToProfileChange()">
+              <h4 class="font_roboto myp_normalfont">Profile Change</h4>
+            </div>
+          </div>
+          <div *ngIf="refVal != 1" class="row myp_body2 referral_btnbody" (click)="goToReferralProgram()" >
+            <img class="referral_bg" src="assets/imgs/referral_bg.png" />
+            <img class="referral_120" src="assets/imgs/120.png" />
+            <img class="referral_78" src="assets/imgs/78.png" />
+            <img class="referral_rabbit" src="assets/imgs/rabbit_big_laugh.png" />
+            <h3 class="font_asap referral_lstart">Let's start</h3>
+            <h3 class="font_asap referral_rp">Referral Program!</h3>
+          </div>
+          <div *ngIf="refVal == 1" class="row myp_body2" style="margin-top: 70px;">
+            <h3 class="ref_btxt myp_normalfont font_asap">My Referrals</h3>
+            <div class="col-md-12 ref_bodys">
+              <h3 class="ref_btxt myp_normalfont font_asap">Referral link</h3>
+              <div class="row" style="padding: 5px 17px;">
+                <div class="col-md-9 ref_linkinput">
+
+                </div>
+                <div class="col-md-3 ref_linkinput_btn text-center">
+                  <img src="assets/imgs/ref_copy.png" />
+                  <span class="ref_btxt myp_smallfont lol_white font_asap">Copy</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 ref_bodys" style="border-top: none;">
+              <h3 class="ref_btxt myp_normalfont font_asap">Statistics</h3>
+              <div class="row" style="padding: 5px 17px;">
+                <div class="col-md-12">
+                  <div class="loto-table table-responsive">
+                    <table>
+                      <thead>
+                        <td class="ref_btxt myp_normalfont font_asap" width="20%">Date</td>
+                        <td class="ref_btxt myp_normalfont font_asap" width="30%">Registration</td>
+                        <td class="ref_btxt myp_normalfont font_asap" width="20%">Tickets</td>
+                        <td class="ref_btxt myp_normalfont font_asap" width="30%">Ref Reward</td>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="ref_btxt myp_normalfont font_asap">02.03.18</td>
+                          <td class="ref_btxt myp_normalfont font_asap">xxxxx</td>
+                          <td class="ref_btxt myp_normalfont font_asap">xxxxxx</td>
+                          <td class="ref_btxt myp_normalfont font_asap">xxxx</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 ref_bodys bannerbody" style="border-top: none;">
+                <h3 class="ref_btxt myp_normalfont font_asap">Banners</h3>
+                <div class="row" style="padding: 5px 17px;">
+                  <div class="col-md-6 bannerpanel downpanel">
+                    <div class="dp_div1">
+                      <div class="dp_div2">
+                        <p class="ref_btxt myp_normalfont font_asap">300 * 250</p>
+                      </div>
+                      <div class="dp_div3">
+                        <img src="assets/imgs/ref_down.png" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 bannerpanel">
+                    <img style="width: 80%;" src="assets/imgs/banner_big.png" />
+                  </div>
+                  <div class="col-md-6 bannerpanel">
+                    <div class="dp_div1">
+                      <div class="dp_div2">
+                        <p class="ref_btxt myp_normalfont font_asap">320 * 50</p>
+                      </div>
+                      <div class="dp_div3">
+                        <img src="assets/imgs/ref_down.png" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 bannerpanel">
+                    <img style="width: 90%;" src="assets/imgs/banner_medium.png" />
+                  </div>
+                  <div class="col-md-6 bannerpanel">
+                    <div class="dp_div1">
+                      <div class="dp_div2">
+                        <p class="ref_btxt myp_normalfont font_asap">728 * 90</p>
+                      </div>
+                      <div class="dp_div3">
+                        <img src="assets/imgs/ref_down.png" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 bannerpanel">
+                    <img style="width: 100%;" src="assets/imgs/banner_small.png" />
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

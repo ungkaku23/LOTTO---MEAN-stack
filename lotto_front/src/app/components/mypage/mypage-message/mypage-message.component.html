@@ -1,0 +1,140 @@
+  <div class="lomotherbody">  
+    <img src="assets/imgs/blugbg.png" class="ab_bg" />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+          <i class="fa fa-angle-left lol_arrow_icon lol_black" aria-hidden="true"></i>
+          <a routerLink="/" class="breadcums lol_black font_roboto">
+            Back
+          </a>
+        </div>
+        <div class="col-md-6">
+          <h1 class="lol_htitle lol_white font_asap">MY PAGE</h1>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 ticket_bettab_body">
+            <span class="mypage_tab_item thickorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind1 == 1"
+                  [class.zindex2]="tabIndObj.ind1 == 2"
+                  [class.zindex3]="tabIndObj.ind1 == 3"
+                  [class.zindex4]="tabIndObj.ind1 == 4"
+                  [class.zindex5]="tabIndObj.ind1 == 5"
+                  [class.zindex6]="tabIndObj.ind1 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 0"
+                  (click)="setTabInfo(0)">
+              Account
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind2 == 1"
+                  [class.zindex2]="tabIndObj.ind2 == 2"
+                  [class.zindex3]="tabIndObj.ind2 == 3"
+                  [class.zindex4]="tabIndObj.ind2 == 4"
+                  [class.zindex5]="tabIndObj.ind2 == 5"
+                  [class.zindex6]="tabIndObj.ind2 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 1"
+                  (click)="setTabInfo(1)" style="left: 15%;">
+              Lottery results
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind3 == 1"
+                  [class.zindex2]="tabIndObj.ind3 == 2"
+                  [class.zindex3]="tabIndObj.ind3 == 3"
+                  [class.zindex4]="tabIndObj.ind3 == 4"
+                  [class.zindex5]="tabIndObj.ind3 == 5"
+                  [class.zindex6]="tabIndObj.ind3 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 2"
+                  (click)="setTabInfo(2)" style="left: 30%;">
+              Deposit withdraw
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind4 == 1"
+                  [class.zindex2]="tabIndObj.ind4 == 2"
+                  [class.zindex3]="tabIndObj.ind4 == 3"
+                  [class.zindex4]="tabIndObj.ind4 == 4"
+                  [class.zindex5]="tabIndObj.ind4 == 5"
+                  [class.zindex6]="tabIndObj.ind4 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 3"
+                  (click)="setTabInfo(3)" style="left: 45%;">
+              My history
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind5 == 1"
+                  [class.zindex2]="tabIndObj.ind5 == 2"
+                  [class.zindex3]="tabIndObj.ind5 == 3"
+                  [class.zindex4]="tabIndObj.ind5 == 4"
+                  [class.zindex5]="tabIndObj.ind5 == 5"
+                  [class.zindex6]="tabIndObj.ind5 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 4"
+                  (click)="setTabInfo(4)" style="left: 60%;">
+              Message
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind6 == 1"
+                  [class.zindex2]="tabIndObj.ind6 == 2"
+                  [class.zindex3]="tabIndObj.ind6 == 3"
+                  [class.zindex4]="tabIndObj.ind6 == 4"
+                  [class.zindex5]="tabIndObj.ind6 == 5"
+                  [class.zindex6]="tabIndObj.ind6 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 5"
+                  (click)="setTabInfo(5)" style="left: 75%;">
+              Settings
+            </span>
+        </div>
+        <div class="col-md-1">
+        </div>
+        
+        <div class="col-md-12 tbt_origin_panel buyticket_border">
+          <div class="row myp_header">
+            <div class="col-md-6">
+              <img *ngIf="!mydata.avatar" class="man_small" src="assets/imgs/mandummy.png" />
+              <img *ngIf="mydata.avatar" class="man_small" src="{{baseUrl + mydata.avatar}}" />
+              <span class="font_roboto myp_mediumfont mpheader_name">{{mydata.nickname}}</span>
+            </div>
+            <div class="col-md-6 font_roboto balance_panel">
+              <span class="myp_smallfont lol_orange myp_b1">Balance</span>
+              <span class="myp_mediumfont font_asap myp_b2">0.123456</span>
+              <span class="myp_smallfont lol_orange myp_b3">BTC</span>
+            </div>
+          </div>
+          <div class="row msgbody">
+            <div class="col-md-5 msglist">
+              <div class="msgitem" [class.msgitem_active]="msgItemClicked == i" *ngFor="let msgitem of msgDatas; let i = index;" (click)="clickedMsgItem(i)">
+                <img *ngIf="msgItemClicked != i" class="msgicon" src="assets/imgs/msg_closed.png" />
+                <img *ngIf="msgItemClicked == i" class="msgicon" src="assets/imgs/msg_opened.png" />
+                <div class="msgitem_contents">
+                  <h4 class="font_roboto myp_mmsmallfont card_truncated">{{msgitem.title}}</h4>
+                  <p style="margin: 0;"></p>
+                  <img src="assets/imgs/msg_clock.png" /> &nbsp; 
+                  <span class="font_asap myp_3msmallfont" style="font-weight: bold;">{{msgitem.date}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 msgdetails">
+              <div *ngIf="!isEmpty(msgClickedContents)" class="row msgd_header">
+                  <div class="col-md-9 text-left">
+                      <h4 class="font_roboto myp_mmsmallfont" style="float: left;">{{msgClickedContents.title}}</h4>
+                  </div>
+                  <div class="col-md-3 text-right">
+                      <span class="font_asap myp_3msmallfont" style="font-weight: bold; float: right;">{{msgClickedContents.date}}</span>
+                  </div>
+              </div>
+              <div *ngIf="!isEmpty(msgClickedContents)" class="row msgd_details">
+                <div class="col-md-12" [innerHtml]="msgClickedContents.msg_contents" >
+                    <img src="https://backend.sharemeshi.com/frontend/images/news/img_news_20180704.jpg">
+
+                    大田区の有力メディア、大田区タイムズの編集会議にご招待頂き、ライターのみなさまへシェアメシ の事業内容をプレゼンテーションをさせて頂きました！
+                    
+                    ママライターの方からは「自分は里帰り出産ではなく料理が大変だった、出産後の大変な時期にこのサービスが始まっていたら是非利用したかった」等、ご意見いただいたり、サービスの広け方のアドバイスなどについてご意見頂きました。
+                    
+                    <a href="https://otaku-times.com/12101/">https://otaku-times.com/12101/</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>

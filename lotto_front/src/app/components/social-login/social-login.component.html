@@ -1,0 +1,54 @@
+<div class="lologin">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+          <i class="fa fa-angle-left lol_back_icon" aria-hidden="true"></i>
+          <a routerLink="/" class="lol_back font_roboto">
+            &nbsp;Back
+          </a>
+        </div>
+        <div class="col-md-12">
+          <h1 class="lol_htitle font_asap">LOGIN</h1>
+        </div>
+        <div class="col-md-12 bordered_outer login_mainbody">
+          <div class="row bordered_inner">
+  
+            <div class="col-md-12 text-right">
+              <a routerLink="/loto/register">
+                <img src="assets/imgs/orregisterbtn.png" />
+              </a>
+            </div>
+  
+            <div *ngIf="!showCodePanel" class="col-md-12 login_inputgroups text-center">
+                <p class="font_roboto login_labels">Checking...</p>
+            </div>
+  
+            <div *ngIf="showCodePanel" class="col-md-12 login_inputgroups">
+                <form name="form" (ngSubmit)="l_verifycode.form.valid && this.doVerifyLoginCode() " #l_verifycode="ngForm" validate>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="form-group col-md-6 login_widgets_left" [ngClass]="{ 'has-error': l_verifycode.submitted && !smscode.valid }">
+                          <label class="font_roboto login_labels">Code</label>
+                          <p class="m0"></p>
+                          <input type="text" placeholder="6 digits" class="form-control login_inputs" name="smscode" [(ngModel)]="smsmodel.smscode" #smscode="ngModel" required />
+                          <div *ngIf="l_verifycode.submitted && !smscode.valid" class="font_roboto help-block">Code is required</div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row" style="margin-top: 40px;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6 submitbody text-center">
+                          <button class="codesubmit">
+                            <img src="assets/imgs/loginbtn.png" />
+                          </button>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </form>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

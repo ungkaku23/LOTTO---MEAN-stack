@@ -1,0 +1,288 @@
+  <div class="lomotherbody">
+    <img src="assets/imgs/blugbg.png" class="ab_bg" />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+          <i class="fa fa-angle-left lol_arrow_icon lol_black" aria-hidden="true"></i>
+          <a routerLink="/" class="breadcums lol_black font_roboto">
+            Back
+          </a>
+        </div>
+        <div class="col-md-6">
+          <h1 class="lol_htitle lol_white font_asap">MY PAGE</h1>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 ticket_bettab_body">
+            <span class="mypage_tab_item thickorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind1 == 1"
+                  [class.zindex2]="tabIndObj.ind1 == 2"
+                  [class.zindex3]="tabIndObj.ind1 == 3"
+                  [class.zindex4]="tabIndObj.ind1 == 4"
+                  [class.zindex5]="tabIndObj.ind1 == 5"
+                  [class.zindex6]="tabIndObj.ind1 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 0"
+                  (click)="setTabInfo(0)">
+              Account
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind2 == 1"
+                  [class.zindex2]="tabIndObj.ind2 == 2"
+                  [class.zindex3]="tabIndObj.ind2 == 3"
+                  [class.zindex4]="tabIndObj.ind2 == 4"
+                  [class.zindex5]="tabIndObj.ind2 == 5"
+                  [class.zindex6]="tabIndObj.ind2 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 1"
+                  (click)="setTabInfo(1)" style="left: 15%;">
+              Lottery results
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind3 == 1"
+                  [class.zindex2]="tabIndObj.ind3 == 2"
+                  [class.zindex3]="tabIndObj.ind3 == 3"
+                  [class.zindex4]="tabIndObj.ind3 == 4"
+                  [class.zindex5]="tabIndObj.ind3 == 5"
+                  [class.zindex6]="tabIndObj.ind3 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 2"
+                  (click)="setTabInfo(2)" style="left: 30%;">
+              Deposit withdraw
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap" 
+                  [class.zindex1]="tabIndObj.ind4 == 1"
+                  [class.zindex2]="tabIndObj.ind4 == 2"
+                  [class.zindex3]="tabIndObj.ind4 == 3"
+                  [class.zindex4]="tabIndObj.ind4 == 4"
+                  [class.zindex5]="tabIndObj.ind4 == 5"
+                  [class.zindex6]="tabIndObj.ind4 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 3"
+                  (click)="setTabInfo(3)" style="left: 45%;">
+              My history
+            </span>
+            <span class="mypage_tab_item whiteorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind5 == 1"
+                  [class.zindex2]="tabIndObj.ind5 == 2"
+                  [class.zindex3]="tabIndObj.ind5 == 3"
+                  [class.zindex4]="tabIndObj.ind5 == 4"
+                  [class.zindex5]="tabIndObj.ind5 == 5"
+                  [class.zindex6]="tabIndObj.ind5 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 4"
+                  (click)="setTabInfo(4)" style="left: 60%;">
+              Message
+            </span>
+            <span class="mypage_tab_item solidorangebg font_asap"
+                  [class.zindex1]="tabIndObj.ind6 == 1"
+                  [class.zindex2]="tabIndObj.ind6 == 2"
+                  [class.zindex3]="tabIndObj.ind6 == 3"
+                  [class.zindex4]="tabIndObj.ind6 == 4"
+                  [class.zindex5]="tabIndObj.ind6 == 5"
+                  [class.zindex6]="tabIndObj.ind6 == 6"
+                  [class.ticket_bettab_item_chosen]="tabIndex == 5"
+                  (click)="setTabInfo(5)" style="left: 75%;">
+              Settings
+            </span>
+        </div>
+        <div class="col-md-1">
+        </div>
+        
+        <div class="col-md-12 tbt_origin_panel buyticket_border">
+          <div class="row myp_header">
+            <div class="col-md-6">
+              <img *ngIf="!mydata.avatar" class="man_small" src="assets/imgs/mandummy.png" />
+              <img *ngIf="mydata.avatar" class="man_small" src="{{baseUrl + mydata.avatar}}" />
+              <span class="font_roboto myp_mediumfont mpheader_name">{{mydata.nickname}}</span>
+            </div>
+            <div class="col-md-6 font_roboto balance_panel">
+              <span class="myp_smallfont lol_orange myp_b1">Balance</span>
+              <span class="myp_mediumfont font_asap myp_b2">0.123456</span>
+              <span class="myp_smallfont lol_orange myp_b3">BTC</span>
+            </div>
+          </div>
+          <div class="row myp_body1">
+            <app-bit-tabs [tid]="tid" (myevent)="getTidFromTab($event)"></app-bit-tabs>
+          </div>
+          <div *ngIf="tid == 1" class="row myp_body2">
+            <div class="col-md-4 mark_body">
+              <div class="mark_panel">
+                <img src="assets/imgs/winning_mark_lotteryresults.png" />
+              </div>
+              <div class="mark_txts">
+                <img src="assets/imgs/gold.png" />
+                <h5 class="lol_white font_asap">Congratulations!</h5>
+              </div>
+            </div>
+            <div class="col-md-8 mark_numbers">
+              <p class="lol_graymorewhite font_roboto myp_smallfont">Winning number</p>
+              <div class="roundnum pink_round font_roboto">
+                {{lottery_top_result.winning_numbers[0]}}
+              </div>
+              <div class="roundnum green_round font_roboto">
+                {{lottery_top_result.winning_numbers[1]}}
+              </div>
+              <div class="roundnum blue_round font_roboto">
+                {{lottery_top_result.winning_numbers[2]}}
+              </div>
+            </div>
+            <div class="col-md-12" style="padding: 20px;">
+              <div class="loto-whitetable table_body table-responsive">
+                <table>
+                  <thead>
+                    <td width="30%" class="myp_msmallfont font_roboto">rank</td>
+                    <td width="30%" class="myp_msmallfont font_roboto">secret</td>
+                    <td width="40%" class="myp_msmallfont font_roboto">get coin</td>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="myp_smallfont font_roboto">
+                        <img src="assets/imgs/gold.png" />
+                        GOLD
+                      </td>
+                      <td class="myp_smallfont font_roboto">1234</td>
+                      <td class="myp_smallfont font_roboto">0.1234 BTC</td>
+                    </tr>
+                    <tr>
+                      <td class="myp_smallfont font_roboto">
+                        <img src="assets/imgs/iron.png" />
+                        SILVER
+                      </td>
+                      <td class="myp_smallfont font_roboto">1234</td>
+                      <td class="myp_smallfont font_roboto">0.1234 BTC</td>
+                    </tr>
+                    <tr>
+                      <td class="myp_smallfont font_roboto">
+                        <img src="assets/imgs/bronze.png" />
+                        BRONZE
+                      </td>
+                      <td class="myp_smallfont font_roboto">1234</td>
+                      <td class="myp_smallfont font_roboto">0.1234 BTC</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-md-12 next_challenge">
+              <img (click)="goToChallenge()" src="assets/imgs/next_challenge.png" />
+            </div>
+          </div>
+          <div *ngIf="tid == 1" class="row myp_body2" style="margin-top: 50px;">
+              <div *ngFor="let stitem of statistics_data; let i = index;" class="col-md-4 lobetboxes">
+                  <div class="bbox_header">
+                      <img *ngIf="i == 0" src="assets/imgs/gold.png" />
+                      <img *ngIf="i == 1" src="assets/imgs/iron.png" />
+                      <img *ngIf="i == 2" src="assets/imgs/bronze.png" />
+                      <span *ngIf="i == 0" class="myp_normalfont font_roboto">GOLD</span>
+                      <span *ngIf="i == 1" class="myp_normalfont font_roboto">SILVER</span>
+                      <span *ngIf="i == 2" class="myp_normalfont font_roboto">BRONZE</span>
+                  </div>
+                  <div class="bbox_body text-left">
+                    <div class="bbb_body">
+                      <span class="myp_msmallfont lol_graymorewhite font_roboto bbb_title">winner</span>
+                      <span class="myp_smallfont font_asap bbb_content">{{stitem.winners}}</span>
+                    </div>
+                    <div class="bbb_body">
+                      <span class="myp_msmallfont lol_graymorewhite font_roboto bbb_title">total bet</span>
+                      <span class="myp_smallfont font_asap bbb_content">{{stitem.total_bet | to_fixed: 6}} <span class="lol_whiteorange">BTC</span></span>
+                    </div>
+                    <div class="bbb_body">
+                      <span class="myp_msmallfont lol_graymorewhite font_roboto bbb_title">total get coin</span>
+                      <span class="myp_smallfont font_asap bbb_content">{{stitem.total_get_coin | to_fixed: 6}} <span class="lol_whiteorange">BTC</span></span>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div *ngIf="tid == 2" class="row myp_body2">
+              <div class="col-md-4 mark_body">
+                <div class="mark_panel">
+                  <img src="assets/imgs/winning_mark_lotteryresults.png" />
+                </div>
+                <div class="mark_txts">
+                  <img src="assets/imgs/gold.png" />
+                  <h5 class="lol_white font_asap">Congratulations!</h5>
+                </div>
+              </div>
+              <div class="col-md-8 mark_numbers">
+                <p class="lol_graymorewhite font_roboto myp_smallfont">Winning number</p>
+                <div class="roundnum pink_round font_roboto">
+                  {{lottery_top_result.winning_numbers[0]}}
+                </div>
+                <div class="roundnum green_round font_roboto">
+                  {{lottery_top_result.winning_numbers[1]}}
+                </div>
+                <div class="roundnum blue_round font_roboto">
+                  {{lottery_top_result.winning_numbers[2]}}
+                </div>
+                <div class="roundnum red_round font_roboto">
+                  {{lottery_top_result.winning_numbers[3]}}
+                </div>
+              </div>
+              <div class="col-md-12" style="padding: 20px;">
+                <div class="loto-whitetable table_body table-responsive">
+                  <table>
+                    <thead>
+                      <td width="30%" class="myp_msmallfont font_roboto">rank</td>
+                      <td width="30%" class="myp_msmallfont font_roboto">secret</td>
+                      <td width="40%" class="myp_msmallfont font_roboto">get coin</td>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="myp_smallfont font_roboto">
+                          <img src="assets/imgs/gold.png" />
+                          GOLD
+                        </td>
+                        <td class="myp_smallfont font_roboto">1234</td>
+                        <td class="myp_smallfont font_roboto">0.1234 BTC</td>
+                      </tr>
+                      <tr>
+                        <td class="myp_smallfont font_roboto">
+                          <img src="assets/imgs/iron.png" />
+                          SILVER
+                        </td>
+                        <td class="myp_smallfont font_roboto">1234</td>
+                        <td class="myp_smallfont font_roboto">0.1234 BTC</td>
+                      </tr>
+                      <tr>
+                        <td class="myp_smallfont font_roboto">
+                          <img src="assets/imgs/bronze.png" />
+                          BRONZE
+                        </td>
+                        <td class="myp_smallfont font_roboto">1234</td>
+                        <td class="myp_smallfont font_roboto">0.1234 BTC</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-12 next_challenge">
+                <img (click)="goToChallenge()" src="assets/imgs/next_challenge.png" />
+              </div>
+            </div>
+            <div *ngIf="tid == 2" class="row myp_body2" style="margin-top: 50px;">
+                <div *ngFor="let stitem of statistics_data; let i = index;" class="col-md-4 lobetboxes">
+                    <div class="bbox_header">
+                        <img *ngIf="i == 0" src="assets/imgs/gold.png" />
+                        <img *ngIf="i == 1" src="assets/imgs/iron.png" />
+                        <img *ngIf="i == 2" src="assets/imgs/bronze.png" />
+                        <span *ngIf="i == 0" class="myp_normalfont font_roboto">GOLD</span>
+                        <span *ngIf="i == 1" class="myp_normalfont font_roboto">SILVER</span>
+                        <span *ngIf="i == 2" class="myp_normalfont font_roboto">BRONZE</span>
+                    </div>
+                    <div class="bbox_body text-left">
+                      <div class="bbb_body">
+                        <span class="myp_msmallfont lol_graymorewhite font_roboto bbb_title">winner</span>
+                        <span class="myp_smallfont font_asap bbb_content">{{stitem.winners}}</span>
+                      </div>
+                      <div class="bbb_body">
+                        <span class="myp_msmallfont lol_graymorewhite font_roboto bbb_title">total bet</span>
+                        <span class="myp_smallfont font_asap bbb_content">{{stitem.total_bet | to_fixed: 6}} <span class="lol_whiteorange">BTC</span></span>
+                      </div>
+                      <div class="bbb_body">
+                        <span class="myp_msmallfont lol_graymorewhite font_roboto bbb_title">total get coin</span>
+                        <span class="myp_smallfont font_asap bbb_content">{{stitem.total_get_coin | to_fixed: 6}} <span class="lol_whiteorange">BTC</span></span>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

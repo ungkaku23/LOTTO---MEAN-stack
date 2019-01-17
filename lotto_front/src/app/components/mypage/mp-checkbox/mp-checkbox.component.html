@@ -1,0 +1,15 @@
+<span class="font_roboto mpcheck_body" 
+      [class.onbg]="value == true" 
+      [class.offbg]="value == false"
+      (click)="changeVal()">
+  <span *ngIf="value == false" class="mpoff">
+    OFF
+  </span>  
+  <span *ngIf="value == true" class="mpoff_box">
+  </span> 
+  <span *ngIf="value == true" class="mpon">
+    ON
+  </span>
+  <span *ngIf="value == false" class="mpon_box">
+  </span> 
+</span>
